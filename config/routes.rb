@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'store/my_store'
+
+  get 'store/show_product'
+
   root "pages#home"
   get 'pages/home' => 'pages#home'
   get 'pages/trading_apps' => 'pages#trading_apps'

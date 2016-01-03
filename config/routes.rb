@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'pages/how_it_works', to: 'pages#how_it_works', as: 'pages_how_it_works'
   get 'pages/faq' => 'pages#faq'
   get 'pages/contact' => 'pages#contact'
+  get 'pages/show_robot' => 'pages#show_robot'
 end

@@ -3656,7 +3656,7 @@ a.thumbnail.active {
   margin: 0 2px;
 }
 .carousel-section {
-  background-image: url("../img/slide_back.jpg");
+  background-image: image-url("slide_back.jpg");
   margin-bottom: 40px;
   overflow: hidden;
 }
@@ -4396,7 +4396,7 @@ input.input-lg[type="text"] {
 /* bxslider */
 /*-------------------------------------------------------------------*/
 .bx-wrapper .bx-loading {
-  background-image: url("../img/bx_loader.gif");
+  background-image: image-url("bx_loader.gif");
 }
 .bx-wrapper .bx-caption {
   padding: 5px;

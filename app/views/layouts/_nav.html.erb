@@ -12,20 +12,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
         <li class="dropdown">
-          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Trading Apps</a>
           <ul class="dropdown-menu dropdown-menu-left">
-            <li><a href="index.html" class="active">Option 1: Default</a></li>
-            <li><a href="home_services.html">Option 2: Services</a></li>
-            <li><a href="home_full.html">Option 3: Full Intro</a></li>
-            <li><a href="home_only_full.html">Option 4: Only Full Intro</a></li>
-            <li><a href="home_news.html">Option 5: News</a></li>
-            <li><a href="home_profile.html">Option 6: Professional Profile</a></li>
-            <li><a href="home_plan.html">Option 7: Subscribe <span class="label label-success pull-right">New</span></a></li>
-            <li role="presentation" class="dropdown-header">Header Options</li>
-            <li><a href="configurator.html">Configurator<span class="label label-success pull-right">New</span></a></li>
+            <li role="presentation" class="dropdown-header">Robots Disponibles</li>
+            <li><a href="index.html" class="active">Robot 1: Default</a></li>
+            <li><a href="home_services.html">Robot 2: Services</a></li>
+            <li><a href="home_full.html">Robot 3: Full Intro</a></li>
+            <li><a href="home_only_full.html">Robot 4: Only Full Intro</a></li>
+            <li><a href="home_news.html">Robot 5: News</a></li>
+            <li><a href="home_profile.html">Robot 6: Professional Profile</a></li>
+            <li><a href="home_plan.html">Robot 7: Subscribe <span class="label label-success pull-right">New</span></a></li>
           </ul>
         </li>
+        <li><%= link_to "How It Works?", pages_how_it_works_path %></li>
+        <li><%= link_to "FAQ", pages_faq_path %></li>
+        <li><%= link_to "Store", "#" %></li>
+        <li><%= link_to "Contact", pages_contact_path %></li>
         <li class="dropdown">
           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">UI Elements</a>
           <ul class="dropdown-menu dropdown-menu-left">

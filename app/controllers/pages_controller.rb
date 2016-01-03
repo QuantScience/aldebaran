@@ -5,9 +5,12 @@ class PagesController < ApplicationController
   def trading_apps
   end
 
-  def how_it_works?
+  def how_it_works
   end
 
   def faq
+  end
+
+  def contact
   end
 end

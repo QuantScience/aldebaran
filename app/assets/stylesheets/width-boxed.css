@@ -1,5 +1,5 @@
 #sb-site {
-    background-image: url(../img/back.png);
+    background-image: image-url("back.png");
     background-repeat: repeat;
 }
 

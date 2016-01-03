@@ -4411,11 +4411,11 @@ input.input-lg[type="text"] {
 }
 .bx-wrapper .bx-prev {
   left: 0px;
-  background: url("../img/controls.png") no-repeat 0 -32px;
+  background: image-url("controls.png") no-repeat 0 -32px;
 }
 .bx-wrapper .bx-next {
   right: 10px;
-  background: url("../img/controls.png") no-repeat -43px -32px;
+  background: image-url("controls.png") no-repeat -43px -32px;
 }
 .bx-wrapper .bx-viewport {
   -moz-box-shadow: none;
@@ -5585,7 +5585,7 @@ a.feature-icon:hover {
 }
 /* 404 2 */
 .paper-back {
-  background-image: url("../img/back.png");
+  background-image: image-url("back.png");
   background-repeat: repeat;
   position: fixed;
   height: 100%;
@@ -5596,7 +5596,7 @@ a.feature-icon:hover {
   right: 0;
 }
 .title-logo {
-  background-image: url("../img/colors/blue/logo50.png");
+  background-image: image-url("colors/blue/logo50.png");
   background-repeat: no-repeat;
   background-position: center top;
   font-size: 2.3em;

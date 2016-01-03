@@ -13,8 +13,10 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require home_inverse_navbar
+//= require mixitup.min
 //= require bxslider.min
 //= require slidebars
+//= require commerce
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

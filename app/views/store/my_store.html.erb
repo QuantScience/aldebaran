@@ -1,2 +1,159 @@
-<h1>Store#my_store</h1>
-<p>Find me in app/views/store/my_store.html.erb</p>
+<header class="main-header">
+  <div class="container">
+    <h1 class="page-title">E-commerce Filters</h1>
+
+    <ol class="breadcrumb pull-right">
+      <li><a href="#">E-commerce</a></li>
+      <li class="active">E-commerce Filters</li>
+    </ol>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 hidden-sm hidden-xs">
+      <div class="ec-filters-menu">
+        <h3 class="section-title no-margin-top">Filters</h3>
+        <h4>Select A Robot</h4>
+        <ul>
+          <li><a href="#" class="filter">All</a></li>
+          <li><a href="#" class="filter">Smaprtphones</a></li>
+          <li><a href="#" class="filter">Smart TV</a></li>
+          <li><a href="#" class="filter">Keyboards</a></li>
+          <li><a href="#" class="filter">Graphics Cards</a></li>
+        </ul>
+      </div>
+      <h3 class="section-title">Latest Offers</h3>
+      <div class="bxslider-controls">
+       <span id="bx-prev5"></span>
+       <span id="bx-next5"></span>
+      </div>
+      <ul class="bxslider" id="offers">
+        <li>
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #1</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img03.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 249.99</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #2</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img07.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 999.99</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #3</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img01.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 649.00</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="row" id="Container">
+        <div class="col-sm-4 mix category-smartphone" data-price="64900" data-date="20130521" data-popularity="3">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #1</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img01.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 649.00</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-keyboard" data-price="4999" data-date="20130421" data-popularity="8">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #2</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img02.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 49.99</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-smartphone" data-price="24999" data-date="20121409" data-popularity="7">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #3</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img03.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 249.99</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-smartphone" data-price="9995" data-date="20130521" data-popularity="10">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #4</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img04.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 99.95</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-graphic" data-price="22400" data-date="20111225" data-popularity="9">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #5</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img05.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 224.00</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-smartphone" data-price="49999" data-date="20140102" data-popularity="12">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #6</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img06.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 499.99</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-tv" data-price="99999" data-date="20121124" data-popularity="5">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #7</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img07.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 999.99</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-smartphone" data-price="42565" data-date="20100907" data-popularity="15">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #8</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img08.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 425.65</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mix category-smartphone" data-price="22900" data-date="20140831" data-popularity="8">
+          <div class="ec-box">
+            <div class="ec-box-header"><a href="#">Robot #9</a></div>
+            <a href="#"><img src="<%= asset_path('demo/e_img09.jpg') %>" alt=""></a>
+            <div class="ec-box-footer">
+              <span class="label label-primary">$ 229.00</span>
+              <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->

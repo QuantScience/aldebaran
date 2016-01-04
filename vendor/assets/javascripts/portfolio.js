@@ -1,5 +1,5 @@
 $(function(){
-    $('#Container').mixItUp();
+    // $('#Container').mixItUp();
 
     // Coumnas
     $('#Cols1').click(function() {

@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def about_us
+  end
+
   def show_robot
   end
 end

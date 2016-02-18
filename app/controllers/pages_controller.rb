@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   def about_us
   end
 
-  def show_robot
+  def show_product
   end
 
   def strategies

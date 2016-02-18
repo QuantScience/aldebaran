@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'pages/faq' => 'pages#faq'
   get 'pages/contact' => 'pages#contact'
   get 'pages/about_us' => 'pages#about_us'
-  get 'pages/show_robot' => 'pages#show_robot'
+  get 'pages/show_product' => 'pages#show_product'
   get 'pages/strategies' => 'pages#strategies'
   get 'pages/portfolios' => 'pages#portfolios'
   get 'pages/indicators' => 'pages#indicators'

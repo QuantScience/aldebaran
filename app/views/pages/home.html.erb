@@ -8,71 +8,58 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" style="padding-top: 45px;padding-bottom: 45px;">
+    <div class="carousel-inner">
       <div class="item active">
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
-              <div class="service-header-text text-center center-block">
-                <h1 class="animated fadeInDown animation-delay-2">At the Vanguard of Innovation</h1>
-                <p class="animated fadeInDown animation-delay-5">Phasellus viverra nulla ut metus varius laoreet rutrum. Aenean imperdiet etiam ultricies nisi vel augue.</p>
-                <p class="animated fadeInDown animation-delay-8"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+            <div class="col-md-6 col-sm-7">
+              <div class="carousel-caption">
+                <div class="carousel-text">
+                  <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">A template, infinite possibilities</h1>
+                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">We give you everything done, except the coffee</h2>
+                  <ul class="list-unstyled carousel-list">
+                    <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>Built with Bootstrap</li>
+                    <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>HTML5 and CSS3</li>
+                    <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Responsive Template</li>
+                  </ul>
+                  <p class="animated fadeInDown animation-delay-8 text-center"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <ul class="services-header-list">
-                <li class="animated fadeInUp animation-delay-5"><a href="#"><i class="fa fa-globe"></i> Global web solutions &amp; cloud computing</a></li>
-                <li class="animated fadeInUp animation-delay-8"><a href="#"><i class="fa fa-tachometer"></i> High-speed servers and performance</a></li>
-                <li class="animated fadeInUp animation-delay-11"><a href="#"><i class="fa fa-cloud"></i> Lorem ipsum dolor sit amet consectetur</a></li>
-              </ul>
+            <div class="col-md-6 col-sm-5 hidden-xs carousel-img-wrap">
+              <div class="carousel-img">
+                <img src="<%= asset_path('demo/pre.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+              </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="item">
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
-              <div class="service-header-text text-center center-block">
-                <h1 class="animated fadeInDown animation-delay-2">At the Vanguard of Innovation</h1>
-                <p class="animated fadeInDown animation-delay-5">Phasellus viverra nulla ut metus varius laoreet rutrum. Aenean imperdiet etiam ultricies nisi vel augue.</p>
-                <p class="animated fadeInDown animation-delay-8"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+            <div class="col-md-6 col-sm-8">
+              <div class="carousel-caption">
+                <div class="carousel-text">
+                  <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">Customization extremes</h1>
+                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">Configure your own template in few easy steps</h2>
+                  <ul class="list-unstyled carousel-list">
+                    <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>25 default colors</li>
+                    <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>Variables less for all colors</li>
+                    <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Full width and boxed mode</li>
+                  </ul>
+                  <p class="animated fadeInDown animation-delay-8 text-center"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <ul class="services-header-list">
-                <li class="animated fadeInUp animation-delay-5"><a href="#"><i class="fa fa-globe"></i> Global web solutions &amp; cloud computing</a></li>
-                <li class="animated fadeInUp animation-delay-8"><a href="#"><i class="fa fa-tachometer"></i> High-speed servers and performance</a></li>
-                <li class="animated fadeInUp animation-delay-11"><a href="#"><i class="fa fa-cloud"></i> Lorem ipsum dolor sit amet consectetur</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="service-header-text text-center center-block">
-                <h1 class="animated fadeInDown animation-delay-2">At the Vanguard of Innovation</h1>
-                <p class="animated fadeInDown animation-delay-5">Phasellus viverra nulla ut metus varius laoreet rutrum. Aenean imperdiet etiam ultricies nisi vel augue.</p>
-                <p class="animated fadeInDown animation-delay-8"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+            <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
+              <div class="carousel-img">
+                <img src="<%= asset_path('demo/pre2.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
               </div>
-            </div>
-            <div class="col-md-6">
-              <ul class="services-header-list">
-                <li class="animated fadeInUp animation-delay-5"><a href="#"><i class="fa fa-globe"></i> Global web solutions &amp; cloud computing</a></li>
-                <li class="animated fadeInUp animation-delay-8"><a href="#"><i class="fa fa-tachometer"></i> High-speed servers and performance</a></li>
-                <li class="animated fadeInUp animation-delay-11"><a href="#"><i class="fa fa-cloud"></i> Lorem ipsum dolor sit amet consectetur</a></li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
@@ -118,7 +105,7 @@
   </div>
 </section>
 
-<section class="section-lines" style="margin-bottom: 0;">
+<section class="section-lines">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -190,7 +177,7 @@
   </div>
 </section>
 
-<section class="section-lines" style="margin-bottom: 0;">
+<section class="section-lines">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -270,27 +257,3 @@
     </div>
   </div>
 </section>
-
-<div class="container">
-
-
-<section>
-  <p class="slogan text-center">Discover our projects and the rigorous process of <span>creation</span>. Our principles are <span>creativity</span>, <span>design</span>, <span>experience</span> and <span>knowledge</span>. We are backed by 20 years of <span>research</span>.</p>
-  <h2 class="section-title">Our Clients</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/intel.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/microsoft.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/nokia.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/samsung.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/anz.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/maxis.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/sony.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/hp.png') %>" alt="" class="img-responsive"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</div>

@@ -19,4 +19,13 @@ class PagesController < ApplicationController
 
   def show_robot
   end
+
+  def strategies
+  end
+
+  def portfolios
+  end
+
+  def indicators
+  end
 end

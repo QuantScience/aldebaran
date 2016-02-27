@@ -17,8 +17,37 @@ ActiveRecord::Schema.define(version: 20160227005717) do
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "slide_1_title"
+    t.string   "slide_1_subtitle"
+    t.string   "slide_2_title"
+    t.string   "slide_2_subtitle"
+    t.string   "slide_3_title"
+    t.string   "slide_3_subtitle"
+    t.string   "carousel_link_1"
+    t.string   "carousel_link_1_text"
+    t.string   "carousel_link_2"
+    t.string   "carousel_link_2_text"
+    t.string   "carousel_link_3"
+    t.string   "carousel_link_3_text"
+    t.string   "feature_1_title"
+    t.string   "feature_1_text"
+    t.string   "feature_2_title"
+    t.string   "feature_2_text"
+    t.string   "feature_3_title"
+    t.string   "feature_3_text"
+    t.string   "feature_4_title"
+    t.string   "feature_4_text"
+    t.string   "section_1_title"
+    t.string   "section_1_first_paragraph"
+    t.string   "section_1_second_paragraph"
+    t.string   "section_2_title"
+    t.string   "section_2_first_paragraph"
+    t.string   "section_2_second_paragraph"
+    t.string   "section_3_title"
+    t.string   "section_3_first_paragraph"
+    t.string   "section_3_second_paragraph"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

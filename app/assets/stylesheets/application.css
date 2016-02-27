@@ -22,3 +22,11 @@
 p.product-thumbnail-text {
   font-size: .9em;
 }
+
+.white-text {
+  color: white !important;
+}
+
+.white-text:hover {
+  color: #23527c !important;
+}

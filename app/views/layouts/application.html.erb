@@ -12,6 +12,8 @@
   <%= render 'layouts/nav' %>
   <%= render 'layouts/alerts' %>
   <%= yield %>
-  <%= render 'layouts/footer' %>
+  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" %>
+    <%= render 'layouts/footer' %>
+  <% end %>
 </body>
 </html>

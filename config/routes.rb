@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'pages/strategies' => 'pages#strategies'
   get 'pages/portfolios' => 'pages#portfolios'
   get 'pages/indicators' => 'pages#indicators'
-  resources :content
+  resources :contents
   # get 'content/copies_manager' => 'content#copies_manager'
 end

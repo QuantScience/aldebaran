@@ -1,7 +1,17 @@
-class ContentController < ApplicationController
+class ContentsController < ApplicationController
 
-  def new
-    @content = Content.find(1)
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def update
+    @content = Content.find(params[:id])
+    if @content.update(content_params)
+      redirect_to root_path
+    else
+      flash[:alert] = 'ERROR'
+      render 'edit'
+    end
   end
 
   private

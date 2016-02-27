@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     if current_user.admin?
-      new_content_path
+      edit_content_path(id: 1)
     else
       root_path
     end

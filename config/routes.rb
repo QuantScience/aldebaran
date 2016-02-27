@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'pages/strategies' => 'pages#strategies'
   get 'pages/portfolios' => 'pages#portfolios'
   get 'pages/indicators' => 'pages#indicators'
+  get 'admin/copies_manager' => 'admin#copies_manager'
 end

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="title-logo animated fadeInDown animation-delay-5">artificial<span>reason</span></div>
+    </div>
+    <div class="col-md-7">
+      <h2 class="right-line">About us</h2>
+      <p><%= @content.about_us_first_paragraph %></p>
+      <p><%= @content.about_us_second_paragraph %></p>
+      <p><%= @content.about_us_third_paragraph %></p>
+    </div>
+    <div class="col-md-5">
+      <h2 class="right-line">Our Approach</h2>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-link">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              <i class="fa fa-lightbulb-o"></i> <%= @content.about_us_1_title %>
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <p><%= @content.about_us_1_first_paragraph %></p>
+              <p><%= @content.about_us_1_second_paragraph %></p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-link">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+              <i class="fa fa-desktop"></i> <%= @content.about_us_2_title %>
+            </a>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p><%= @content.about_us_2_first_paragraph %></p>
+              <p><%= @content.about_us_2_second_paragraph %></p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-link">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+              <i class="fa fa-user"></i> <%= @content.about_us_3_title %>
+            </a>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p><%= @content.about_us_3_first_paragraph %></p>
+              <p><%= @content.about_us_3_second_paragraph %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- row -->
+</div> <!-- container -->

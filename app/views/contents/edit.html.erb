@@ -1,0 +1,34 @@
+<div class="container">
+  <%= form_for(@content) do |content| %>
+    <div class="row">
+      <% if @content.errors.any? %>
+        <% @content.errors.each do |attribute, message| %>
+          <h3 class="validation-error"><%= message %></h3>
+        <% end %>
+      <% end %>
+      <h1>Change Home Copies</h1>
+      <%= render 'slides_text', content: content %>
+      <%= render 'carousel_link', content: content %>
+      <%= render 'features_text', content: content %>
+      <%= render 'section_copies', content: content %>
+      <%= render 'about_us_copies',content: content %>
+      <h2>Contact Copies:</h2>
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <div class="field form-group">
+            <%= content.label :contact_us_paragraph, "Contact Us Paragraph:", class: "lead lead-lg" %>
+            <%= content.text_area :contact_us_paragraph, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="actions form-group text-center">
+          <%= content.submit "Save Copies", class: "btn btn-ar btn-lg btn-success" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

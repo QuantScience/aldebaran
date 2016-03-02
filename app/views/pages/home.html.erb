@@ -1,25 +1,99 @@
-<header class="services-header">
-  <div class="primary-dark-div">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="service-header-text text-center center-block">
-            <h1 class="animated fadeInDown animation-delay-2">At the Vanguard of Innovation</h1>
-            <p class="animated fadeInDown animation-delay-5">Phasellus viverra nulla ut metus varius laoreet rutrum. Aenean imperdiet etiam ultricies nisi vel augue.</p>
-            <p class="animated fadeInDown animation-delay-8"><%= link_to "Buy Robots", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+<section class="carousel-section">
+  <div id="carousel-example-generic" class="carousel carousel-razon slide" data-ride="carousel" data-interval="5000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-7">
+              <div class="carousel-caption">
+                <div class="carousel-text">
+                  <h1 class="animated fadeInDownBig animation-delay-7 carousel-title"><%= @content.slide_1_title %></h1>
+                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle"><%= @content.slide_1_subtitle %></h2>
+                  <ul class="list-unstyled carousel-list">
+                    <li class="animated bounceInLeft animation-delay-11"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_1_text}".html_safe, @content.carousel_link_1, class: "white-text" %></li>
+                    <li class="animated bounceInLeft animation-delay-13"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_2_text}".html_safe, @content.carousel_link_2, class: "white-text" %></li>
+                    <li class="animated bounceInLeft animation-delay-15"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_3_text}".html_safe, @content.carousel_link_3, class: "white-text" %></li>
+                  </ul>
+                  <p class="animated fadeInDown animation-delay-8 text-center"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-5 hidden-xs carousel-img-wrap">
+              <div class="carousel-img">
+                <img src="<%= asset_path('demo/pre.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <ul class="services-header-list">
-            <li class="animated fadeInUp animation-delay-5"><a href="#"><i class="fa fa-globe"></i> Global web solutions &amp; cloud computing</a></li>
-            <li class="animated fadeInUp animation-delay-8"><a href="#"><i class="fa fa-tachometer"></i> High-speed servers and performance</a></li>
-            <li class="animated fadeInUp animation-delay-11"><a href="#"><i class="fa fa-cloud"></i> Lorem ipsum dolor sit amet consectetur</a></li>
-          </ul>
+      </div>
+      <div class="item">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-8">
+              <div class="carousel-caption">
+                <div class="carousel-text">
+                  <h1 class="animated fadeInDownBig animation-delay-7 carousel-title"><%= @content.slide_2_title %></h1>
+                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle"><%= @content.slide_2_subtitle %></h2>
+                  <ul class="list-unstyled carousel-list">
+                    <li class="animated bounceInLeft animation-delay-11"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_1_text}".html_safe, @content.carousel_link_1, class: "white-text" %></li>
+                    <li class="animated bounceInLeft animation-delay-13"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_2_text}".html_safe, @content.carousel_link_2, class: "white-text" %></li>
+                    <li class="animated bounceInLeft animation-delay-15"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_3_text}".html_safe, @content.carousel_link_3, class: "white-text" %></li>
+                  </ul>
+                  <p class="animated fadeInDown animation-delay-8 text-center"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
+              <div class="carousel-img">
+                <img src="<%= asset_path('demo/pre2.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-8">
+              <div class="carousel-caption">
+                <div class="carousel-text">
+                  <h1 class="animated fadeInDownBig animation-delay-7 carousel-title"><%= @content.slide_3_title %><%= @content.slide_3_title %></h1>
+                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle"><%= @content.slide_2_subtitle %></h2>
+                  <ul class="list-unstyled carousel-list">
+                    <li class="animated bounceInLeft animation-delay-11"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_1_text}".html_safe, @content.carousel_link_1, class: "white-text" %></li>
+                    <li class="animated bounceInLeft animation-delay-13"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_2_text}".html_safe, @content.carousel_link_2, class: "white-text" %></li>
+                    <li class="animated bounceInLeft animation-delay-15"><%= link_to "<i class='fa fa-check'></i>#{@content.carousel_link_3_text}".html_safe, @content.carousel_link_3, class: "white-text" %></li>
+                  </ul>
+                  <p class="animated fadeInDown animation-delay-8 text-center"><%= link_to "Buy Strategies", store_my_store_path, class: "btn btn-ar btn-primary btn-lg" %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
+              <div class="carousel-img">
+                <img src="<%= asset_path('demo/pre2.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
-</header>
+</section> <!-- carousel -->
 
 <section class="margin-bottom">
   <div class="container">
@@ -27,43 +101,43 @@
       <div class="col-md-3 col-sm-6">
         <div class="content-box box-default animated fadeInUp animation-delay-10">
           <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-html5"></i></span>
-          <h4 class="content-box-title">Lorem ipsum dolor</h4>
-          <p>Consectetur adipisicing elit vritatis dolor rem officia molestiae atque eveniet inventore earum quas voluptates cumque</p>
+          <h4 class="content-box-title"><%= @content.feature_1_title %></h4>
+          <p><%= @content.feature_1_text %></p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="content-box box-default animated fadeInUp animation-delay-14">
           <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-css3"></i></span>
-          <h4 class="content-box-title">Lorem ipsum dolor</h4>
-          <p>Consectetur adipisicing elit vritatis dolor rem officia molestiae atque eveniet inventore earum quas voluptates cumque</p>
+          <h4 class="content-box-title"><%= @content.feature_2_title %></h4>
+          <p><%= @content.feature_2_text %></p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="content-box box-default animated fadeInUp animation-delay-16">
           <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-desktop"></i></span>
-          <h4 class="content-box-title">Lorem ipsum dolor</h4>
-          <p>Consectetur adipisicing elit vritatis dolor rem officia molestiae atque eveniet inventore earum quas voluptates cumque</p>
+          <h4 class="content-box-title"><%= @content.feature_3_title %></h4>
+          <p><%= @content.feature_3_text %></p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="content-box box-default animated fadeInUp animation-delay-12">
           <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-flag"></i></span>
-          <h4 class="content-box-title">Lorem ipsum dolor</h4>
-          <p>Consectetur adipisicing elit vritatis dolor rem officia molestiae atque eveniet inventore earum quas voluptates cumque</p>
+          <h4 class="content-box-title"><%= @content.feature_4_title %></h4>
+          <p><%= @content.feature_4_text %></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section-lines" style="margin-bottom: 0;">
+<section class="section-lines">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <div class="home-devices">
-          <h3>The template for all devices</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sapiente, nam sunt rem beatae architecto cupiditate numquam consectetur dolorum aliquam suscipit adipisci expedita vel quaerat illum aperiam facere inventore officia.</p>
-          <p>Consequuntur sed ipsum eius minima eum velit soluta accusamus omnis maiores modi quae mollitia consectetur adipisci.</p>
+          <h3><%= @content.section_1_title %></h3>
+          <p><%= @content.section_1_first_paragraph %></p>
+          <p><%= @content.section_1_second_paragraph %></p>
           <ul class="icon-devices">
             <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
             <li><a href="#laptop" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
@@ -92,35 +166,35 @@
   </div>
 </section>
 
-<section class="section-lines" style="margin-bottom: 0;">
+<section class="section-lines">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <div class="tab-content">
-          <div class="tab-pane active" id="desktop">
+          <div class="tab-pane active" id="desktop1">
             <img src="<%= asset_path('demo/mac.png') %>" alt="" class="img-responsive">
           </div>
-          <div class="tab-pane" id="laptop">
+          <div class="tab-pane" id="laptop1">
             <img src="<%= asset_path('demo/macpro.png') %>" alt="" class="img-responsive">
           </div>
-          <div class="tab-pane" id="tablet">
+          <div class="tab-pane" id="tablet1">
             <img src="<%= asset_path('demo/ipad.png') %>" alt="" class="img-responsive">
           </div>
-          <div class="tab-pane" id="mobile">
+          <div class="tab-pane" id="mobile1">
             <img src="<%= asset_path('demo/iphone.png') %>" alt="" class="img-responsive">
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="home-devices">
-          <h3>The template for all devices</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sapiente, nam sunt rem beatae architecto cupiditate numquam consectetur dolorum aliquam suscipit adipisci expedita vel quaerat illum aperiam facere inventore officia.</p>
-          <p>Consequuntur sed ipsum eius minima eum velit soluta accusamus omnis maiores modi quae mollitia consectetur adipisci.</p>
+          <h3><%= @content.section_2_title %></h3>
+          <p><%= @content.section_2_first_paragraph %></p>
+          <p><%= @content.section_2_second_paragraph %></p>
           <ul class="icon-devices">
-            <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
-            <li><a href="#laptop" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
-            <li><a href="#tablet" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
-            <li><a href="#mobile" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
+            <li class="active"><a href="#desktop1" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
+            <li><a href="#laptop1" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
+            <li><a href="#tablet1" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
+            <li><a href="#mobile1" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
           </ul>
         </div>
       </div>
@@ -133,29 +207,29 @@
     <div class="row">
       <div class="col-md-4">
         <div class="home-devices">
-          <h3>The template for all devices</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sapiente, nam sunt rem beatae architecto cupiditate numquam consectetur dolorum aliquam suscipit adipisci expedita vel quaerat illum aperiam facere inventore officia.</p>
-          <p>Consequuntur sed ipsum eius minima eum velit soluta accusamus omnis maiores modi quae mollitia consectetur adipisci.</p>
+          <h3><%= @content.section_3_title %></h3>
+          <p><%= @content.section_3_first_paragraph %></p>
+          <p><%= @content.section_3_second_paragraph %></p>
           <ul class="icon-devices">
-            <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
-            <li><a href="#laptop" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
-            <li><a href="#tablet" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
-            <li><a href="#mobile" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
+            <li class="active"><a href="#desktop2" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
+            <li><a href="#laptop2" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
+            <li><a href="#tablet2" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
+            <li><a href="#mobile2" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-8">
         <div class="tab-content">
-          <div class="tab-pane active" id="desktop">
+          <div class="tab-pane active" id="desktop2">
             <img src="<%= asset_path('demo/mac.png') %>" alt="" class="img-responsive">
           </div>
-          <div class="tab-pane" id="laptop">
+          <div class="tab-pane" id="laptop2">
             <img src="<%= asset_path('demo/macpro.png') %>" alt="" class="img-responsive">
           </div>
-          <div class="tab-pane" id="tablet">
+          <div class="tab-pane" id="tablet2">
             <img src="<%= asset_path('demo/ipad.png') %>" alt="" class="img-responsive">
           </div>
-          <div class="tab-pane" id="mobile">
+          <div class="tab-pane" id="mobile2">
             <img src="<%= asset_path('demo/iphone.png') %>" alt="" class="img-responsive">
           </div>
         </div>
@@ -164,82 +238,47 @@
   </div>
 </section>
 
-<div class="container">
-  <section class="margin-bottom">
-    <p class="lead lead-lg text-center primary-color margin-bottom">Knows the <strong>Artificial Reason</strong> and surprise yourself</p>
+<section class="section-lines" style="padding-top:45px;padding-bottom:45px;">
+  <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <h2 class="no-margin-top">About us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, alias, nihil molestias libero corporis perferendis a quasi at.</p>
-        <p>Eos, illum, odit nulla provident sint atque quasi necessitatibus dolores voluptatibus perspiciatis aliquid tempora possimus laudantium. Blanditiis, deleniti!</p>
-        <p>Saepe, laborum, eligendi vitae ad excepturi officiis vel omnis quidem et dolorum rem vero explicabo consequatur mollitia nihil!</p>
-        <p>Fuga, omnis, quo, cumque, ipsa quasi facilis voluptatibus iure veniam nostrum voluptate accusantium dolore reprehenderit. Corrupti, mollitia, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit ducimus, pariatur ad ipsam et quod numquam eveniet magni aspernatur.</p>
-
-      </div>
-      <div class="col-md-6">
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading panel-heading-link">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                <i class="fa fa-lightbulb-o"></i> Talent and creativity
-              </a>
+      <div class="col-md-12">
+        <div id="carousel-example-captions" class="carousel carousel-images slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+            <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="<%= asset_path('demo/w2.jpg') %>" alt="First slide image">
+              <div class="carousel-caption animated fadeInUpBig">
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati molestiae id ipsum ipsa repudiandae. Voluptatum, molestias, quas magnam repellat quos facilis sequi. Ullam optio eius deleniti dolore quasi doloribus ipsam incidunt perferendis.</p>
-                <p>Dolores, corrupti, laborum, officia sit aliquam doloremque accusantium nemo sunt veniam est incidunt perferendis minima obcaecati ex aperiam voluptatibus blanditiis eum suscipit magnam dolorum in adipisci nihil ipsam perspiciatis molestiae!</p>
+            <div class="item">
+              <img src="<%= asset_path('demo/w3.jpg') %>" alt="Second slide image">
+              <div class="carousel-caption animated fadeInUpBig">
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="<%= asset_path('demo/w10.jpg') %>" alt="Third slide image">
+              <div class="carousel-caption animated fadeInUpBig">
+                <h3>Third slide label</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading panel-heading-link">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
-                <i class="fa fa-desktop"></i> Design and code
-              </a>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit dignissimos inventore cupiditate expedita saepe enim nobis nostrum? Laborum, laudantium, maiores, cupiditate, perspiciatis at ad accusamus corporis sed ipsam et velit!</p>
-                <p>Incidunt, harum itaque voluptatum asperiores recusandae explicabo maiores. Alias, quos, ex impedit at error id laborum fugit architecto qui beatae molestiae dolorum rem veritatis quia aliquam totam accusamus perferendis. Nulla!</p>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading panel-heading-link">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
-                <i class="fa fa-user"></i> Quality and Support
-              </a>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, rerum unde doloribus accusamus pariatur non expedita quibusdam velit totam obcaecati. Consequatur, deserunt, asperiores quam nisi earum voluptates animi labore tempore!</p>
-                <p>Dolorum, aliquam, totam labore saepe error a eum culpa assumenda sint laudantium ipsa iure ullam et dicta nesciunt repellendus optio voluptatibus reprehenderit odit officia fugiat necessitatibus recusandae architecto ad neque?</p>
-              </div>
-            </div>
-          </div>
+          <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-<section>
-  <p class="slogan text-center">Discover our projects and the rigorous process of <span>creation</span>. Our principles are <span>creativity</span>, <span>design</span>, <span>experience</span> and <span>knowledge</span>. We are backed by 20 years of <span>research</span>.</p>
-  <h2 class="section-title">Our Clients</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/intel.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/microsoft.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/nokia.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/samsung.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/anz.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/maxis.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/sony.png') %>" alt="" class="img-responsive"></div>
-        <div class="col-md-3 col-sm-3 col-xs-6"><img src="<%= asset_path('demo/hp.png') %>" alt="" class="img-responsive"></div>
       </div>
     </div>
   </div>
 </section>
-
-</div>

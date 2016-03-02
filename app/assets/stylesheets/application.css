@@ -30,3 +30,7 @@ p.product-thumbnail-text {
 .white-text:hover {
   color: #23527c !important;
 }
+
+.validation-error {
+  color: red;
+}

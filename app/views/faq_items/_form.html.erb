@@ -1,5 +1,10 @@
-<%= form_for(@faq_item, url: faq_index_path) do |faq_item| %>
+<%= form_for(@faq_item) do |faq_item| %>
   <h3 class="right-line text-left">FAQ Item Management</h3>
+  <% if @faq_item.errors.any? %>
+    <% @faq_item.errors.each do |attribute, message| %>
+      <h3 class="validation-error"><%= message %></h3>
+    <% end %>
+  <% end %>
   <div class="row">
     <div class="col-md-12 text-left">
       <div class="field form-group">

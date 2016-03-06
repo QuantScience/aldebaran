@@ -16,7 +16,7 @@
             <td class="lead lead-sm vert-align text-center"><%= faq_item.question %></td>
             <td class="lead lead-sm vert-align text-center"><%= faq_item.answer %></td>
             <td class="lead lead-sm vert-align text-center">
-              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_faq_item_path(faq_item), class: "btn btn-ar btn-warning" %>
+              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_faq_path(faq_item), class: "btn btn-ar btn-warning" %>
               <%= link_to faq_path(faq_item.id), method: :delete, data: { confirm: '¿Are you sure?' }, class: "btn btn btn-ar btn-danger" do %><i class="fa fa-trash"></i><% end %>
             </td>
           </tr>

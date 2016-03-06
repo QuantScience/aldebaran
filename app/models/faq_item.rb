@@ -10,4 +10,5 @@
 #
 
 class FaqItem < ActiveRecord::Base
+  validates :question, :answer, presence: { message: "You must include all the fields"}
 end

@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get 'pages/portfolios' => 'pages#portfolios'
   get 'pages/indicators' => 'pages#indicators'
   resources :contents
+  resources :faq
   # get 'content/copies_manager' => 'content#copies_manager'
 end

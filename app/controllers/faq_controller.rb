@@ -14,8 +14,12 @@ class FaqController < ApplicationController
   end
 
   def index
+    @faq_items = FaqItem.all
   end
 
   def destroy
+    @faq_item = FaqItem.find(params[:id])
+    @faq_item.destroy
+    redirect_to faq_index_path
   end
 end

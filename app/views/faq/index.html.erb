@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <h2 class="right-line">FAQ Items</h2>
+    <div class="col-md-12">
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">Number</th>
+          <th class="text-center lead lead-lg">Question</th>
+          <th class="text-center lead lead-lg">Answer</th>
+          <th class="text-center lead lead-lg">Options</th>
+        </tr>
+        <% @faq_items.each_with_index do |faq_item,index| %>
+          <tr class="text-center">
+            <td class="lead lead-sm vert-align text-center"><%= index+1 %></td>
+
+            <td class="lead lead-sm vert-align text-center"><%= faq_item.question %></td>
+            <td class="lead lead-sm vert-align text-center"><%= faq_item.answer %></td>
+            <td class="lead lead-sm vert-align text-center">
+              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_faq_item_path(faq_item), class: "btn btn-ar btn-warning" %>
+              <%= link_to faq_path(faq_item.id), method: :delete, data: { confirm: '¿Are you sure?' }, class: "btn btn btn-ar btn-danger" do %><i class="fa fa-trash"></i><% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center col-md-offset-3" id="btn-new-user">
+      <%= link_to "Add New Faq Item", new_faq_path, class: "btn btn-lg btn-ar btn-success" %>
+    </div>
+  </div>
+</div>

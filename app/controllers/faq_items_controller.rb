@@ -1,4 +1,6 @@
 class FaqItemsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :its_admin?
 
   def new
     @faq_item = FaqItem.new
@@ -43,5 +45,11 @@ class FaqItemsController < ApplicationController
   private
     def faq_item_params
       params.require(:faq_item).permit(:question, :answer)
+    end
+
+    def its_admin?
+      unless current_user.admin?
+        redirect_to root_path, :alert => "Lo sentimos, usted no tiene permisos para acceder a esta ruta"
+      end
     end
 end

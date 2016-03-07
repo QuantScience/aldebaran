@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160306220946) do
     t.text     "about_us_3_first_paragraph"
     t.text     "about_us_3_second_paragraph"
     t.text     "contact_us_paragraph"
+    t.text     "faq_paragraph"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end

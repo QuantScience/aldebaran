@@ -1,17 +1,18 @@
 # == Schema Information
 #
-# Table name: faq_items
+# Table name: steps
 #
 #  id         :integer          not null, primary key
-#  question   :text
-#  answer     :text
+#  title      :string
+#  content    :text
+#  step_type  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class FaqItemTest < ActiveSupport::TestCase
+class StepTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

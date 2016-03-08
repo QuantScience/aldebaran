@@ -45,6 +45,7 @@
 #  about_us_3_first_paragraph  :text
 #  about_us_3_second_paragraph :text
 #  contact_us_paragraph        :text
+#  faq_paragraph               :text
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
 #

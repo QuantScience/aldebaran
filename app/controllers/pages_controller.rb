@@ -9,6 +9,9 @@ class PagesController < ApplicationController
 
   def how_it_works
     @content = Content.find(1)
+    @steps_1 = Step.where(step_type: 0)
+    @steps_2 = Step.where(step_type: 1)
+    @steps_3 = Step.where(step_type: 2)
   end
 
   def faq

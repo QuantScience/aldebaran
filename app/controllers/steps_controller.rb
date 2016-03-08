@@ -3,9 +3,11 @@ class StepsController < ApplicationController
   before_action :its_admin?
 
   def index
+    @steps = Step.all
   end
 
   def new
+    @step = Step.new
   end
 
   def edit

@@ -14,8 +14,8 @@
 #
 
 class Image < ActiveRecord::Base
-  has_attached_file :images, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :images, content_type: /\Aimage\/.*\Z/
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   enum step_type: [:carousel_1, :section, :carousel_2]
 end

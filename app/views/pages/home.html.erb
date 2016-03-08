@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-6 col-sm-5 hidden-xs carousel-img-wrap">
               <div class="carousel-img">
-                <img src="<%= asset_path('demo/pre.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+                <img src="<%= @carousel_images[0].image.url %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
               <div class="carousel-img">
-                <img src="<%= asset_path('demo/pre2.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+                <img src="<%= @carousel_images[1].image.url %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
               <div class="carousel-img">
-                <img src="<%= asset_path('demo/pre2.png') %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+                <img src="<%= @carousel_images[2].image.url %>" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
               </div>
             </div>
           </div>
@@ -135,26 +135,26 @@
           <p><%= @content.section_1_first_paragraph %></p>
           <p><%= @content.section_1_second_paragraph %></p>
           <ul class="icon-devices">
-            <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
-            <li><a href="#laptop" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
-            <li><a href="#tablet" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
-            <li><a href="#mobile" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
+            <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
+            <li><a href="#laptop" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
+            <li><a href="#tablet" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
+            <li><a href="#mobile" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-8">
         <div class="tab-content">
           <div class="tab-pane active" id="desktop">
-            <img src="<%= asset_path('demo/mac.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[0].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="laptop">
-            <img src="<%= asset_path('demo/macpro.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[1].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="tablet">
-            <img src="<%= asset_path('demo/ipad.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[2].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="mobile">
-            <img src="<%= asset_path('demo/iphone.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[3].image.url %>" alt="" class="img-responsive">
           </div>
         </div>
       </div>
@@ -168,16 +168,16 @@
       <div class="col-md-8">
         <div class="tab-content">
           <div class="tab-pane active" id="desktop1">
-            <img src="<%= asset_path('demo/mac.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[4].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="laptop1">
-            <img src="<%= asset_path('demo/macpro.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[5].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="tablet1">
-            <img src="<%= asset_path('demo/ipad.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[6].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="mobile1">
-            <img src="<%= asset_path('demo/iphone.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[7].image.url %>" alt="" class="img-responsive">
           </div>
         </div>
       </div>
@@ -187,10 +187,10 @@
           <p><%= @content.section_2_first_paragraph %></p>
           <p><%= @content.section_2_second_paragraph %></p>
           <ul class="icon-devices">
-            <li class="active"><a href="#desktop1" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
-            <li><a href="#laptop1" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
-            <li><a href="#tablet1" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
-            <li><a href="#mobile1" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
+            <li class="active"><a href="#desktop1" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
+            <li><a href="#laptop1" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
+            <li><a href="#tablet1" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
+            <li><a href="#mobile1" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
           </ul>
         </div>
       </div>
@@ -207,26 +207,26 @@
           <p><%= @content.section_3_first_paragraph %></p>
           <p><%= @content.section_3_second_paragraph %></p>
           <ul class="icon-devices">
-            <li class="active"><a href="#desktop2" data-toggle="tab"><i class="fa fa-desktop"></i></a></li>
-            <li><a href="#laptop2" data-toggle="tab"><i class="fa fa-laptop"></i></a></li>
-            <li><a href="#tablet2" data-toggle="tab"><i class="fa fa-tablet"></i></a></li>
-            <li><a href="#mobile2" data-toggle="tab"><i class="fa fa-mobile"></i></a></li>
+            <li class="active"><a href="#desktop2" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
+            <li><a href="#laptop2" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
+            <li><a href="#tablet2" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
+            <li><a href="#mobile2" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-8">
         <div class="tab-content">
           <div class="tab-pane active" id="desktop2">
-            <img src="<%= asset_path('demo/mac.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[8].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="laptop2">
-            <img src="<%= asset_path('demo/macpro.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[9].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="tablet2">
-            <img src="<%= asset_path('demo/ipad.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[10].image.url %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="mobile2">
-            <img src="<%= asset_path('demo/iphone.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[11].image.url %>" alt="" class="img-responsive">
           </div>
         </div>
       </div>
@@ -240,32 +240,28 @@
       <div class="col-md-12">
         <div id="carousel-example-captions" class="carousel carousel-images slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-captions" data-slide-to="1"></li>
-            <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+            <% @slide_images.each_with_index do |image,index| %>
+              <% if index == 0 %>
+                <li data-target="#carousel-example-captions" data-slide-to="<%= index %>" class="active"></li>
+              <% else %>
+                <li data-target="#carousel-example-captions" data-slide-to="<%= index %>"></li>
+              <% end %>
+            <% end %>
           </ol>
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="<%= asset_path('demo/w2.jpg') %>" alt="First slide image">
-              <div class="carousel-caption animated fadeInUpBig">
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <% @slide_images.each_with_index do |image,index| %>
+              <% if index == 0 %>
+                <div class="item active">
+              <% else %>
+                <div class="item">
+              <% end %>
+                <img src="<%= image.image.url %>" alt="First slide image">
+                <div class="carousel-caption animated fadeInUpBig">
+                  <h3><%= image.title %></h3>
+                  <p><%= image.caption %></p>
+                </div>
               </div>
-            </div>
-            <div class="item">
-              <img src="<%= asset_path('demo/w3.jpg') %>" alt="Second slide image">
-              <div class="carousel-caption animated fadeInUpBig">
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<%= asset_path('demo/w10.jpg') %>" alt="Third slide image">
-              <div class="carousel-caption animated fadeInUpBig">
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-            </div>
+            <% end %>
           </div>
           <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>

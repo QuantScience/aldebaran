@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def home
     @content = Content.find(1)
+    @carousel_images = Image.where(image_type: 0)
+    @section_images = Image.where(image_type: 1)
+    @slide_images = Image.where(image_type: 2)
   end
 
   def trading_apps

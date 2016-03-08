@@ -13,21 +13,33 @@ class StepsController < ApplicationController
   def create
     @step = Step.new(step_params)
     if @step.save
-      flash[:notice] = "The FAQ Item was saved successfully"
+      flash[:notice] = "The step was saved successfully"
       redirect_to steps_path
     else
-      flash[:alert] = "There has been an error saving the FAQ Item"
+      flash[:alert] = "There has been an error saving the step"
       render :action => 'new'
     end
   end
 
   def edit
+    @step = Step.find(params[:id])
   end
 
   def update
+    @step = Step.find(params[:id])
+    if @step.update(step_params)
+      flash[:notice] = "The step was edited successfully"
+      redirect_to steps_path
+    else
+      flash[:alert] = 'There has been an error editing the step'
+      render 'edit'
+    end
   end
 
   def destroy
+    @step = Step.find(params[:id])
+    @step.destroy
+    redirect_to steps_path
   end
 
 

@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'pages/indicators' => 'pages#indicators'
   resources :contents
   resources :faq_items
+  resources :steps
 end

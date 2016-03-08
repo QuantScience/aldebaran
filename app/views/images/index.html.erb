@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <h2 class="right-line">Images</h2>
+    <div class="col-md-12">
+      <h3>Carousel Images</h3>
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">No.</th>
+          <th class="text-center lead lead-lg">Location</th>
+          <th class="text-center lead lead-lg">Image</th>
+          <th class="text-center lead lead-lg">Options</th>
+        </tr>
+        <% @carousel_images.each_with_index do |image,index| %>
+          <tr class="text-center">
+            <td class="lead lead-sm vert-align text-center"><%= index+1 %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image_tag image.image.url(:thumb), class: "user-thumbnail" %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image.location %></td>
+            <td class="lead lead-sm vert-align text-center">
+              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_image_path(image), class: "btn btn-ar btn-warning" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="col-md-12">
+      <h3>Section Images</h3>
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">No.</th>
+          <th class="text-center lead lead-lg">Location</th>
+          <th class="text-center lead lead-lg">Image</th>
+          <th class="text-center lead lead-lg">Options</th>
+        </tr>
+        <% @section_images.each_with_index do |image,index| %>
+          <tr class="text-center">
+            <td class="lead lead-sm vert-align text-center"><%= index+1 %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image_tag image.image.url(:thumb), class: "user-thumbnail" %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image.location %></td>
+            <td class="lead lead-sm vert-align text-center">
+              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_image_path(image), class: "btn btn-ar btn-warning" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="col-md-12">
+      <h3>Slide Images</h3>
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">No.</th>
+          <th class="text-center lead lead-lg">Location</th>
+          <th class="text-center lead lead-lg">Title</th>
+          <th class="text-center lead lead-lg">Caption</th>
+          <th class="text-center lead lead-lg">Image</th>
+          <th class="text-center lead lead-lg">Options</th>
+        </tr>
+        <% @slide_images.each_with_index do |image,index| %>
+          <tr class="text-center">
+            <td class="lead lead-sm vert-align text-center"><%= index+1 %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image_tag image.image.url(:thumb), class: "user-thumbnail" %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image.location %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image.title %></td>
+            <td class="lead lead-sm vert-align text-center"><%= image.caption %></td>
+            <td class="lead lead-sm vert-align text-center">
+              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_image_path(image), class: "btn btn-ar btn-warning" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

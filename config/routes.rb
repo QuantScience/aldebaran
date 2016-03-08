@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :contents
   resources :faq_items
   resources :steps
+  resources :images
 end

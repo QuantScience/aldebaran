@@ -10,6 +10,17 @@ class StepsController < ApplicationController
     @step = Step.new
   end
 
+  def create
+    @step = Step.new(step_params)
+    if @step.save
+      flash[:notice] = "The FAQ Item was saved successfully"
+      redirect_to steps_path
+    else
+      flash[:alert] = "There has been an error saving the FAQ Item"
+      render :action => 'new'
+    end
+  end
+
   def edit
   end
 
@@ -19,12 +30,10 @@ class StepsController < ApplicationController
   def destroy
   end
 
-  def create
-  end
 
   private
     def step_params
-      params.require(:step_item).permit(:title, :question, :step_type)
+      params.require(:step).permit(:title, :content, :step_type)
     end
 
     def its_admin?

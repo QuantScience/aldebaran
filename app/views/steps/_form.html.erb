@@ -9,12 +9,20 @@
     <div class="col-md-12 text-left">
       <div class="field form-group">
         <%= step.label :title, "Title:", class: "lead lead-lg" %>
-        <%= step.text_area :title, required: true, class: "form-control" %>
+        <%= step.text_area :title, required: true,class: "form-control" %>
       </div>
 
       <div class="field form-group">
         <%= step.label :content, "Content:", class: "lead lead-lg" %>
         <%= step.text_area :content, required: true, class: "form-control" %>
+      </div>
+
+      <div class="field form-group">
+        <%= step.label :step_type, "Content:", class: "lead lead-lg" %>
+        <%#= step.select :step_type, Step.step_types.keys.map, class: "form-control" %>
+        <%= step.collection_select :step_type, Step.step_types.keys, :to_s, :titlecase, { include_blank: "Select One Step Type" },{ required: true, class: "form-control" } %>
+
+
       </div>
 
       <div class="row">

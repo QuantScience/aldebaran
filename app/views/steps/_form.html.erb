@@ -1,0 +1,37 @@
+<%= form_for(@step) do |step| %>
+  <h3 class="right-line text-left">Steps Management</h3>
+  <% if @step.errors.any? %>
+    <% @step.errors.each do |attribute, message| %>
+      <h3 class="validation-error"><%= message %></h3>
+    <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <div class="field form-group">
+        <%= step.label :title, "Title:", class: "lead lead-lg" %>
+        <%= step.text_area :title, required: true,class: "form-control" %>
+      </div>
+
+      <div class="field form-group">
+        <%= step.label :content, "Content:", class: "lead lead-lg" %>
+        <%= step.text_area :content, required: true, class: "form-control" %>
+      </div>
+
+      <div class="field form-group">
+        <%= step.label :step_type, "Content:", class: "lead lead-lg" %>
+        <%#= step.select :step_type, Step.step_types.keys.map, class: "form-control" %>
+        <%= step.collection_select :step_type, Step.step_types.keys, :to_s, :titlecase, { include_blank: "Select One Step Type" },{ required: true, class: "form-control" } %>
+
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="actions form-group text-center">
+            <%= step.submit "Save FAQ Item", class: "btn btn-ar btn-lg btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

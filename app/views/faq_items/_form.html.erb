@@ -1,0 +1,29 @@
+<%= form_for(@faq_item) do |faq_item| %>
+  <h3 class="right-line text-left">FAQ Item Management</h3>
+  <% if @faq_item.errors.any? %>
+    <% @faq_item.errors.each do |attribute, message| %>
+      <h3 class="validation-error"><%= message %></h3>
+    <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <div class="field form-group">
+        <%= faq_item.label :question, "Question:", class: "lead lead-lg" %>
+        <%= faq_item.text_area :question, required: true, class: "form-control" %>
+      </div>
+
+      <div class="field form-group">
+        <%= faq_item.label :answer, "Answer:", class: "lead lead-lg" %>
+        <%= faq_item.text_area :answer, required: true, class: "form-control" %>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="actions form-group text-center">
+            <%= faq_item.submit "Save FAQ Item", class: "btn btn-ar btn-lg btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

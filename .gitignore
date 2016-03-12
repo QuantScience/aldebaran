@@ -11,4 +11,5 @@
 /log/*
 !/log/.keep
 /public/system/images/
+/public/system/images/images/
 /tmp

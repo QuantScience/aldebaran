@@ -16,7 +16,7 @@ Content.create(slide_1_title: "A template, infinite possibilities", slide_1_subt
 
 Image.create([
   # Background Carousel Image
-  {location: "Carousel Background - Required Size (1920 × 561)", title: "Image by default", caption: "Image by default", image_type: 0, image: File.new("app/assets/images/slide_back.jpg")},
+  {location: "Carousel Background - Required Size (1920 × 561)", title: "Image by default", caption: "Image by default", image_type: 3, image: File.new("app/assets/images/slide_back.jpg")},
   # Carousel Images
   {location: "Carousel #1", title: "Image by default", caption: "Image by default", image_type: 0, image: File.new("app/assets/images/demo/pre.png")},
   {location: "Carousel #2", title: "Image by default", caption: "Image by default", image_type: 0, image: File.new("app/assets/images/demo/pre2.png")},

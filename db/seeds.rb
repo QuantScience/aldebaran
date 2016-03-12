@@ -16,7 +16,7 @@ Content.create(slide_1_title: "A template, infinite possibilities", slide_1_subt
 
 Image.create([
   # Background Carousel Image
-  {location: "Carousel Background - Required Size (1920 × 561)", title: "Image by default", caption: "Image by default", image_type: 1, image: File.new("app/assets/images/slide_back.jpg")}
+  {location: "Carousel Background - Required Size (1920 × 561)", title: "Image by default", caption: "Image by default", image_type: 1, image: File.new("app/assets/images/slide_back.jpg")},
   # Carousel Images
   {location: "Carousel #1", title: "Image by default", caption: "Image by default", image_type: 0, image: File.new("app/assets/images/demo/pre.png")},
   {location: "Carousel #2", title: "Image by default", caption: "Image by default", image_type: 0, image: File.new("app/assets/images/demo/pre2.png")},
@@ -37,5 +37,5 @@ Image.create([
   # Slide Images
   {location: "Slide #1", title: "First slide label", caption: "Nulla vitae elit libero, a pharetra augue mollis interdum.", image_type: 2, image: File.new("app/assets/images/demo/w2.jpg")},
   {location: "Slide #2", title: "Second slide label", caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", image_type: 2, image: File.new("app/assets/images/demo/w3.jpg")},
-  {location: "Slide #3", title: "Third slide label", caption: "Praesent commodo cursus magna, vel scelerisque nisl consectetur.", image_type: 2, image: File.new("app/assets/images/demo/w10.jpg")},
+  {location: "Slide #3", title: "Third slide label", caption: "Praesent commodo cursus magna, vel scelerisque nisl consectetur.", image_type: 2, image: File.new("app/assets/images/demo/w10.jpg")}
 ])

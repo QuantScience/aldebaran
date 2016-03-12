@@ -21,6 +21,7 @@ class ImagesController < ApplicationController
     @carousel_images = Image.where(image_type: 0)
     @section_images = Image.where(image_type: 1)
     @slide_images = Image.where(image_type: 2)
+    @carousel_background = Image.where(image_type: 3)[0]
   end
 
   private

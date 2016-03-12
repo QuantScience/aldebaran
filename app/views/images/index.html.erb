@@ -2,6 +2,25 @@
   <div class="row">
     <h2 class="right-line">Images</h2>
     <div class="col-md-12">
+      <h3>Carousel Background</h3>
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">No.</th>
+          <th class="text-center lead lead-lg">Location</th>
+          <th class="text-center lead lead-lg">Image</th>
+          <th class="text-center lead lead-lg">Options</th>
+        </tr>
+        <tr class="text-center">
+          <td class="lead lead-sm vert-align text-center">1</td>
+          <td class="lead lead-sm vert-align text-center"><%= image_tag @carousel_background.image.url(:thumb), class: "user-thumbnail" %></td>
+          <td class="lead lead-sm vert-align text-center"><%= @carousel_background.location %></td>
+          <td class="lead lead-sm vert-align text-center">
+            <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_image_path(@carousel_background), class: "btn btn-ar btn-warning" %>
+          </td>
+        </tr>
+      </table>
+
+
       <h3>Carousel Images</h3>
       <table class="table">
         <tr class="success">

@@ -1,0 +1,41 @@
+<%= form_for(@image) do |image| %>
+  <h3 class="right-line text-left">Image Management</h3>
+  <% if @image.errors.any? %>
+    <% @image.errors.each do |attribute, message| %>
+      <h3 class="validation-error"><%= message %></h3>
+    <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <div class="form-group reg-email">
+        <div>
+          <%= image_tag(@image.image.url(:medium)) %>
+        </div>
+        <div>
+          <label for="image">Agrega una imagen:</label>
+          <%= image.file_field :image, class: "form-control" %>
+        </div>
+      </div>
+
+      <% if @image.image_type == 2 %>
+        <div class="field form-group">
+          <%= image.label :title, "Title:", class: "lead lead-lg" %>
+          <%= image.text_area :title, required: true, class: "form-control" %>
+        </div>
+
+        <div class="field form-group">
+          <%= image.label :caption, "Caption:", class: "lead lead-lg" %>
+          <%= image.text_area :caption, required: true, class: "form-control" %>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="actions form-group text-center">
+            <%= image.submit "Save Image", class: "btn btn-ar btn-lg btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

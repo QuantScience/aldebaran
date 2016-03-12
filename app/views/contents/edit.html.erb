@@ -1,0 +1,27 @@
+<div class="container">
+  <%= form_for(@content) do |content| %>
+    <div class="row">
+      <% if @content.errors.any? %>
+        <% @content.errors.each do |attribute, message| %>
+          <h3 class="validation-error"><%= message %></h3>
+        <% end %>
+      <% end %>
+      <h1>Change Home Copies</h1>
+      <%= render 'slides_text', content: content %>
+      <%= render 'carousel_link', content: content %>
+      <%= render 'features_text', content: content %>
+      <%= render 'section_copies', content: content %>
+      <%= render 'about_us_copies',content: content %>
+      <%= render 'contact_copies', content: content %>
+      <%= render 'fap_copies', content: content %>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="actions form-group text-center">
+          <%= content.submit "Save Copies", class: "btn btn-ar btn-lg btn-success" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

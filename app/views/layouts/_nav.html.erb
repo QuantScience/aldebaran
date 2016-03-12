@@ -1,0 +1,47 @@
+<nav class="navbar navbar-static-top navbar-default navbar-header-full navbar-inverse" role="navigation" id="header">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand hidden-lg hidden-md hidden-sm active" href="index.html">alde <span>baran</span></a>
+    </div> <!-- navbar-header -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li class="dropdown">
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Trading Apps</a>
+           <ul class="dropdown-menu dropdown-menu-left">
+            <li><%= link_to "Strategies", pages_strategies_path %></li>
+            <li><%= link_to "Indicators", pages_indicators_path %></li>
+            <li><%= link_to "Portfolio", pages_portfolios_path %></li>
+            <li><%= link_to "See All", pages_trading_apps_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to "How It Works?", pages_how_it_works_path %></li>
+        <li><%= link_to "FAQ", pages_faq_path %></li>
+        <li><%= link_to "Store", store_my_store_path %></li>
+        <li><%= link_to "About Us", pages_about_us_path %></li>
+        <li><%= link_to "Contact", pages_contact_path %></li>
+        <li><%= link_to "Blog", root_path %></li>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li class="dropdown">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+               <ul class="dropdown-menu dropdown-menu-left">
+                <li><%= link_to "Change Copies", edit_content_path(id: 1) %></li>
+                <li><%= link_to "FAQ Items", faq_items_path %></li>
+                <li><%= link_to "Steps", steps_path %></li>
+                <li><%= link_to "Images", images_path %></li>
+              </ul>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div><!-- navbar-collapse -->
+  </div><!-- container -->
+</nav>

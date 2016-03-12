@@ -10,6 +10,27 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+.htb-cta:hover {
+  text-decoration: none;
+}
+
+p.product-thumbnail-text {
+  font-size: .9em;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.white-text:hover {
+  color: #23527c !important;
+}
+
+.validation-error {
+  color: red;
+}

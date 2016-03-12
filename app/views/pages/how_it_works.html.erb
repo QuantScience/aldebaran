@@ -1,0 +1,76 @@
+<header class="main-header">
+  <div class="container">
+    <h1 class="page-title">How It Works?</h1>
+
+    <ol class="breadcrumb pull-right">
+      <li><a href="#">Home</a></li>
+      <li class="active">How It Works?</li>
+    </ol>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="animated fadeIn animation-delay-10">
+        <h3 class="section-title">Steps How To Buy</h3>
+        <div class="panel-group" id="accordion">
+          <% @steps_1.each do |step| %>
+            <div class="panel panel-default">
+              <div class="panel-heading panel-heading-link">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= step.id %>">
+                  <%= step.title %>
+                </a>
+              </div>
+              <div id="collapse<%= step.id %>" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <%= step.content %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </section>
+
+      <section class="animated fadeIn animation-delay-10">
+        <h3 class="section-title">Steps When Already Buy</h3>
+        <div class="panel-group" id="accordion2">
+          <% @steps_2.each do |step| %>
+            <div class="panel panel-default">
+              <div class="panel-heading panel-heading-link">
+                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= step.id %>-2">
+                  <%= step.title %>
+                </a>
+              </div>
+              <div id="collapse<%= step.id %>-2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <%= step.content %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </section>
+
+      <section class="animated fadeIn animation-delay-10">
+        <h3 class="section-title">Brokers</h3>
+        <div class="panel-group" id="accordion3">
+          <% @steps_3.each do |step| %>
+            <div class="panel panel-default">
+              <div class="panel-heading panel-heading-link">
+                <a data-toggle="collapse" data-parent="#accordion3" href="#collapse<%= step.id %>-3">
+                  <%= step.title %>
+                </a>
+              </div>
+              <div id="collapse<%= step.id %>-3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <%= step.content %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div> <!-- container -->

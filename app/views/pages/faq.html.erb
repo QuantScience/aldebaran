@@ -1,0 +1,76 @@
+<header class="main-header">
+  <div class="container">
+    <h1 class="page-title">FAQ Option 1</h1>
+
+    <ol class="breadcrumb pull-right">
+      <li><a href="#">Pages</a></li>
+      <li><a href="#">FAQ & Support</a></li>
+      <li class="active">FAQ Option 1</li>
+    </ol>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <section>
+     <div class="col-xs-12">
+      <p><%= @content.faq_paragraph %></p>
+    </div>
+  </section>
+  <div class="col-md-8">
+    <h2 class="section-title">List of Questions</h2>
+    <div class="panel-group" id="accordion1">
+      <% @faq_items.each_with_index do |faq_item, index| %>
+        <div class="panel panel-primary">
+          <div class="panel-heading panel-plus-link">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href='<%= "#collapse#{faq_item.id}" %>'>
+              <%= "#{index+1}. #{faq_item.question}" %>
+            </a>
+          </div>
+          <div id="<%= "collapse#{faq_item.id}" %>" class="panel-collapse collapse">
+            <div class="panel-body">
+              <%= faq_item.answer %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div> <!-- panel-group -->
+  </div> <!-- col-md-8 -->
+  <div class="col-md-4">
+    <h2 class="section-title">More Questions?</h2>
+
+    <form role="form">
+      <div class="form-group">
+        <label for="InputName">Name</label>
+        <input type="email" class="form-control" id="InputName" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="InputEmail">Email</label>
+        <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="InputText">Question</label>
+        <textarea id="InputText" class="form-control" rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn btn-ar btn-success btn-lg btn-block">Send question</button>
+    </form>
+    <div class="contact-info">
+      <h3>Contacts</h3>
+      <address>
+        <strong>Clean Concept, Inc.</strong><br>
+        894 Folsom Ave, Suite 655<br>
+        San Francisco, CA 94107<br>
+        <abbr title="Phone">P:</abbr> (123) 456-7890
+      </address>
+
+      <!-- Business Hours -->
+      <h3>Business Hours</h3>
+      <ul class="list-unstyled">
+        <li><strong>Monday-Friday:</strong> 9am to 7pm</li>
+        <li><strong>Saturday:</strong> 9am to 2pm</li>
+        <li><strong>Sunday:</strong> Closed</li>
+      </ul>
+    </div>
+  </div>
+</div> <!-- row -->
+</div> <!-- container -->

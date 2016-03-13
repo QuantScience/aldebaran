@@ -21,5 +21,5 @@
 #
 
 class Product < ActiveRecord::Base
-  enum step_type: [:strategie, :indicator, :portafolio]
+  enum step_type: [:strategy, :indicator, :portfolio]
 end

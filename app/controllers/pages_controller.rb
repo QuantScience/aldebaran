@@ -8,9 +8,9 @@ class PagesController < ApplicationController
   end
 
   def trading_apps
-    @strategies = Product.where(product_type: 0)
-    @indicators = Product.where(product_type: 1)
-    @portfolios = Product.where(product_type: 2)
+    @strategies = Product.where(product_type: 0).limit(6)
+    @indicators = Product.where(product_type: 1).limit(6)
+    @portfolios = Product.where(product_type: 2).limit(6)
   end
 
   def how_it_works

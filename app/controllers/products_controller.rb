@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :its_admin?
+  before_action :authenticate_user!, :except => [:show]
+  before_action :its_admin?, :except => [:show]
 
   def new
     @product = Product.new
@@ -15,6 +15,10 @@ class ProductsController < ApplicationController
       flash[:alert] = "There has been an error saving the Product"
       render :action => 'new'
     end
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   def edit

@@ -33,10 +33,6 @@ class PagesController < ApplicationController
     @content = Content.find(1)
   end
 
-  def show_product
-    @content = Content.find(1)
-  end
-
   def strategies
     @products = Product.where(product_type: 0)
   end

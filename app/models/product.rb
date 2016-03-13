@@ -24,4 +24,7 @@ class Product < ActiveRecord::Base
   enum product_type: [:strategy, :indicator, :portfolio]
 
   validates :title, :resume, :product_type, :subtitle, :price, :specifications, :section_title, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}
+
+  validates :resume, length: { maximum: 120,
+    too_long: "%{count} characters is the maximum allowed for resume field" }
 end

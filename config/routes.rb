@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :faq_items
   resources :steps
   resources :images
+  resources :products
 end

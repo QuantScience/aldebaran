@@ -16,7 +16,7 @@
       </div>
       <div class="field form-group">
         <%= product.label :resume, "Resume:", class: "lead lead-lg" %>
-        <%= product.text_area :title, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+        <%= product.text_area :resume, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
       </div>
       <div class="field form-group">
         <%= product.label :section_title, "Section Title:", class: "lead lead-lg" %>
@@ -65,7 +65,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="actions form-group text-center">
-        <%= product.submit "Save product", class: "btn btn-ar btn-lg btn-success" %>
+        <%= product.submit "Save Product", class: "btn btn-ar btn-lg btn-success" %>
       </div>
     </div>
   </div>

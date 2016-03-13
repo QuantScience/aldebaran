@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :its_admin?
 
   def new
     @product = Product.new
@@ -18,4 +20,15 @@ class ProductsController < ApplicationController
 
   def index
   end
+
+  private
+    def product_params
+      params.require(:product).permit(:question, :answer)
+    end
+
+    def its_admin?
+      unless current_user.admin?
+        redirect_to root_path, :alert => "You don't have access to this route"
+      end
+    end
 end

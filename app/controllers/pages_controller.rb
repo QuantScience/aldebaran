@@ -38,14 +38,15 @@ class PagesController < ApplicationController
   end
 
   def strategies
-    @content = Content.find(1)
+    @products = Product.where(product_type: 0)
+  end
+
+
+  def indicators
+    @products = Product.where(product_type: 1)
   end
 
   def portfolios
-    @content = Content.find(1)
-  end
-
-  def indicators
-    @content = Content.find(1)
+    @products = Product.where(product_type: 2)
   end
 end

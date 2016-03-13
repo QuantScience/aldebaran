@@ -7,6 +7,14 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @product = Product.new(product_params)
+    if @product.save
+      flash[:notice] = "The Product was saved successfully"
+      redirect_to products_path
+    else
+      flash[:alert] = "There has been an error saving the Product"
+      render :action => 'new'
+    end
   end
 
   def edit
@@ -16,9 +24,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path
   end
 
   def index
+    @products = Product.all
   end
 
   private

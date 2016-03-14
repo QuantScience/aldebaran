@@ -21,10 +21,14 @@
 #
 
 class Product < ActiveRecord::Base
+  has_many :product_images
+
+  accepts_nested_attributes_for :product_images, :limit => 8, :reject_if => :all_blank, allow_destroy: true
+
   enum product_type: [:strategy, :indicator, :portfolio]
 
+  validates_associated :product_images
   validates :title, :resume, :product_type, :subtitle, :price, :specifications, :section_title, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}
-
   validates :resume, length: { maximum: 120,
     too_long: "%{count} characters is the maximum allowed for resume field" }
 end

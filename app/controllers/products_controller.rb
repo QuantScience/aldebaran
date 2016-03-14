@@ -19,6 +19,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    offset = rand(Product.count)
+    @random_item = Product.offset(offset).first
+    @specifications = @product.specifications.split(';')
   end
 
   def edit

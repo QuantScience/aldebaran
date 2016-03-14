@@ -1,6 +1,6 @@
 <header class="main-header">
   <div class="container">
-    <h1 class="page-title">Products</h1>
+    <h1 class="page-title"><%= @product.product_type.humanize %></h1>
 
     <ol class="breadcrumb pull-right">
       <li><a href="#">Pages</a></li>
@@ -14,8 +14,8 @@
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-9">
-        <p class="slogan text-center" style="margin-bottom: 20px;"><span>Robot Name</span></p>
-        <p class="slogan text-center margin-bottom">Discover the artificial reason template. <br> A world of possibilities and customization for your website.</p>
+        <p class="slogan text-center" style="margin-bottom: 20px;"><span><%= @product.title %></span></p>
+        <p class="slogan text-center margin-bottom"><%= @product.subtitle %></p>
         <div class="col-md-6">
           <img src="<%= asset_path('demo/pre.png') %>" alt="" class="img-responsive">
         </div>
@@ -24,14 +24,14 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="e-price">$ <span>229</span>.00</div>
+        <div class="e-price">$ <span><%= @product.price %></span>.00</div>
         <a href="#" class="btn btn-ar btn-block btn-success"><i class="fa fa-shopping-cart"></i> Buy Now</a>
         <h3 class="right-line">Related Products</h3>
         <div class="ec-box">
-          <div class="ec-box-header"><a href="#">Bq Aquaris 5 16GB White</a></div>
+          <div class="ec-box-header"><%= link_to @random_item.title, product_path(@random_item) %></div>
           <a href="#"><img src="<%= asset_path('demo/e_img03.jpg') %>" alt=""></a>
           <div class="ec-box-footer">
-            <span class="label label-primary">$ 249.99</span>
+            <span class="label label-primary"><%= number_to_currency(@random_item.price) %></span>
             <a href="#" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Buy Now</a>
           </div>
         </div>
@@ -45,11 +45,9 @@
       <div class="col-md-6">
         <h2 class="no-margin-top">Product Specifications</h2>
         <ol class="service-list list-unstyled">
-          <li class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil suscipit cupiditate expedita hic earum vero sint, recusandae itaque, rem distinctio.</li>
-          <li class="wow fadeInUp">Totam porro sit, obcaecati quos quae iure tenetur, soluta voluptatem sapiente rerum ipsam delectus corporis voluptates voluptate, nulla mollitia pariatur.</li>
-          <li class="wow fadeInUp">Amet dolorum ullam, rerum ratione distinctio, quia iusto rem! Asperiores et quas, ratione in dolores dolorum doloribus magni suscipit labore!</li>
-          <li class="wow fadeInUp">Enim quas nesciunt sequi odit, ut quisquam vitae commodi animi placeat nihil saepe magnam aliquam, vero harum quae doloribus aut nostrum veniam alias!</li>
-          <li class="wow fadeInUp">Expedita doloribus vel nam fuga iusto aperiam maxime aut amet pariatur. Libero quidem, optio itaque ducimus. Nulla laboriosam voluptas voluptates.</li>
+          <% @specifications.each do |spec| %>
+            <li class="wow fadeInUp"><%= spec %></li>
+          <% end %>
         </ol>
       </div>
       <div class="col-md-6">
@@ -64,9 +62,9 @@
     <div class="row">
       <div class="col-md-4">
         <div class="home-devices">
-          <h3>The template for all devices</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sapiente, nam sunt rem beatae architecto cupiditate numquam consectetur dolorum aliquam suscipit adipisci expedita vel quaerat illum aperiam facere inventore officia.</p>
-          <p>Consequuntur sed ipsum eius minima eum velit soluta accusamus omnis maiores modi quae mollitia consectetur adipisci.</p>
+          <h3><%= @product.section_title %></h3>
+          <p><%= @product.section_paragraph_1 %></p>
+          <p><%= @product.section_paragraph_2 %></p>
           <ul class="icon-devices">
             <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
             <li><a href="#mobile" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
@@ -96,36 +94,56 @@
   </div>
 </section>
 
-
+<% if @product.strategy? || @product.portfolio? %>
 <section class="wrap-primary-color margin-bottom">
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-1"></div>
-          <h4 class="text-center">NET Profit/Drawdown</h4>
-          <p class="small-font">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% if @product.strategy? %>
+            <h4 class="text-center">Strategy - NET Profit/Drawdown</h4>
+            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% else %>
+            <h4 class="text-center">Portfolio - NET Profit/Drawdown</h4>
+            <p class="small-font"> - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% end %>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-2"></div>
-          <h4 class="text-center">Walkforwards Pass</h4>
-          <p class="small-font">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% if @product.strategy? %>
+            <h4 class="text-center">Strategy - Walkforwards Pass</h4>
+            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% else %>
+            <h4 class="text-center">Portfolio - Walkforwards Pass</h4>
+            <p class="small-font">Portfolio - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% end %>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-3"></div>
-          <h4 class="text-center">Drawdown</h4>
-          <p class="small-font">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% if @product.strategy? %>
+            <h4 class="text-center">Strategy - Drawdown</h4>
+            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% else %>
+            <h4 class="text-center">Portfolio - Drawdown</h4>
+            <p class="small-font">Portfolio - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% end %>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-4"></div>
-          <h4 class="text-center">Percent Profitable</h4>
-          <p class="small-font">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% if @product.strategy? %>
+            <h4 class="text-center">Strategy - Percent Profitable</h4>
+            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% else %>
+            <h4 class="text-center">Portfolio - Percent Profitable</h4>
+            <p class="small-font">Portfolio - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -134,30 +152,57 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 text-justify">
-      <h2 class="right-line">Wolkforward</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
-    </div>
-    <div class="col-md-6 text-justify">
-      <h2 class="right-line">Drawdown</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
-    </div>
-    <div class="col-md-6 text-justify">
-      <h2 class="right-line">Max Drawdown</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
-    </div>
-    <div class="col-md-6 text-justify">
-      <h2 class="right-line">Percent Profitable</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
-    </div>
-    <div class="col-md-6 text-justify">
-      <h2 class="right-line">Standard Deviation</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
-    </div>
-    <div class="col-md-6 text-justify">
-      <h2 class="right-line">Standard Deviation of AVG Trade</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
-    </div>
+    <% if @product.strategy? %>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Strategy - Wolkforward</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Strategy - Drawdown</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Strategy - Max Drawdown</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Strategy - Percent Profitable</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Strategy - Standard Deviation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Strategy - Standard Deviation of AVG Trade</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+    <% elsif @product.portfolio? %>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Portfolio - Wolkforward</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Portfolio - Drawdown</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Portfolio - Max Drawdown</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Portfolio - Percent Profitable</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Portfolio - Standard Deviation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Portfolio - Standard Deviation of AVG Trade</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -167,7 +212,7 @@ $(document).on("ready page:load", function() {
   var myCircle1 = Circles.create({
       id:         'circles-1',
       radius:     60,
-      value:      43,
+      value:      <%= @product.quality_1 %>,
       maxValue:   100,
       width:      5,
       text:       function(value){return value + '%';},
@@ -180,7 +225,7 @@ $(document).on("ready page:load", function() {
   var myCircle2 = Circles.create({
       id:         'circles-2',
       radius:     60,
-      value:      60,
+      value:      <%= @product.quality_2 %>,
       maxValue:   100,
       width:      5,
       text:       function(value){return value + '%';},
@@ -193,7 +238,7 @@ $(document).on("ready page:load", function() {
   var myCircle3 = Circles.create({
       id:         'circles-3',
       radius:     60,
-      value:      80,
+      value:      <%= @product.quality_3 %>,
       maxValue:   100,
       width:      5,
       text:       function(value){return value + '%';},
@@ -206,7 +251,7 @@ $(document).on("ready page:load", function() {
   var myCircle4 = Circles.create({
       id:         'circles-4',
       radius:     60,
-      value:      100,
+      value:      <%= @product.quality_4 %>,
       maxValue:   100,
       width:      5,
       text:       function(value){return value + '%';},
@@ -217,3 +262,4 @@ $(document).on("ready page:load", function() {
   })
 });
 </script>
+<% end %>

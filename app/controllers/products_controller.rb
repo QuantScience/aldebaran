@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
     offset = rand(Product.count)
     @random_item = Product.offset(offset).first
     @specifications = @product.specifications.split(';')
+    @product_images = @product.product_images
   end
 
   def edit

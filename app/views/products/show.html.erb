@@ -17,10 +17,10 @@
         <p class="slogan text-center" style="margin-bottom: 20px;"><span><%= @product.title %></span></p>
         <p class="slogan text-center margin-bottom"><%= @product.subtitle %></p>
         <div class="col-md-6">
-          <img src="<%= asset_path('demo/pre.png') %>" alt="" class="img-responsive">
+          <img src="<%= @product_images[0].image.url(:product_show) %>" alt="" style="margin-bottom: 20px;" class="img-responsive">
         </div>
         <div class="col-md-6">
-          <img src="<%= asset_path('demo/pre.png') %>" alt="" class="img-responsive">
+          <img src="<%= @product_images[1].image.url(:product_show) %>" alt="" style="margin-bottom: 20px;" class="img-responsive">
         </div>
       </div>
       <div class="col-md-3">
@@ -51,7 +51,7 @@
         </ol>
       </div>
       <div class="col-md-6">
-        <img src="<%= asset_path('demo/pre.png') %>" alt="" class="img-responsive">
+        <img src="<%= @product_images[2].image.url(:big_product_show) %>" alt="" class="img-responsive">
       </div>
     </div>
   </section>

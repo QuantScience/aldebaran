@@ -1,11 +1,11 @@
 <header class="main-header">
   <div class="container">
-    <h1 class="page-title">product</h1>
+    <h1 class="page-title">Strategies</h1>
 
     <ol class="breadcrumb pull-right">
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Bussiness & Products</a></li>
-      <li class="active">product</li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bussiness & Products", pages_trading_apps_path %></li>
+      <li class="active">Strategies</li>
     </ol>
   </div>
 </header>
@@ -20,7 +20,7 @@
         <div class="footer-widget">
           <% @products.each do |product| %>
             <div class="media col-md-4">
-              <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, product_path(product), class: "pull-left" %>
+              <%= link_to "<img class='media-object' src='#{product.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(product), class: "pull-left" %>
               <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
               <div class="media-body">
                 <h4 class="media-heading"><%= link_to product.title, product_path(product) %></h4>

@@ -8,9 +8,9 @@ class PagesController < ApplicationController
   end
 
   def trading_apps
-    @strategies = Product.where(product_type: 0).limit(6)
-    @indicators = Product.where(product_type: 1).limit(6)
-    @portfolios = Product.where(product_type: 2).limit(6)
+    @strategies = Product.where(product_type: 0).includes(:section_images).limit(6)
+    @indicators = Product.where(product_type: 1).includes(:section_images).limit(6)
+    @portfolios = Product.where(product_type: 2).includes(:section_images).limit(6)
   end
 
   def how_it_works
@@ -34,15 +34,15 @@ class PagesController < ApplicationController
   end
 
   def strategies
-    @products = Product.where(product_type: 0)
+    @products = Product.where(product_type: 0).includes(:section_images)
   end
 
 
   def indicators
-    @products = Product.where(product_type: 1)
+    @products = Product.where(product_type: 1).includes(:section_images)
   end
 
   def portfolios
-    @products = Product.where(product_type: 2)
+    @products = Product.where(product_type: 2).includes(:section_images)
   end
 end

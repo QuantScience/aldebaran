@@ -3,8 +3,8 @@
     <h1 class="page-title"><%= @product.product_type.humanize %></h1>
 
     <ol class="breadcrumb pull-right">
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Bussiness & Products</a></li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bussiness & Products", pages_trading_apps_path %></li>
       <li class="active">Products</li>
     </ol>
   </div>

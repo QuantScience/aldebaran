@@ -77,16 +77,16 @@
       <div class="col-md-8">
         <div class="tab-content">
           <div class="tab-pane active" id="desktop">
-            <img src="http://www.nsmarttrading.com/images/jpg/7.jpg" alt="" class="img-responsive">
+            <img src="<%= @section_images[0].image.url(:section_size) %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="laptop">
-            <img src="<%= asset_path('demo/macpro.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[1].image.url(:section_size) %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="tablet">
-            <img src="<%= asset_path('demo/ipad.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[2].image.url(:section_size) %>" alt="" class="img-responsive">
           </div>
           <div class="tab-pane" id="mobile">
-            <img src="<%= asset_path('demo/iphone.png') %>" alt="" class="img-responsive">
+            <img src="<%= @section_images[3].image.url(:section_size) %>" alt="" class="img-responsive">
           </div>
         </div>
       </div>

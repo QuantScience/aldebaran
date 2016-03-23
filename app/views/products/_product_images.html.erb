@@ -1,0 +1,29 @@
+<div class="col-md-6">
+  <div class="field form-group">
+    <h2 class="block-title-2"><span>PRODUCT IMAGES:</span></h2>
+    <%= product.fields_for :product_images do |product_image| %>
+      <div class="col-md-12 col-sm-12 col-xs-12 remove-article-image">
+        <% if product_image.object.image.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
+          <div class="col-md-3 col-sm-4 col-xs-4 edit_images">
+            <%= image_tag product_image.object.image.url(:mini_thumb) %>
+          </div>
+
+          <div class="col-md-9 col-sm-8 col-xs-8">
+            <h4 class="block-title-2"><span>IMAGE SAVED:</span></h4>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <div class="form-group reg-email">
+                <div>
+                  <%= product_image.file_field :image, class: "input-file" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="col-md-12">
+            <%= product_image.file_field :image, required: true, class: "input-file" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

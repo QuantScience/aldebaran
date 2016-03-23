@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     3.times { @product.product_images.build }
+    4.times { @product.section_images.build }
   end
 
   def create
@@ -14,6 +15,7 @@ class ProductsController < ApplicationController
       redirect_to products_path
     else
       3.times { @product.product_images.build }
+      4.times { @product.section_images.build }
       flash[:alert] = "There has been an error saving the Product"
       render :action => 'new'
     end
@@ -54,7 +56,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:title, :resume, :product_type, :subtitle, :price, :specifications, :section_title, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, product_images_attributes: [:id, :image])
+      params.require(:product).permit(:title, :resume, :product_type, :subtitle, :price, :specifications, :section_title, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, product_images_attributes: [:id, :image], section_images_attributes: [:id, :image])
     end
 
     def its_admin?

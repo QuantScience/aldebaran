@@ -34,7 +34,7 @@ Image.create([
 
 # Products Seeds
 10.times do
-  Product.create(
+  product = Product.new(
     title: Faker::Commerce.product_name,
     resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
     product_type: 0,
@@ -49,10 +49,17 @@ Image.create([
     quality_3: Faker::Number.number(2),
     quality_4: Faker::Number.number(2)
   )
+  product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product.save
+  product_image_1.save
+  product_image_2.save
+  product_image_3.save
 end
 
 10.times do
-  Product.create(
+  product = Product.new(
     title: Faker::Commerce.product_name,
     resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
     product_type: 1,
@@ -67,10 +74,17 @@ end
     quality_3: Faker::Number.number(2),
     quality_4: Faker::Number.number(2)
   )
+  product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product.save
+  product_image_1.save
+  product_image_2.save
+  product_image_3.save
 end
 
 10.times do
-  Product.create(
+  product = Product.new(
     title: Faker::Commerce.product_name,
     resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
     product_type: 2,
@@ -85,4 +99,11 @@ end
     quality_3: Faker::Number.number(2),
     quality_4: Faker::Number.number(2)
   )
+  product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  product.save
+  product_image_1.save
+  product_image_2.save
+  product_image_3.save
 end

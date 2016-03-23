@@ -52,10 +52,18 @@ Image.create([
   product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
   product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
   product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
   product.save
   product_image_1.save
   product_image_2.save
   product_image_3.save
+  section_image_1.save
+  section_image_2.save
+  section_image_3.save
+  section_image_4.save
 end
 
 10.times do
@@ -77,10 +85,18 @@ end
   product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
   product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
   product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
   product.save
   product_image_1.save
   product_image_2.save
   product_image_3.save
+  section_image_1.save
+  section_image_2.save
+  section_image_3.save
+  section_image_4.save
 end
 
 10.times do
@@ -102,8 +118,16 @@ end
   product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
   product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
   product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+  section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
+  section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
   product.save
   product_image_1.save
   product_image_2.save
   product_image_3.save
+  section_image_1.save
+  section_image_2.save
+  section_image_3.save
+  section_image_4.save
 end

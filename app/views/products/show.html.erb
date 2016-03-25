@@ -101,49 +101,29 @@
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-1"></div>
-          <% if @product.strategy? %>
-            <h4 class="text-center">Strategy - NET Profit/Drawdown</h4>
-            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% else %>
-            <h4 class="text-center">Portfolio - NET Profit/Drawdown</h4>
-            <p class="small-font"> - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% end %>
+            <h4 class="text-center">NET PROFIT / DRAWDOWN</h4>
+            <p class="small-font">Number of times net profit has overcome losses.</p>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-2"></div>
-          <% if @product.strategy? %>
-            <h4 class="text-center">Strategy - Walkforwards Pass</h4>
-            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% else %>
-            <h4 class="text-center">Portfolio - Walkforwards Pass</h4>
-            <p class="small-font">Portfolio - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% end %>
+            <h4 class="text-center">WALKFORWARD PASS</h4>
+            <p class="small-font">Trading Robustness.</p>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-3"></div>
-          <% if @product.strategy? %>
-            <h4 class="text-center">Strategy - Drawdown</h4>
-            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% else %>
-            <h4 class="text-center">Portfolio - Drawdown</h4>
-            <p class="small-font">Portfolio - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% end %>
+            <h4 class="text-center">DRAWDOWN</h4>
+            <p class="small-font">Drawdown *100/ Net profit.</p>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-4"></div>
-          <% if @product.strategy? %>
-            <h4 class="text-center">Strategy - Percent Profitable</h4>
-            <p class="small-font">Strategy - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% else %>
-            <h4 class="text-center">Portfolio - Percent Profitable</h4>
-            <p class="small-font">Portfolio - Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <% end %>
+            <h4 class="text-center">PERCENT PROFITABLE</h4>
+            <p class="small-font">(Number of Winning Trades / Total Number of Trades) * 100.</p>
         </div>
       </div>
     </div>
@@ -200,7 +180,7 @@
         </p>
       </div>
       <div class="col-md-6 text-justify">
-        <h2 class="right-line">Portfolio - Standard Deviation of AVG Trade</h2>
+        <h2 class="right-line">Maximum drawdown</h2>
         <p>A maximum drawdown (MDD) is the maximum loss from a peak to a trough of a strategy or portfolio, before a new peak is attained. Maximum Drawdown (MDD) is an indicator of downside risk over a specified time period. It can be used both as a stand-alone measure or as an input into other metrics such as "Return over Maximum Drawdown" and Calmar Ratio.</p>
       </div>
     <% end %>
@@ -229,11 +209,11 @@ $(document).on("ready page:load", function() {
       value:      <%= @product.quality_2 %>,
       maxValue:   100,
       width:      5,
-      text:       function(value){return value + '%';},
+      text:       'Approved',
       colors:     ['rgba(255,255,255,0.3)', '#fff'],
       duration:   1000,
       wrpClass:   'circles-wrp',
-      textClass:  'circles-text'
+      textClass:  'special-text'
   })
 
   var myCircle3 = Circles.create({
@@ -264,3 +244,9 @@ $(document).on("ready page:load", function() {
 });
 </script>
 <% end %>
+
+<style>
+  .special-text {
+    font-size: 1.5em !important;
+  }
+</style>

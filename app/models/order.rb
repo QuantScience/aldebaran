@@ -23,6 +23,7 @@ class Order < ActiveRecord::Base
 
   enum shopping_time: [ :"Six Months", :"One Year", :"Open Source"]
   enum trading_software: [ :"Trade Station", :"Multicharts"]
+  enum status: [ :"Awaiting Payment", :"Payment Confirmed", :""]
 
   validates :trading_software, :customer_id, :accepts_disclaimer, presence: { message: "You must include all the fields"}
 

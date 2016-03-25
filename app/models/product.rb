@@ -26,6 +26,7 @@
 class Product < ActiveRecord::Base
   has_many :product_images
   has_many :section_images
+  has_many :orders
 
   accepts_nested_attributes_for :product_images, :limit => 3, :reject_if => :all_blank, allow_destroy: true
   accepts_nested_attributes_for :section_images, :limit => 4, :reject_if => :all_blank, allow_destroy: true

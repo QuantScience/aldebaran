@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.product_id = @product.id
     @order.user_id = current_user.id
+    @order.status = 0
     if @order.save
       flash[:notice] = "The Order was created successfully"
       redirect_to @order

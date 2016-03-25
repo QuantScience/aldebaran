@@ -12,7 +12,7 @@
   <%= render 'layouts/nav' %>
   <%= render 'layouts/alerts' %>
   <%= yield %>
-  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" %>
+  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" || controller.controller_name == "passwords" %>
     <%= render 'layouts/footer' %>
   <% end %>
 </body>

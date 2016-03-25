@@ -12,6 +12,10 @@
     <%= order.text_field :customer_id, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
   </div>
 
+  <div>
+    <p class="disclaimer text-justify">All trading involves risk. Leveraged trading has large potential rewards, but also large potential risk. You must be aware of the risks and be willing to accept them in order to invest in the financial markets. Don't trade with money you can't afford to lose. This is neither a solicitation nor an offer to Buy/Sell financial markets. No representation is being made that any account will or is likely to achieve profits or losses similar to those  discussed.  The  past  performance  of  any  trading  system  or  methodology  is  not necessarily indicative of future results. IT  SHOULD  NOT  BE  ASSUMED  THAT  THE  METHODS,  TECHNIQUES, OR    INDICATORS    PRESENTED    IN    THESE    PRODUCTS    WILL    BE PROFITABLE  OR  THAT  THEY  WILL  NOT  RESULT  IN  LOSSES.  PASTRESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. THESE  SET-UPS  ARE  NOT  SOLICITATIONS  OF  ANY  ORDER  TO  BUY OR  SELL.  THE  AUTHORS,  THE  PUBLISHER,  AND  ALL  AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS. THERE IS A HIGH DEGREE OF RISK IN TRADING. THIS SITE DISCLAIMS  ANY RESPONSIBILITY FOR LOSSES INCURRED FOR MARKET POSITIONS TAKEN BY MEMBERS OR CLIENTS IN THEIRINDIVIDUAL  CASES,  OR   FOR  ANY  MISUNDERSTANDING  ON  THE PART  OF  ANY  USERS  OF  THESE  WEBSITE.  THIS  SITE  SHALL  NOT  BE LIABLE      FOR      ANY      INDIRECT      INCIDENTAL,      SPECIAL      OR CONSEQUENTIAL  DAMAGES,  AND  IN  NO  EVENT  WILL  THIS  SITE  BE HELD  LIABLE  FOR  ANY  OF  THE  RESULTS  OFFERED  THROUGH  THIS WEBSITE. BY ACCESSING OR USING THESE FINANCIAL SOFTWARES, YOU ARE DEEMED   TO   HAVE   READ,   UNDERSTOOD   AND   ACCEPTED   THIS DISCLAIMER. </p>
+  </div>
+
   <div class="field form-group">
     <%= order.check_box :accepts_disclaimer, required: true %>
     <%= order.label :accepts_disclaimer, "I have read and accept all conditions", class: "lead lead-lg" %>
@@ -23,3 +27,12 @@
     <%= order.submit "Go To Buy Product", class: "btn btn-ar btn-lg btn-success" %>
   </div>
 </div>
+<style>
+  p.disclaimer {
+    border: 1px #ccc solid;
+    border-radius: 1%;
+    padding: 7px;
+    height: 200px;
+    overflow: scroll;
+  }
+</style>

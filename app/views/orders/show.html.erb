@@ -16,6 +16,7 @@
         <p><strong>Email:</strong> <%= current_user.email %></p>
         <p><strong>Trading Software:</strong> <%= @order.trading_software %></p>
         <p><strong>Customer ID:</strong> <%= @order.customer_id %></p>
+        <p><strong>Order Status:</strong> <%= @order.status %></p>
       </div>
 
       <%= hidden_field_tag 'product_id', params[:product_id] %>

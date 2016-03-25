@@ -37,6 +37,9 @@ class PagesController < ApplicationController
     @products = Product.where(product_type: 0).includes(:section_images)
   end
 
+  def thanks_for_purchase
+  end
+
 
   def indicators
     @products = Product.where(product_type: 1).includes(:section_images)

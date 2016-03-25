@@ -17,8 +17,16 @@ class Order < ActiveRecord::Base
   belongs_to :product
   belongs_to :user
 
+  before_create :generate_unique_code
+
   enum shopping_time: [ :"Six Months", :"One Year", :"Open Source"]
   enum trading_software: [ :"Trade Station", :"Multicharts"]
 
   validates :trading_software, :customer_id, :accepts_disclaimer, presence: { message: "You must include all the fields"}
+
+  def generate_unique_code
+    begin
+      self.unique_code = SecureRandom.hex(5).upcase
+    end while self.class.exists?(unique_code: unique_code)
+  end
 end

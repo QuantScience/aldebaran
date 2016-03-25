@@ -18,16 +18,15 @@
         <p><strong>Customer ID:</strong> <%= @order.customer_id %></p>
         <p><strong>Order Status:</strong> <%= @order.status %></p>
       </div>
-
       <%= hidden_field_tag 'product_id', params[:product_id] %>
-
-      <div class="actions form-group text-center">
-        <%= @product.pay_pal_button.html_safe %>
-      </div>
+      <% if @order.status == "Awaiting Payment" %>
+        <div class="actions form-group text-center">
+          <%= @product.pay_pal_button.html_safe %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-
 <style>
   table {
     margin: auto;

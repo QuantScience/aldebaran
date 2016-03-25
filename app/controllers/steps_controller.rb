@@ -42,7 +42,6 @@ class StepsController < ApplicationController
     redirect_to steps_path
   end
 
-
   private
     def step_params
       params.require(:step).permit(:title, :content, :step_type)

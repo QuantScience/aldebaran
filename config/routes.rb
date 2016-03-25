@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'store/my_store'
-  get 'store/show_product'
   root "pages#home"
+  get 'pages/my_store' => 'pages#my_store'
   get 'pages/home' => 'pages#home'
   get 'pages/trading_apps' => 'pages#trading_apps'
   get 'pages/how_it_works', to: 'pages#how_it_works', as: 'pages_how_it_works'

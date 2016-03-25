@@ -15,4 +15,8 @@
 class Order < ActiveRecord::Base
   belongs_to :product
   belongs_to :user
+
+  enum shopping_time: [ :"Six Months", :"One Year", :"Open Source"]
+  enum trading_software: [ :"Trade Station", :"Multicharts"]
+
 end

@@ -90,8 +90,9 @@ ActiveRecord::Schema.define(version: 20160325163925) do
     t.integer  "shopping_time"
     t.string   "customer_id"
     t.integer  "trading_software"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "accepts_disclaimer"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "product_images", force: :cascade do |t|

@@ -6,6 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :shopping_time
       t.string :customer_id
       t.integer :trading_software
+      t.boolean :accepts_disclaimer
 
       t.timestamps null: false
     end

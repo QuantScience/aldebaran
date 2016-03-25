@@ -15,7 +15,7 @@
 class ProductImage < ActiveRecord::Base
   belongs_to :product
 
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "150x150#", mini_thumb: "75x75#", product_show: "478x247#", big_product_show: "682x353#" }, default_url: "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "150x150#", mini_thumb: "75x75#", product_show: "478x478#", big_product_show: "682x353#" }, default_url: "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates_attachment_presence :image
 end

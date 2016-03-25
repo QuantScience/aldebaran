@@ -24,7 +24,9 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="e-price">$ <span><%= @product.price %></span>.00</div>
+        <div class="e-price">$ <span><%= @product.price %></span>.00 <span class="price-time">Six Months</span></div>
+        <div class="e-price">$ <span><%= @product.price_one_year %></span>.00 <span class="price-time">One Year</span></div>
+        <div class="e-price">$ <span><%= @product.price_open_source %></span>.00 <span class="price-time">Open Source</span></div>
         <a href="#" class="btn btn-ar btn-block btn-success"><i class="fa fa-shopping-cart"></i> Buy Now</a>
         <h3 class="right-line">Related Products</h3>
         <div class="ec-box">
@@ -248,5 +250,9 @@ $(document).on("ready page:load", function() {
 <style>
   .special-text {
     font-size: 1.5em !important;
+  }
+
+  .price-time {
+    font-size: 12px !important;
   }
 </style>

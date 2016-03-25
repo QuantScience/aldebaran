@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @product = Product.find(params[:product_id])
     @product_images = @product.product_images

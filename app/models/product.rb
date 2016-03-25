@@ -18,6 +18,8 @@
 #  quality_4           :integer
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  price_one_year      :integer
+#  price_open_source   :integer
 #
 
 class Product < ActiveRecord::Base

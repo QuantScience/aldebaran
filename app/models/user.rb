@@ -23,8 +23,14 @@ class User < ActiveRecord::Base
   has_many :orders
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  after_initialize :set_default_role, :if => :new_record?
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
   enum role: [ :user, :admin]
+
+  def set_default_role
+    self.role ||= :user
+  end
 end

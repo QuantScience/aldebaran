@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :its_admin?, :only => [:index,:destroy]
+  before_action :its_admin?, :only => [:index,:destroy, :edit, :update]
 
   def new
     @product = Product.find(params[:product_id])
@@ -23,6 +23,23 @@ class OrdersController < ApplicationController
     end
   end
 
+  def edit
+    @order = Order.find(params[:id])
+    @product = @order.product
+    @product_images = @product.product_images
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      flash[:notice] = "The Order was edited successfully"
+      redirect_to orders_path
+    else
+      flash[:alert] = 'There has been an error editing the Order'
+      render 'edit'
+    end
+  end
+
   def index
     @orders = Order.includes(:product, :user)
   end
@@ -41,7 +58,7 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:trading_software, :customer_id, :accepts_disclaimer)
+      params.require(:order).permit(:trading_software, :customer_id, :accepts_disclaimer, :shopping_time, :status)
     end
 
     def its_admin?

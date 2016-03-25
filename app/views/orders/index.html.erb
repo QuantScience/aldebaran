@@ -26,7 +26,7 @@
               <% if order.status == "Awaiting Payment" %>
                 <span class="label label-warning"><%= order.status %></span>
               <% elsif order.status == "Payment Confirmed" %>
-                <span class="label label-default"><%= order.status %></span>
+                <span class="label label-primary"><%= order.status %></span>
               <% else %>
                 <span class="label label-success"><%= order.status %></span>
               <% end %>
@@ -34,6 +34,7 @@
             <td class="lead lead-sm vert-align text-center"><%= order.shopping_time %></td>
             <td class="lead lead-sm vert-align text-center">
               <%= link_to order_path(order.id) do %><i class="fa fa-search-plus"></i><% end %>
+              <%= link_to edit_order_path(order.id) do %><i class="fa fa-edit"></i><% end %>
               <%= link_to order_path(order.id), method: :delete, data: { confirm: '¿Are you sure?' } do %><i class="fa fa-trash"></i><% end %>
             </td>
           </tr>

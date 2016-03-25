@@ -20,6 +20,7 @@
 #  updated_at          :datetime         not null
 #  price_one_year      :integer
 #  price_open_source   :integer
+#  pay_pal_button      :text
 #
 
 require 'test_helper'

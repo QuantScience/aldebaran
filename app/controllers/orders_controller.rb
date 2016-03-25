@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @order = Order.new(order_params)
-    @order.product_id = product.id
+    @order.product_id = @product.id
     @order.user_id = current_user.id
     if @order.save
       flash[:notice] = "The Order was created successfully"
@@ -21,10 +21,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @product = @order.product
+    @product_images = @product.product_images
   end
 
   private
-    def product_params
-      params.require(:product).permit(:trading_software, :customer_id, :accepts_disclaimer)
+    def order_params
+      params.require(:order).permit(:trading_software, :customer_id, :accepts_disclaimer)
     end
 end

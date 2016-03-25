@@ -17,6 +17,8 @@
     <%= order.label :accepts_disclaimer, "I have read and accept all conditions", class: "lead lead-lg" %>
   </div>
 
+  <%= hidden_field_tag 'product_id', params[:product_id] %>
+
   <div class="actions form-group text-center">
     <%= order.submit "Go To Buy Product", class: "btn btn-ar btn-lg btn-success" %>
   </div>

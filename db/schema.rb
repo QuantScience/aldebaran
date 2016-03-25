@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160325163925) do
     t.string   "customer_id"
     t.integer  "trading_software"
     t.boolean  "accepts_disclaimer"
+    t.string   "unique_code"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

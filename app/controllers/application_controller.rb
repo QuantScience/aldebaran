@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   after_filter :store_location
+  before_filter :footer_items
+
+  def footer_items
+    @footer_items = Product.order(created_at: :desc).limit(3)
+  end
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
@@ -26,6 +31,6 @@ class ApplicationController < ActionController::Base
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name,:email, :password, :password_confirmation) }
-      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name,:email, :password, :password_confirmation) }
+      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name,:email, :password, :password_confirmation, :current_password) }
     end
 end

@@ -6,7 +6,7 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand hidden-lg hidden-md hidden-sm active" href="index.html">alde <span>baran</span></a>
+      <a class="navbar-brand hidden-lg hidden-md hidden-sm active" href="/">alde <span>baran</span></a>
     </div> <!-- navbar-header -->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,19 +24,29 @@
         </li>
         <li><%= link_to "How It Works?", pages_how_it_works_path %></li>
         <li><%= link_to "FAQ", pages_faq_path %></li>
-        <li><%= link_to "Store", store_my_store_path %></li>
+        <li><%= link_to "Store", pages_my_store_path %></li>
         <li><%= link_to "About Us", pages_about_us_path %></li>
         <li><%= link_to "Contact", pages_contact_path %></li>
-        <li><%= link_to "Blog", root_path %></li>
+        <li><%= link_to "Blog", "https://medium.com/@aldebarantechnologies", target: '_blank' %></li>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
             <li class="dropdown">
               <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
                <ul class="dropdown-menu dropdown-menu-left">
+                <li><%= link_to "Orders", orders_path %></li>
                 <li><%= link_to "Change Copies", edit_content_path(id: 1) %></li>
                 <li><%= link_to "FAQ Items", faq_items_path %></li>
                 <li><%= link_to "Steps", steps_path %></li>
                 <li><%= link_to "Images", images_path %></li>
+                <li><%= link_to "Products", products_path %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="dropdown">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
+               <ul class="dropdown-menu dropdown-menu-left">
+                <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
+                <li><%= link_to "My Products", pages_my_products_path %></li>
               </ul>
             </li>
           <% end %>

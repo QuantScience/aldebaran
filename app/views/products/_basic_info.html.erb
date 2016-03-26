@@ -1,0 +1,30 @@
+<div class="col-md-6">
+  <div class="field form-group">
+    <%= product.label :title, "Title:", class: "lead lead-lg" %>
+    <%= product.text_field :title, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+  </div>
+  <div class="field form-group">
+    <%= product.label :product_type, "Product Type:", class: "lead lead-lg" %>
+    <%= product.collection_select :product_type, Product.product_types.keys, :to_s, :titlecase, { include_blank: "Select One Product Type" },{ required: true, class: "form-control" } %>
+  </div>
+  <div class="field form-group">
+    <%= product.label :resume, "Resume:", class: "lead lead-lg" %>
+    <%= product.text_area :resume, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+  </div>
+  <div class="field form-group">
+    <%= product.label :section_title, "Section Title:", class: "lead lead-lg" %>
+    <%= product.text_field :section_title, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+  </div>
+  <div class="field form-group">
+    <%= product.label :section_paragraph_1, "Section Paragraph 1:", class: "lead lead-lg" %>
+    <%= product.text_area :section_paragraph_1, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+  </div>
+  <div class="field form-group">
+    <%= product.label :section_paragraph_2, "Section Paragraph 2:", class: "lead lead-lg" %>
+    <%= product.text_area :section_paragraph_2, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+  </div>
+  <div class="field form-group">
+    <%= product.label :pay_pal_button, "PayPal Button Code:", class: "lead lead-lg" %>
+    <%= product.text_area :pay_pal_button, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+  </div>
+</div>

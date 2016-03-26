@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <h2 class="right-line">New Order</h2>
+  </div>
+  <%= form_for(@order) do |order| %>
+    <% if @order.errors.any? %>
+      <% @order.errors.each do |attribute, message| %>
+        <h3 class="validation-error"><%= message %></h3>
+      <% end %>
+    <% end %>
+    <div class="row">
+      <%= render 'order_fields', order: order %>
+    </div>
+  <% end %>
+</div>

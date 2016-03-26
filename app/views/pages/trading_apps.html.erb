@@ -1,11 +1,11 @@
 <header class="main-header">
   <div class="container">
-    <h1 class="page-title">Services</h1>
+    <h1 class="page-title">Products</h1>
 
     <ol class="breadcrumb pull-right">
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Bussiness & Products</a></li>
-      <li class="active">Services</li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bussiness & Products", pages_trading_apps_path %></li>
+      <li class="active">Products</li>
     </ol>
   </div>
 </header>
@@ -18,49 +18,15 @@
       </div>
       <div class="col-md-12">
         <div class="footer-widget">
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+          <% @strategies.each do |strategy| %>
+            <div class="media col-md-4">
+              <%= link_to "<img class='media-object' src='#{strategy.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(strategy), class: "pull-left" %>
+              <div class="media-body">
+                <h4 class="media-heading"><%= link_to strategy.title, product_path(strategy) %></h4>
+                <p class="product-thumbnail-text"><%= strategy.resume %></p>
+              </div>
             </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #2</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div> <!-- row -->
@@ -77,59 +43,25 @@
   <section class="margin-bottom">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="right-line">Our Portfolios<h2>
+        <h2 class="right-line">Our Indicators<h2>
       </div>
       <div class="col-md-12">
         <div class="footer-widget">
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Portfolio #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+          <% @indicators.each do |indicator| %>
+            <div class="media col-md-4">
+              <%= link_to "<img class='media-object' src='#{indicator.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(indicator), class: "pull-left" %>
+              <div class="media-body">
+                <h4 class="media-heading"><%= link_to indicator.title, product_path(indicator) %></h4>
+                <p class="product-thumbnail-text"><%= indicator.resume %></p>
+              </div>
             </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Portfolio #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Portfolio #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Portfolio #2</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Portfolio #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Portfolio #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div> <!-- row -->
     <div class="row">
       <div class="col-md-12 text-right">
-        <%= link_to "See All", pages_portfolios_path, class: "btn btn-ar btn-primary btn-lg" %>
+        <%= link_to "See All", pages_indicators_path, class: "btn btn-ar btn-primary btn-lg" %>
       </div>
     </div>
   </section>
@@ -140,59 +72,25 @@
   <section class="margin-bottom">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="right-line">Our Indicators<h2>
+        <h2 class="right-line">Our Portfolios<h2>
       </div>
       <div class="col-md-12">
         <div class="footer-widget">
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Indicator #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+          <% @portfolios.each do |portfolio| %>
+            <div class="media col-md-4">
+              <%= link_to "<img class='media-object' src='#{portfolio.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(portfolio), class: "pull-left" %>
+              <div class="media-body">
+                <h4 class="media-heading"><%= link_to portfolio.title, product_path(portfolio) %></h4>
+                <p class="product-thumbnail-text"><%= portfolio.resume %></p>
+              </div>
             </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Indicator #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Indicator #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Indicator #2</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Indicator #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Indicator #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div> <!-- row -->
     <div class="row">
       <div class="col-md-12 text-right">
-        <%= link_to "See All", pages_indicators_path, class: "btn btn-ar btn-primary btn-lg" %>
+        <%= link_to "See All", pages_portfolios_path, class: "btn btn-ar btn-primary btn-lg" %>
       </div>
     </div>
   </section>

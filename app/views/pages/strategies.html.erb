@@ -3,8 +3,8 @@
     <h1 class="page-title">Strategies</h1>
 
     <ol class="breadcrumb pull-right">
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Bussiness & Products</a></li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bussiness & Products", pages_trading_apps_path %></li>
       <li class="active">Strategies</li>
     </ol>
   </div>
@@ -18,70 +18,15 @@
       </div>
       <div class="col-md-12">
         <div class="footer-widget">
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+          <% @products.each do |product| %>
+            <div class="media col-md-4">
+              <%= link_to "<img class='media-object' src='#{product.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(product), class: "pull-left" %>
+              <div class="media-body">
+                <h4 class="media-heading"><%= link_to product.title, product_path(product) %></h4>
+                <p class="product-thumbnail-text"><%= product.resume %></p>
+              </div>
             </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #1</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #2</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
-          <div class="media col-md-4">
-            <%= link_to "<img class='media-object' src='#{asset_path('demo/m2.jpg')}' width='75' height='75' alt='image'>".html_safe, pages_strategies_path, class: "pull-left" %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Strategie #3</a></h4>
-              <p class="product-thumbnail-text">Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div> <!-- row -->

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <h2 class="right-line">Orders</h2>
+    <div class="col-md-12">
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">Number</th>
+          <th class="text-center lead lead-lg">Code</th>
+          <th class="text-center lead lead-lg">Product</th>
+          <th class="text-center lead lead-lg">User</th>
+          <th class="text-center lead lead-lg">Trading Software</th>
+          <th class="text-center lead lead-lg">Customer ID</th>
+          <th class="text-center lead lead-lg">Status</th>
+          <th class="text-center lead lead-lg">Shopping Time</th>
+          <th class="text-center lead lead-lg">Options</th>
+        </tr>
+        <% @orders.each_with_index do |order,index| %>
+          <tr class="text-center">
+            <td class="lead lead-sm vert-align text-center"><%= index+1 %></td>
+            <td class="lead lead-sm vert-align text-center"><%= order.unique_code %></td>
+            <td class="lead lead-sm vert-align text-center"><%= order.product.title %></td>
+            <td class="lead lead-sm vert-align text-center"><%= order.user.name %><br><%= order.user.email %></td>
+            <td class="lead lead-sm vert-align text-center"><%= order.trading_software %></td>
+            <td class="lead lead-sm vert-align text-center"><%= order.customer_id %></td>
+            <td class="lead lead-sm vert-align text-center">
+              <% if order.status == "Awaiting Payment" %>
+                <span class="label label-warning"><%= order.status %></span>
+              <% elsif order.status == "Payment Confirmed" %>
+                <span class="label label-primary"><%= order.status %></span>
+              <% else %>
+                <span class="label label-success"><%= order.status %></span>
+              <% end %>
+            </td>
+            <td class="lead lead-sm vert-align text-center"><%= order.shopping_time %></td>
+            <td class="lead lead-sm vert-align text-center">
+              <%= link_to order_path(order.id) do %><i class="fa fa-search-plus"></i><% end %>
+              <%= link_to edit_order_path(order.id) do %><i class="fa fa-edit"></i><% end %>
+              <%= link_to order_path(order.id), method: :delete, data: { confirm: '¿Are you sure?' } do %><i class="fa fa-trash"></i><% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

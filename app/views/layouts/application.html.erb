@@ -7,13 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<% if controller.controller_name == 'pages' && controller.action_name == 'my_store' %>
+  <body data-no-turbolink="true">
+<% else %>
+  <body>
+<% end %>
   <%= render 'layouts/header' %>
   <%= render 'layouts/nav' %>
   <%= render 'layouts/alerts' %>
   <%= yield %>
-  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" %>
+  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" || controller.controller_name == "passwords" %>
     <%= render 'layouts/footer' %>
   <% end %>
 </body>
 </html>
+<script>
+  $(".alert").fadeIn(500).css("opacity","0.85").delay( 6000 ).fadeOut( 1000 );
+  $('.alerts').on('click','.alert',function(){ $(this).remove() });
+</script>

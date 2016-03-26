@@ -42,7 +42,6 @@ class StepsController < ApplicationController
     redirect_to steps_path
   end
 
-
   private
     def step_params
       params.require(:step).permit(:title, :content, :step_type)
@@ -50,7 +49,7 @@ class StepsController < ApplicationController
 
     def its_admin?
       unless current_user.admin?
-        redirect_to root_path, :alert => "Lo sentimos, usted no tiene permisos para acceder a esta ruta"
+        redirect_to root_path, :alert => "You don't have access to this route"
       end
     end
 end

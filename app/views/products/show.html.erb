@@ -1,0 +1,258 @@
+<header class="main-header">
+  <div class="container">
+    <h1 class="page-title"><%= @product.product_type.humanize %></h1>
+
+    <ol class="breadcrumb pull-right">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bussiness & Products", pages_trading_apps_path %></li>
+      <li class="active">Products</li>
+    </ol>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-9">
+        <p class="slogan text-center" style="margin-bottom: 20px;"><span><%= @product.title %></span></p>
+        <p class="slogan text-center margin-bottom"><%= @product.subtitle %></p>
+        <div class="col-md-6">
+          <img src="<%= @product_images[0].image.url(:product_show) %>" alt="" style="margin-bottom: 20px;" class="img-responsive">
+        </div>
+        <div class="col-md-6">
+          <img src="<%= @product_images[1].image.url(:product_show) %>" alt="" style="margin-bottom: 20px;" class="img-responsive">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="e-price">$ <span><%= @product.price %></span>.00 <span class="price-time">Six Months</span></div>
+        <div class="e-price">$ <span><%= @product.price_one_year %></span>.00 <span class="price-time">One Year</span></div>
+        <div class="e-price">$ <span><%= @product.price_open_source %></span>.00 <span class="price-time">Open Source</span></div>
+        <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, new_order_path(product_id: @product.id), class: "btn btn-ar btn-block btn-success" %>
+        <h3 class="right-line">Related Products</h3>
+        <div class="ec-box">
+          <div class="ec-box-header"><%= link_to @random_item.title, product_path(@random_item) %></div>
+          <%= link_to "<img src='#{asset_path('demo/e_img03.jpg')}' alt=''>".html_safe, product_path(@random_item) %>
+          <div class="ec-box-footer">
+            <span class="label label-primary">Start at <%= number_to_currency(@random_item.price) %></span>
+            <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, new_order_path(product_id: @product.id), class: "btn btn-ar btn-success btn-sm pull-right" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- row -->
+
+  <section class="margin-bottom">
+    <!-- <p class="lead lead-lg text-center primary-color margin-bottom">Knows the <strong>Artificial Reason</strong> and surprise yourself</p> -->
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="no-margin-top">Product Specifications</h2>
+        <ol class="service-list list-unstyled">
+          <% @specifications.each do |spec| %>
+            <li class="wow fadeInUp"><%= spec %></li>
+          <% end %>
+        </ol>
+      </div>
+      <div class="col-md-6">
+        <img src="<%= @product_images[2].image.url(:big_product_show) %>" alt="" class="img-responsive">
+      </div>
+    </div>
+  </section>
+</div> <!-- container -->
+
+<section class="section-lines">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="home-devices">
+          <h3><%= @product.section_title %></h3>
+          <p><%= @product.section_paragraph_1 %></p>
+          <p><%= @product.section_paragraph_2 %></p>
+          <ul class="icon-devices">
+            <li class="active"><a href="#desktop" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
+            <li><a href="#mobile" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
+            <li><a href="#laptop" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
+            <li><a href="#tablet" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content">
+          <div class="tab-pane active" id="desktop">
+            <img src="<%= @section_images[0].image.url(:section_size) %>" alt="" class="img-responsive">
+          </div>
+          <div class="tab-pane" id="laptop">
+            <img src="<%= @section_images[1].image.url(:section_size) %>" alt="" class="img-responsive">
+          </div>
+          <div class="tab-pane" id="tablet">
+            <img src="<%= @section_images[2].image.url(:section_size) %>" alt="" class="img-responsive">
+          </div>
+          <div class="tab-pane" id="mobile">
+            <img src="<%= @section_images[3].image.url(:section_size) %>" alt="" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if @product.strategy? || @product.portfolio? %>
+<section class="wrap-primary-color margin-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="text-center">
+          <div class="circle" id="circles-1"></div>
+            <h4 class="text-center">NET PROFIT / DRAWDOWN</h4>
+            <p class="small-font">Number of times net profit has overcome losses.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="text-center">
+          <div class="circle" id="circles-2"></div>
+            <h4 class="text-center">WALKFORWARD PASS</h4>
+            <p class="small-font">Trading Robustness.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="text-center">
+          <div class="circle" id="circles-3"></div>
+            <h4 class="text-center">DRAWDOWN</h4>
+            <p class="small-font">Drawdown *100/ Net profit.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="text-center">
+          <div class="circle" id="circles-4"></div>
+            <h4 class="text-center">PERCENT PROFITABLE</h4>
+            <p class="small-font">(Number of Winning Trades / Total Number of Trades) * 100.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <% if @product.strategy? %>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Drawdown</h2>
+        <p>A drawdown is the peak-to-trough decline during a specific record period of an investment, fund or commodity. A drawdown is usually quoted as the percentage between the peak and the trough. Drawdowns help determine an investment's financial risk, and it is use to compare a security's possible reward to its risk.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Wolkforward</h2>
+        <p>Walk forward optimization is a method used in finance for determining the best parameters to use in a trading strategy. The trading strategy is optimized with in sample data for a time window in a data series. The remainder of the data are reserved for out of sample testing.at the end, all of the recorded results are use to assess the strategy.aa</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Maximum Drawdown</h2>
+        <p>MDD is the maximum loss from a peak to a trough of a strategy or portfolio, before a new peak is attained. Maximum Drawdown is an indicator of downside risk over a specified time period. It can be used both as a stand-alone measure or as an input into other metrics such as "Return over Maximum Drawdown" and Calmar Ratio.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Percent Profitable</h2>
+        <p>Percent Profitable is a key figure in the Performance report .With this key figure you get an information about the percentage of profitable trades in relation to all trades.This value is an important piece of information for testing and optimizing your trading system. Percent Profitable Trades=(Number of Winning Trades/Total Number of Trades)*100</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Standard Deviation</h2>
+        <p>Standard deviation is a measure of the dispersion of a set of data from its mean. The more spread apart the data, the higher the deviation. Standard deviation is calculated as the square root of variance. In finance, standard deviation is applied to the annual rate of return of an investment to measure the investment's volatility.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Sharpe Ratio</h2>
+        <p>The Sharpe Ratio is a measure for calculating risk-adjusted return, and this ratio has become the industry standard for such calculations. The Sharpe ratio is the average return earned in excess of the risk-free rate per unit of volatility or total risk. Generally, the greater the value of the Sharpe ratio, the more attractive the risk-adjusted return.</p>
+      </div>
+    <% elsif @product.portfolio? %>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Standard Deviation</h2>
+        <p>Standard deviation is a measure of the dispersion of a set of data from its mean. The more spread apart the data, the higher the deviation. Standard deviation is calculated as the square root of variance. In finance, standard deviation is applied to the annual rate of return of an investment to measure the investment's volatility.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Wolkforward</h2>
+        <p>Walk forward optimization is a method used in finance for determining the best parameters to use in a trading strategy. The trading strategy is optimized with in sample data for a time window in a data series. The remainder of the data are reserved for out of sample testing.at the end, all of the recorded results are use to assess the strategy.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Profit factor</h2>
+        <p>The profit factor is the gross win divided by gross loss. The pessimistic return ratio (PRR) is the profit factor adjusted by the number of trades; it gives a worse result when the number of trades is low.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Pessimistic Return on Capital (PROC)</h2>
+        <p>A fitness function that represents a very conservative value for Return on Capital (ROC). It calculates the: <br> AvgWin*(NumWinTrades) - SquareRoot(NumWinTrades))+AvgLoss*(NumLossTrades + SquareRoot (NumLossTrades))) / Capital.</p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Percent Profitable</h2>
+        <p>Percent Profitable is a key figure in the Performance Report. With this key figure you get an information about the percentage of profitable trades in relation to all trades. This value is an important piece of information for testing and optimizing your trading system. Percent Profitable Trades=(Number of Winning Trades/Total Number of Trades)*100
+        </p>
+      </div>
+      <div class="col-md-6 text-justify">
+        <h2 class="right-line">Maximum drawdown</h2>
+        <p>A maximum drawdown (MDD) is the maximum loss from a peak to a trough of a strategy or portfolio, before a new peak is attained. Maximum Drawdown (MDD) is an indicator of downside risk over a specified time period. It can be used both as a stand-alone measure or as an input into other metrics such as "Return over Maximum Drawdown" and Calmar Ratio.</p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<script>
+$(document).on("ready page:load", function() {
+  var myCircle1 = Circles.create({
+      id:         'circles-1',
+      radius:     60,
+      value:      <%= @product.quality_1 %>,
+      maxValue:   100,
+      width:      5,
+      text:       function(value){return value + '%';},
+      colors:     ['rgba(255,255,255,0.3)', '#fff'],
+      duration:   1000,
+      wrpClass:   'circles-wrp',
+      textClass:  'circles-text'
+  })
+
+  var myCircle2 = Circles.create({
+      id:         'circles-2',
+      radius:     60,
+      value:      <%= @product.quality_2 %>,
+      maxValue:   100,
+      width:      5,
+      text:       'Approved',
+      colors:     ['rgba(255,255,255,0.3)', '#fff'],
+      duration:   1000,
+      wrpClass:   'circles-wrp',
+      textClass:  'special-text'
+  })
+
+  var myCircle3 = Circles.create({
+      id:         'circles-3',
+      radius:     60,
+      value:      <%= @product.quality_3 %>,
+      maxValue:   100,
+      width:      5,
+      text:       function(value){return value + '%';},
+      colors:     ['rgba(255,255,255,0.3)', '#fff'],
+      duration:   1000,
+      wrpClass:   'circles-wrp',
+      textClass:  'circles-text'
+  })
+
+  var myCircle4 = Circles.create({
+      id:         'circles-4',
+      radius:     60,
+      value:      <%= @product.quality_4 %>,
+      maxValue:   100,
+      width:      5,
+      text:       function(value){return value + '%';},
+      colors:     ['rgba(255,255,255,0.3)', '#fff'],
+      duration:   1000,
+      wrpClass:   'circles-wrp',
+      textClass:  'circles-text'
+  })
+});
+</script>
+<% end %>
+
+<style>
+  .special-text {
+    font-size: 1.5em !important;
+  }
+
+  .price-time {
+    font-size: 12px !important;
+  }
+</style>

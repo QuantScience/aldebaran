@@ -1,0 +1,22 @@
+<%= form_for(@product) do |product| %>
+  <% if @product.errors.any? %>
+    <% @product.errors.each do |attribute, message| %>
+      <h3 class="validation-error"><%= message %></h3>
+    <% end %>
+  <% end %>
+  <div class="row">
+    <%= render 'basic_info', product: product %>
+    <%= render 'secondary_info', product: product %>
+  </div>
+  <div class="row">
+    <%= render 'product_images', product: product %>
+    <%= render 'section_image', product: product %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="actions form-group text-center">
+        <%= product.submit "Save Product", class: "btn btn-ar btn-lg btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <h2 class="right-line">You are buying this product</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Please confirm your information and go to PayPal to finish the purchase process.</h3>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="product_image text-center">
+        <img src="<%= @product_images[0].image.url(:thumb) %>" alt="" style="margin: auto;"class="img-responsive">
+        <h2><%= @product.title %></h2>
+      </div>
+      <div class="field form-group">
+        <p><strong>Name:</strong> <%= current_user.name %></p>
+        <p><strong>Day of Purchase:</strong> <%= @order.created_at.strftime("Purchased on %m/%d/%Y") %></p>
+        <p><strong>Email:</strong> <%= current_user.email %></p>
+        <p><strong>Trading Software:</strong> <%= @order.trading_software %></p>
+        <p><strong>Customer ID:</strong> <%= @order.customer_id %></p>
+        <p><strong>Order Status:</strong> <%= @order.status %></p>
+        <% if @order.status != "Awaiting Payment" %>
+          <p><strong>Shopping Time:</strong> <%= @order.shopping_time %></p>
+        <% end %>
+      </div>
+      <%= hidden_field_tag 'product_id', params[:product_id] %>
+      <% if @order.status == "Awaiting Payment" %>
+        <div class="actions form-group text-center">
+          <%= @product.pay_pal_button.html_safe %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<style>
+  table {
+    margin: auto;
+  }
+</style>

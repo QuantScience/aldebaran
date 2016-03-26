@@ -17,6 +17,7 @@ gem "font-awesome-rails"
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'

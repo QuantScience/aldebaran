@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308222940) do
+ActiveRecord::Schema.define(version: 20160325175253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,60 @@ ActiveRecord::Schema.define(version: 20160308222940) do
     t.text     "caption"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "shopping_time"
+    t.string   "customer_id"
+    t.integer  "trading_software"
+    t.boolean  "accepts_disclaimer"
+    t.string   "unique_code"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "status"
+  end
+
+  create_table "product_images", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.text     "resume"
+    t.integer  "product_type"
+    t.text     "subtitle"
+    t.integer  "price"
+    t.text     "specifications"
+    t.string   "section_title"
+    t.text     "section_paragraph_1"
+    t.text     "section_paragraph_2"
+    t.integer  "quality_1"
+    t.integer  "quality_2"
+    t.integer  "quality_3"
+    t.integer  "quality_4"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "price_one_year"
+    t.integer  "price_open_source"
+    t.text     "pay_pal_button"
+  end
+
+  create_table "section_images", force: :cascade do |t|
+    t.integer  "product_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "steps", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -106,6 +160,7 @@ ActiveRecord::Schema.define(version: 20160308222940) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "role"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

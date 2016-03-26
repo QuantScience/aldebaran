@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, :only => [:my_products]
+
   def home
     @content = Content.find(1)
     @carousel_images = Image.where(image_type: 0)
@@ -8,7 +10,9 @@ class PagesController < ApplicationController
   end
 
   def trading_apps
-    @content = Content.find(1)
+    @strategies = Product.where(product_type: 0).includes(:section_images).limit(6)
+    @indicators = Product.where(product_type: 1).includes(:section_images).limit(6)
+    @portfolios = Product.where(product_type: 2).includes(:section_images).limit(6)
   end
 
   def how_it_works
@@ -31,19 +35,29 @@ class PagesController < ApplicationController
     @content = Content.find(1)
   end
 
-  def show_product
-    @content = Content.find(1)
-  end
-
   def strategies
-    @content = Content.find(1)
+    @products = Product.where(product_type: 0).includes(:section_images)
   end
 
-  def portfolios
-    @content = Content.find(1)
+  def thanks_for_purchase
+  end
+
+  def my_store
+    @products = Product.includes(:product_images)
+    @recent_products = Product.order(created_at: :desc).limit(5)
   end
 
   def indicators
-    @content = Content.find(1)
+    @products = Product.where(product_type: 1).includes(:section_images)
+  end
+
+  def portfolios
+    @products = Product.where(product_type: 2).includes(:section_images)
+  end
+
+  def my_products
+    @unactive_orders = current_user.orders.where(status: 0).includes(product: :product_images)
+    @active_orders = current_user.orders.where(status: [1,2]).includes(product: :product_images)
+    @related_products = Product.order("RANDOM()").limit(4)
   end
 end

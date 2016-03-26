@@ -56,5 +56,8 @@ class PagesController < ApplicationController
   end
 
   def my_products
+    @unactive_orders = current_user.orders.where(status: 0).includes(product: :product_images)
+    @active_orders = current_user.orders.where(status: [1,2]).includes(product: :product_images)
+    @related_products = Product.order("RANDOM()").limit(4)
   end
 end

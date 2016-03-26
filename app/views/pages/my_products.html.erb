@@ -9,10 +9,104 @@
   </div>
 </header>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
+    <h1 class="text-center">The products below are your activated products</h1>
+    <h2 class="right-line">Active Products</h2>
+    <div class="col-md-12 table-responsive">
+      <table class="table table-hover table-bordered table-condensed table-striped table-responsive" id="reports">
+        <thead>
+          <th class="text-center lead lead-lg"><strong>Image</strong></th>
+          <th class="text-center lead lead-lg"><strong>Product</strong></th>
+          <th class="text-center lead lead-lg"><strong>Progress</strong></th>
+        </thead>
+        <tbody>
+          <% @active_orders.each do |order| %>
+            <tr class="text-center">
+              <td class="vert-align text-center">
+                <%= image_tag order.product.product_images[0].image.url(:mini_thumb) %><br>
+              </td>
+              <td class="lead lead-sm vert-align text-center">
+                <strong><%= order.product.title %></strong><br>
+                <% if order.shopping_time == "Six Months" %>
+                  <strong>Day of Purchase: </strong> <%= order.created_at.strftime("%B %d, %Y") %><br>
+                  <strong>Active Until:</strong> <%= (order.created_at + 6.months).strftime("%B %d, %Y") %>
+                <% elsif order.shopping_time == "One Year" %>
+                  <strong>Day of Purchase: </strong> <%= order.created_at.strftime("%B %d, %Y") %><br>
+                  <strong>Active Until:</strong> <%= (order.created_at + 12.months).strftime("%B %d, %Y") %>
+                <% else %>
+                  <strong>Day of Purchase: </strong> <%= order.created_at.strftime("%B %d, %Y") %><br>
+                  <strong>Active Until:</strong> Lifetime
+                <% end %>
+              </td>
+              <td class="lead lead-sm vert-align text-center">
+                <% progress = order_progress(order.created_at, order.shopping_time) %>
+                <% if progress == "expire" %>
+                  <strong>This product has expired</strong>
+                <% elsif progress == "open_source" %>
+                  <strong>This product is activated lifetime</strong>
+                <% else %>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="<% progress %>" aria-valuemin="5" aria-valuemax="100" style="width: <% if progress == 0 %>3%<% else %><%= progress %>%<% end %>">
+                      <%= progress %>%
+                    </div>
+                  </div>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
+  <div class="row">
+    <h1 class="text-center">The products below are awaiting for payment</h1>
+    <h2 class="right-line">Unactive Products</h2>
+    <div class="col-md-12 table-responsive">
+      <table class="table table-hover table-bordered table-condensed table-striped table-responsive" id="reports">
+        <thead>
+          <th class="text-center lead lead-lg"><strong>Image</strong></th>
+          <th class="text-center lead lead-lg"><strong>Product</strong></th>
+          <th class="text-center lead lead-lg"><strong>Go To Pay</strong></th>
+        </thead>
+        <tbody>
+          <% @unactive_orders.each do |order| %>
+            <tr class="text-center">
+              <td class="vert-align text-center">
+                <%= image_tag order.product.product_images[0].image.url(:mini_thumb) %><br>
+              </td>
+              <td class="lead lead-sm vert-align text-center">
+                <strong><%= order.product.title %></strong><br>
+              </td>
+              <td class="lead lead-sm vert-align text-center">
+                <%= link_to "Go to Pay", order_path(order) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
+  <div class="row">
+    <h1 class="text-center">Check more of our amazing products</h1>
+    <div class="col-md-12">
+      <div class="row" id="Container">
+        <% @related_products.each do |product| %>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="ec-box">
+              <div class="ec-box-header"><%= link_to product.title, product_path(product) %></div>
+              <%= link_to "<img src='#{product.product_images.first.image.url(:my_store)}' alt="">".html_safe, product_path(product) %>
+              <div class="ec-box-footer">
+                <span class="label label-primary">Start at $ <%= product.price %></span>
+                <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, product_path(product), class: "btn btn-ar btn-success btn-sm pull-right" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div> <!-- container -->
 <script>

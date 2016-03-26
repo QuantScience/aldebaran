@@ -21,7 +21,6 @@
           <% @strategies.each do |strategy| %>
             <div class="media col-md-4">
               <%= link_to "<img class='media-object' src='#{strategy.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(strategy), class: "pull-left" %>
-              <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
               <div class="media-body">
                 <h4 class="media-heading"><%= link_to strategy.title, product_path(strategy) %></h4>
                 <p class="product-thumbnail-text"><%= strategy.resume %></p>
@@ -51,9 +50,8 @@
           <% @indicators.each do |indicator| %>
             <div class="media col-md-4">
               <%= link_to "<img class='media-object' src='#{indicator.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(indicator), class: "pull-left" %>
-              <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
               <div class="media-body">
-                <h4 class="media-heading"><a href="#"><%= link_to indicator.title, product_path(indicator) %></a></h4>
+                <h4 class="media-heading"><%= link_to indicator.title, product_path(indicator) %></h4>
                 <p class="product-thumbnail-text"><%= indicator.resume %></p>
               </div>
             </div>
@@ -81,7 +79,6 @@
           <% @portfolios.each do |portfolio| %>
             <div class="media col-md-4">
               <%= link_to "<img class='media-object' src='#{portfolio.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(portfolio), class: "pull-left" %>
-              <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
               <div class="media-body">
                 <h4 class="media-heading"><%= link_to portfolio.title, product_path(portfolio) %></h4>
                 <p class="product-thumbnail-text"><%= portfolio.resume %></p>

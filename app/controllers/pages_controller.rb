@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, :only => [:my_products]
+
   def home
     @content = Content.find(1)
     @carousel_images = Image.where(image_type: 0)
@@ -45,12 +47,14 @@ class PagesController < ApplicationController
     @recent_products = Product.order(created_at: :desc).limit(5)
   end
 
-
   def indicators
     @products = Product.where(product_type: 1).includes(:section_images)
   end
 
   def portfolios
     @products = Product.where(product_type: 2).includes(:section_images)
+  end
+
+  def my_products
   end
 end

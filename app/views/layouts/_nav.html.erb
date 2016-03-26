@@ -6,7 +6,7 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand hidden-lg hidden-md hidden-sm active" href="index.html">alde <span>baran</span></a>
+      <a class="navbar-brand hidden-lg hidden-md hidden-sm active" href="/">alde <span>baran</span></a>
     </div> <!-- navbar-header -->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,6 +39,14 @@
                 <li><%= link_to "Steps", steps_path %></li>
                 <li><%= link_to "Images", images_path %></li>
                 <li><%= link_to "Products", products_path %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="dropdown">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
+               <ul class="dropdown-menu dropdown-menu-left">
+                <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
+                <li><%= link_to "My Products", pages_my_products_path %></li>
               </ul>
             </li>
           <% end %>

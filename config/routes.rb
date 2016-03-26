@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'pages/portfolios' => 'pages#portfolios'
   get 'pages/indicators' => 'pages#indicators'
   get 'pages/thanks_for_purchase' => 'pages#thanks_for_purchase'
+  get 'pages/my_products' => 'pages#my_products'
   resources :contents
   resources :faq_items
   resources :steps

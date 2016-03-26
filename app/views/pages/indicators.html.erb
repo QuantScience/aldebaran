@@ -21,7 +21,6 @@
           <% @products.each do |product| %>
             <div class="media col-md-4">
               <%= link_to "<img class='media-object' src='#{product.section_images[0].image.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(product), class: "pull-left" %>
-              <!-- <a class="pull-left" href="#"><img class="media-object" src="<%#= asset_path('demo/m2.jpg') %>" width="75" height="75" alt="image"></a> -->
               <div class="media-body">
                 <h4 class="media-heading"><%= link_to product.title, product_path(product) %></h4>
                 <p class="product-thumbnail-text"><%= product.resume %></p>

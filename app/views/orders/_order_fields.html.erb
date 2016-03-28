@@ -10,6 +10,7 @@
   <div class="field form-group">
     <%= order.label :customer_id, "Customer ID:", class: "lead lead-lg" %>
     <%= order.text_field :customer_id, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+    <a href="http://www.elcolombiano.com" target="_blank">* Where can I find the customer ID?</a>
   </div>
 
   <% if current_user.admin? %>
@@ -36,7 +37,7 @@
   <%= hidden_field_tag 'product_id', params[:product_id] %>
 
   <div class="actions form-group text-center">
-    <%= order.submit "Update Order Information", class: "btn btn-ar btn-lg btn-success" %>
+    <%= order.submit "Save Order Information", class: "btn btn-ar btn-lg btn-success" %>
   </div>
 </div>
 <style>

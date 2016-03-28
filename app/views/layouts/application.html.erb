@@ -13,7 +13,7 @@
 <% else %>
   <body>
 <% end %>
-  <%= render 'google_analytics' %>
+  <%= render 'layouts/google_analytics' %>
   <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" || controller.controller_name == "passwords" || ( controller.controller_name == "pages" && controller.action_name == "thanks_for_purchase" )%>
     <%= render 'layouts/header' %>
     <%= render 'layouts/nav' %>

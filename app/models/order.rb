@@ -22,7 +22,7 @@ class Order < ActiveRecord::Base
   before_create :generate_unique_code
 
   enum shopping_time: [ :"Six Months", :"One Year", :"Open Source"]
-  enum trading_software: [ :"Trade Station", :"Multicharts"]
+  enum trading_software: [ :"Tradestation", :"Multicharts"]
   enum status: [ :"Awaiting Payment", :"Payment Confirmed", :"Delivered"]
 
   validates :trading_software, :customer_id, :accepts_disclaimer, presence: { message: "You must include all the fields"}

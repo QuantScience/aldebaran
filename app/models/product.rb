@@ -21,6 +21,7 @@
 #  price_one_year      :integer
 #  price_open_source   :integer
 #  pay_pal_button      :text
+#  more_info_link      :text
 #
 
 class Product < ActiveRecord::Base
@@ -37,7 +38,7 @@ class Product < ActiveRecord::Base
 
   validates_associated :product_images
   validates_associated :section_images
-  validates :title, :resume, :product_type, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :pay_pal_button, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}
+  validates :title, :resume, :product_type, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :pay_pal_button, :more_info_link, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}
   validates :resume, length: { maximum: 120,
     too_long: "%{count} characters is the maximum allowed for resume field" }
   validate :require_three_product_images

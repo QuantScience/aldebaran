@@ -1,4 +1,4 @@
-<nav class="navbar navbar-static-top navbar-default navbar-header-full navbar-inverse" role="navigation" id="header">
+<nav class="navbar navbar-static-top navbar-default navbar-header-full navbar-inverse" role="navigation" id="header" style="margin-bottom: 4px;">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,11 +14,11 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></li>
         <li class="dropdown">
-          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Trading Apps</a>
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Trading Products</a>
            <ul class="dropdown-menu dropdown-menu-left">
             <li><%= link_to "Strategies", pages_strategies_path %></li>
-            <li><%= link_to "Indicators", pages_indicators_path %></li>
-            <li><%= link_to "Portfolio", pages_portfolios_path %></li>
+            <li><%= link_to "Portfolios", pages_portfolios_path %></li>
+            <li><%= link_to "Trading Apps", pages_indicators_path %></li>
             <li><%= link_to "See All", pages_trading_apps_path %></li>
           </ul>
         </li>
@@ -27,7 +27,7 @@
         <li><%= link_to "Store", pages_my_store_path %></li>
         <li><%= link_to "About Us", pages_about_us_path %></li>
         <li><%= link_to "Contact", pages_contact_path %></li>
-        <li><%= link_to "Blog", "https://medium.com/@aldebarantechnologies", target: '_blank' %></li>
+        <li><%= link_to "Blog", "https://medium.com/@aldebarantech", target: '_blank' %></li>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
             <li class="dropdown">

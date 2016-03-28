@@ -16,3 +16,6 @@ public/system/product_images/
 public/system/section_images/
 public/system/section_images/images
 /tmp
+
+# Ignore application configuration
+/config/application.yml

@@ -8,16 +8,30 @@
   <%= csrf_meta_tags %>
 </head>
 
-<% if controller.controller_name == 'pages' && controller.action_name == 'my_store' %>
+<% if (controller.controller_name == 'pages' && controller.action_name == 'my_store') || (controller.controller_name == 'pages' && controller.action_name == 'home') %>
   <body data-no-turbolink="true">
 <% else %>
   <body>
 <% end %>
-  <%= render 'layouts/header' %>
-  <%= render 'layouts/nav' %>
+  <%= render 'layouts/google_analytics' %>
+  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" || controller.controller_name == "passwords" || ( controller.controller_name == "pages" && controller.action_name == "thanks_for_purchase" )%>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/nav' %>
+    <% if (controller.controller_name == 'pages' && controller.action_name == 'home') %>
+      <!--START theFinancials.com Content-->
+      <!--copyright theFinancials.com - All Rights Reserved-->
+      <!--Get Help by Calling 1.843.886.3635-->
+      <!--specify 'bgcolor', 'fontcolor' and 'bordercolor' using 3- or 6-character color codes - DO NOT include '#' in the color codes-->
+      <!--use 'numtileswide=1' to display the widget vertically, 'numtileswide=0' to display it horizontally, or use another value for other layouts-->
+      <!--set 'scrollSpeedFromZeroToTen' to 0 to disable scrolling, or use value from 1 (slow) to 10 (fast) to control scroll speed-->
+      <script LANGUAGE='JavaScript' type='text/javascript' SRC='http://www.thefinancials.com/ShowPanel.aspx?pid=free&id=577&bgcolor=0099da&fontcolor=ffffff&fontsize=13&bordercolor=c0c0c0&numtileswide=0&mode=js&scrollSpeedFromZeroToTen=5'></script>
+      <!--END theFinancials.com Content-->
+    <% end %>
+  <% end %>
+
   <%= render 'layouts/alerts' %>
   <%= yield %>
-  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" || controller.controller_name == "passwords" %>
+  <% unless controller.controller_name == "sessions" || controller.controller_name == "registrations" || controller.controller_name == "passwords" || ( controller.controller_name == "pages" && controller.action_name == "thanks_for_purchase" )%>
     <%= render 'layouts/footer' %>
   <% end %>
 </body>

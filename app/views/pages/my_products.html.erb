@@ -42,7 +42,8 @@
               <td class="lead lead-sm vert-align text-center">
                 <% progress = order_progress(order.created_at, order.shopping_time) %>
                 <% if progress == "expire" %>
-                  <strong>This product has expired</strong>
+                  <strong>This product has expired</strong><br>
+                  <%= link_to "Renew this product", order.product %>
                 <% elsif progress == "open_source" %>
                   <strong>This product is activated lifetime</strong>
                 <% else %>

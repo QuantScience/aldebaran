@@ -23,6 +23,7 @@
         <% end %>
       </div>
       <%= hidden_field_tag 'product_id', params[:product_id] %>
+      <p class="text-justify"><strong>*</strong> Choose your product time from six months, one year or open source in the next select before you go to PayPal:</p>
       <% if @order.status == "Awaiting Payment" %>
         <div class="actions form-group text-center">
           <%= @product.pay_pal_button.html_safe %>

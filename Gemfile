@@ -18,6 +18,7 @@ gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
 gem 'faker'
+gem "figaro"
 
 group :development, :test do
   gem 'byebug'

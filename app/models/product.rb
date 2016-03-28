@@ -21,6 +21,7 @@
 #  price_one_year      :integer
 #  price_open_source   :integer
 #  pay_pal_button      :text
+#  more_info_link      :text
 #
 
 class Product < ActiveRecord::Base

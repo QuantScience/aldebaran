@@ -32,114 +32,114 @@ Image.create([
   {location: "Slide #3", title: "Third slide label", caption: "Praesent commodo cursus magna, vel scelerisque nisl consectetur.", image_type: 2, image: File.new("app/assets/images/demo/w10.jpg")}
 ])
 
-# Products Seeds
-10.times do
-  product = Product.new(
-    title: Faker::Commerce.product_name,
-    resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
-    product_type: 0,
-    subtitle: Faker::Hipster.sentence,
-    price: Faker::Commerce.price,
-    price_one_year: Faker::Commerce.price,
-    price_open_source: Faker::Commerce.price,
-    specifications: "Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications",
-    section_title: Faker::Commerce.product_name,
-    section_paragraph_1: Faker::Lorem.paragraph,
-    section_paragraph_2: Faker::Lorem.paragraph,
-    more_info_link: "http:www.elcolombiano.com",
-    pay_pal_button: '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="2HC6U8D49QT2W"><table><tr><td><input type="hidden" name="on0" value="Time">Time</td></tr><tr><td><select name="os0"><option value="Six Months">Six Months $1,000.00 USD</option><option value="One Year">One Year $2,000.00 USD</option><option value="Open Source">Open Source $3,000.00 USD</option></select> </td></tr></table><input type="hidden" name="currency_code" value="USD"><input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"></form>',
-    quality_1: Faker::Number.number(2),
-    quality_2: Faker::Number.number(2),
-    quality_3: Faker::Number.number(2),
-    quality_4: Faker::Number.number(2)
-  )
-  product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  product.save
-  product_image_1.save
-  product_image_2.save
-  product_image_3.save
-  section_image_1.save
-  section_image_2.save
-  section_image_3.save
-  section_image_4.save
-end
+# # Products Seeds
+# 10.times do
+#   product = Product.new(
+#     title: Faker::Commerce.product_name,
+#     resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
+#     product_type: 0,
+#     subtitle: Faker::Hipster.sentence,
+#     price: Faker::Commerce.price,
+#     price_one_year: Faker::Commerce.price,
+#     price_open_source: Faker::Commerce.price,
+#     specifications: "Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications",
+#     section_title: Faker::Commerce.product_name,
+#     section_paragraph_1: Faker::Lorem.paragraph,
+#     section_paragraph_2: Faker::Lorem.paragraph,
+#     more_info_link: "http:www.elcolombiano.com",
+#     pay_pal_button: '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="2HC6U8D49QT2W"><table><tr><td><input type="hidden" name="on0" value="Time">Time</td></tr><tr><td><select name="os0"><option value="Six Months">Six Months $1,000.00 USD</option><option value="One Year">One Year $2,000.00 USD</option><option value="Open Source">Open Source $3,000.00 USD</option></select> </td></tr></table><input type="hidden" name="currency_code" value="USD"><input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"></form>',
+#     quality_1: Faker::Number.number(2),
+#     quality_2: Faker::Number.number(2),
+#     quality_3: Faker::Number.number(2),
+#     quality_4: Faker::Number.number(2)
+#   )
+#   product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   product.save
+#   product_image_1.save
+#   product_image_2.save
+#   product_image_3.save
+#   section_image_1.save
+#   section_image_2.save
+#   section_image_3.save
+#   section_image_4.save
+# end
 
-10.times do
-  product = Product.new(
-    title: Faker::Commerce.product_name,
-    resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
-    product_type: 1,
-    subtitle: Faker::Hipster.sentence,
-    price: Faker::Commerce.price,
-    price_one_year: Faker::Commerce.price,
-    price_open_source: Faker::Commerce.price,
-    specifications: "Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications",
-    section_title: Faker::Commerce.product_name,
-    section_paragraph_1: Faker::Lorem.paragraph,
-    section_paragraph_2: Faker::Lorem.paragraph,
-    more_info_link: "http:www.elcolombiano.com",
-    pay_pal_button: '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="2HC6U8D49QT2W"><table><tr><td><input type="hidden" name="on0" value="Time">Time</td></tr><tr><td><select name="os0"><option value="Six Months">Six Months $1,000.00 USD</option><option value="One Year">One Year $2,000.00 USD</option><option value="Open Source">Open Source $3,000.00 USD</option></select> </td></tr></table><input type="hidden" name="currency_code" value="USD"><input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"></form>',
-    quality_1: Faker::Number.number(2),
-    quality_2: Faker::Number.number(2),
-    quality_3: Faker::Number.number(2),
-    quality_4: Faker::Number.number(2)
-  )
-  product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  product.save
-  product_image_1.save
-  product_image_2.save
-  product_image_3.save
-  section_image_1.save
-  section_image_2.save
-  section_image_3.save
-  section_image_4.save
-end
+# 10.times do
+#   product = Product.new(
+#     title: Faker::Commerce.product_name,
+#     resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
+#     product_type: 1,
+#     subtitle: Faker::Hipster.sentence,
+#     price: Faker::Commerce.price,
+#     price_one_year: Faker::Commerce.price,
+#     price_open_source: Faker::Commerce.price,
+#     specifications: "Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications",
+#     section_title: Faker::Commerce.product_name,
+#     section_paragraph_1: Faker::Lorem.paragraph,
+#     section_paragraph_2: Faker::Lorem.paragraph,
+#     more_info_link: "http:www.elcolombiano.com",
+#     pay_pal_button: '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="2HC6U8D49QT2W"><table><tr><td><input type="hidden" name="on0" value="Time">Time</td></tr><tr><td><select name="os0"><option value="Six Months">Six Months $1,000.00 USD</option><option value="One Year">One Year $2,000.00 USD</option><option value="Open Source">Open Source $3,000.00 USD</option></select> </td></tr></table><input type="hidden" name="currency_code" value="USD"><input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"></form>',
+#     quality_1: Faker::Number.number(2),
+#     quality_2: Faker::Number.number(2),
+#     quality_3: Faker::Number.number(2),
+#     quality_4: Faker::Number.number(2)
+#   )
+#   product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   product.save
+#   product_image_1.save
+#   product_image_2.save
+#   product_image_3.save
+#   section_image_1.save
+#   section_image_2.save
+#   section_image_3.save
+#   section_image_4.save
+# end
 
-10.times do
-  product = Product.new(
-    title: Faker::Commerce.product_name,
-    resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
-    product_type: 2,
-    subtitle: Faker::Hipster.sentence,
-    price: Faker::Commerce.price,
-    price_one_year: Faker::Commerce.price,
-    price_open_source: Faker::Commerce.price,
-    specifications: "Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications",
-    section_title: Faker::Commerce.product_name,
-    section_paragraph_1: Faker::Lorem.paragraph,
-    section_paragraph_2: Faker::Lorem.paragraph,
-    more_info_link: "http://www.elcolombiano.com",
-    pay_pal_button: '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="2HC6U8D49QT2W"><table><tr><td><input type="hidden" name="on0" value="Time">Time</td></tr><tr><td><select name="os0"><option value="Six Months">Six Months $1,000.00 USD</option><option value="One Year">One Year $2,000.00 USD</option><option value="Open Source">Open Source $3,000.00 USD</option></select> </td></tr></table><input type="hidden" name="currency_code" value="USD"><input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"></form>',
-    quality_1: Faker::Number.number(2),
-    quality_2: Faker::Number.number(2),
-    quality_3: Faker::Number.number(2),
-    quality_4: Faker::Number.number(2)
-  )
-  product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
-  section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
-  product.save
-  product_image_1.save
-  product_image_2.save
-  product_image_3.save
-  section_image_1.save
-  section_image_2.save
-  section_image_3.save
-  section_image_4.save
-end
+# 10.times do
+#   product = Product.new(
+#     title: Faker::Commerce.product_name,
+#     resume: "Ratione ullam soluta molestias commodi et temporibus magnam. Quam quisquam est quia consequatur ut. Hic ab eaque alias.",
+#     product_type: 2,
+#     subtitle: Faker::Hipster.sentence,
+#     price: Faker::Commerce.price,
+#     price_one_year: Faker::Commerce.price,
+#     price_open_source: Faker::Commerce.price,
+#     specifications: "Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications ; Specifications",
+#     section_title: Faker::Commerce.product_name,
+#     section_paragraph_1: Faker::Lorem.paragraph,
+#     section_paragraph_2: Faker::Lorem.paragraph,
+#     more_info_link: "http://www.elcolombiano.com",
+#     pay_pal_button: '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="2HC6U8D49QT2W"><table><tr><td><input type="hidden" name="on0" value="Time">Time</td></tr><tr><td><select name="os0"><option value="Six Months">Six Months $1,000.00 USD</option><option value="One Year">One Year $2,000.00 USD</option><option value="Open Source">Open Source $3,000.00 USD</option></select> </td></tr></table><input type="hidden" name="currency_code" value="USD"><input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"></form>',
+#     quality_1: Faker::Number.number(2),
+#     quality_2: Faker::Number.number(2),
+#     quality_3: Faker::Number.number(2),
+#     quality_4: Faker::Number.number(2)
+#   )
+#   product_image_1 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   product_image_2 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   product_image_3 = product.product_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_1 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_2 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_3 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   section_image_4 = product.section_images.new(image: open(Faker::Placeholdit.image))
+#   product.save
+#   product_image_1.save
+#   product_image_2.save
+#   product_image_3.save
+#   section_image_1.save
+#   section_image_2.save
+#   section_image_3.save
+#   section_image_4.save
+# end

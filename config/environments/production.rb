@@ -85,7 +85,7 @@ Rails.application.configure do
    :user_name            => ENV['gmail_username'],
    :password             => ENV['gmail_password'],
    :authentication       => "plain",
-  :enable_starttls_auto => true
+   :enable_starttls_auto => true
   }
 
   # Do not dump schema after migrations.

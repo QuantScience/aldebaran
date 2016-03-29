@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if @order.update(order_params)
       if @order.status == "Payment Confirmed"
-        AldebaranMailer.confirmed_order(@order.user, @order).deliver
+        AldebaranMailer.confirmed_order(@order.user, @order).deliver_now
       end
       flash[:notice] = "The Order was edited successfully"
       redirect_to orders_path

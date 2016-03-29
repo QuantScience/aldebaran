@@ -19,20 +19,22 @@
       <section>
         <p class="text-justify"><%= @content.contact_us_paragraph %></p>
 
-        <form role="form">
+        <form action="//formspree.io/support@aldebarantech.com " method="POST">
           <div class="form-group">
             <label for="InputName">Name</label>
-            <input type="email" class="form-control" id="InputName">
+            <input type="text" name="name" class="form-control" id="InputName">
           </div>
           <div class="form-group">
             <label for="InputEmail1">Email address</label>
-            <input type="email" class="form-control" id="InputEmail1">
+            <input type="email" name="_replyto" class="form-control" id="InputEmail1">
           </div>
           <div class="form-group">
             <label for="InputMessage">Mesagge</label>
-            <textarea class="form-control" id="InputMessage" rows="8"></textarea>
+            <textarea class="form-control" name="message" id="InputMessage" rows="8"></textarea>
           </div>
-          <button type="submit" class="btn btn-ar btn-primary">Submit</button>
+          <input type="hidden" name="_next" value="//www.aldebarantech.com" />
+          <input type="hidden" name="_subject" value="Request From Contact Section - Aldebaran Tech" />
+          <button value="send" type="submit" class="contact-submit btn btn-ar btn-primary">Submit</button>
           <div class="clearfix"></div>
         </form>
       </section>
@@ -63,3 +65,11 @@
 
   <hr class="dotted">
   </div> <!-- container -->
+
+<script>
+  $(document).ready(function () {
+    $('.contact-submit').click(function() {
+      alert("Thanks for your message, We will contact you soon as posible!");
+    });
+  });
+</script>

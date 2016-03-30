@@ -18,10 +18,10 @@ class ImagesController < ApplicationController
   end
 
   def index
-    @carousel_images = Image.where(image_type: 0)
-    @section_images = Image.where(image_type: 1)
-    @slide_images = Image.where(image_type: 2)
-    @carousel_background = Image.where(image_type: 3)[0]
+    @carousel_images = Image.where(image_type: 0).order('id ASC')
+    @section_images = Image.where(image_type: 1).order('id ASC')
+    @slide_images = Image.where(image_type: 2).order('id ASC')
+    @carousel_background = Image.where(image_type: 3).order('id ASC')[0]
   end
 
   private

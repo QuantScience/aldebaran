@@ -3,7 +3,7 @@ class StepsController < ApplicationController
   before_action :its_admin?
 
   def index
-    @steps = Step.all
+    @steps = Step.all.order('id ASC')
   end
 
   def new

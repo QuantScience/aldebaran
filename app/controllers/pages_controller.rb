@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 
   def faq
     @content = Content.find(1)
-    @faq_items = FaqItem.all.order('id ASC')[0]
+    @faq_items = FaqItem.all.order('id ASC')
   end
 
   def contact

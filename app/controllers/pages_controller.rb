@@ -17,9 +17,9 @@ class PagesController < ApplicationController
 
   def how_it_works
     @content = Content.find(1)
-    @steps_1 = Step.where(step_type: 0).order('id ASC')[0]
-    @steps_2 = Step.where(step_type: 1).order('id ASC')[0]
-    @steps_3 = Step.where(step_type: 2).order('id ASC')[0]
+    @steps_1 = Step.where(step_type: 0).order('id ASC')
+    @steps_2 = Step.where(step_type: 1).order('id ASC')
+    @steps_3 = Step.where(step_type: 2).order('id ASC')
   end
 
   def faq

@@ -16,7 +16,7 @@
         <p><strong>Day of Purchase:</strong> <%= @order.created_at.strftime("Purchased on %m/%d/%Y") %></p>
         <p><strong>Email:</strong> <%= current_user.email %></p>
         <p><strong>Trading Software:</strong> <%= @order.trading_software %></p>
-        <p><strong>Customer ID:</strong> <%= @order.customer_id %></p>
+        <p><strong>Customer Number:</strong> <%= @order.customer_id %></p>
         <p><strong>Order Status:</strong> <%= @order.status %></p>
         <% if @order.status != "Awaiting Payment" %>
           <p><strong>Shopping Time:</strong> <%= @order.shopping_time %></p>

@@ -101,28 +101,28 @@
 <section class="wrap-primary-color margin-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-3">
+      <!-- <div class="col-sm-6 col-md-3">
         <div class="text-center">
           <div class="circle" id="circles-1"></div>
             <h4 class="text-center">NET PROFIT / DRAWDOWN</h4>
             <p class="small-font">Number of times net profit has overcome losses.</p>
         </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
+      </div> -->
+      <div class="col-sm-6 col-md-4">
         <div class="text-center">
           <div class="circle" id="circles-2"></div>
             <h4 class="text-center">WALKFORWARD PASS</h4>
             <p class="small-font">Trading Robustness.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-md-4">
         <div class="text-center">
           <div class="circle" id="circles-3"></div>
             <h4 class="text-center">DRAWDOWN</h4>
             <p class="small-font">Drawdown *100/ Net profit.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-md-4">
         <div class="text-center">
           <div class="circle" id="circles-4"></div>
             <h4 class="text-center">PERCENT PROFITABLE</h4>
@@ -193,18 +193,18 @@
 
 <script>
 $(document).on("ready page:load", function() {
-  var myCircle1 = Circles.create({
-      id:         'circles-1',
-      radius:     60,
-      value:      <%= @product.quality_1 %>,
-      maxValue:   100,
-      width:      5,
-      text:       function(value){return value + '%';},
-      colors:     ['rgba(255,255,255,0.3)', '#fff'],
-      duration:   1000,
-      wrpClass:   'circles-wrp',
-      textClass:  'circles-text'
-  })
+  // var myCircle1 = Circles.create({
+  //     id:         'circles-1',
+  //     radius:     60,
+  //     value:      <%= @product.quality_1 %>,
+  //     maxValue:   100,
+  //     width:      5,
+  //     text:       function(value){return value + '%';},
+  //     colors:     ['rgba(255,255,255,0.3)', '#fff'],
+  //     duration:   1000,
+  //     wrpClass:   'circles-wrp',
+  //     textClass:  'circles-text'
+  // })
 
   var myCircle2 = Circles.create({
       id:         'circles-2',

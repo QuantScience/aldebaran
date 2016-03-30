@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <h2 class="right-line">Users</h2>
+    <div class="col-md-12">
+      <table class="table">
+        <tr class="success">
+          <th class="text-center lead lead-lg">Number</th>
+          <th class="text-center lead lead-lg">Name</th>
+          <th class="text-center lead lead-lg">Email</th>
+          <th class="text-center lead lead-lg">Role</th>
+        </tr>
+        <% @users.each_with_index do |user,index| %>
+          <tr class="text-center">
+            <td class="lead lead-sm vert-align text-center"><%= index+1 %></td>
+            <td class="lead lead-sm vert-align text-center"><%= user.name %></td>
+            <td class="lead lead-sm vert-align text-center"><%= user.email %></td>
+            <td class="lead lead-sm vert-align text-center"><%= user.role.humanize %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :its_admin?, :only => [:index,:destroy, :edit, :update]
+  before_action :its_admin?, :only => [:index,:destroy, :edit, :update, :users]
 
   def new
     @product = Product.find(params[:product_id])
@@ -57,6 +57,10 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.destroy
     redirect_to orders_path
+  end
+
+  def users
+    @users = User.all.order('id ASC')
   end
 
   private

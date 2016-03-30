@@ -66,7 +66,7 @@
               <div class="carousel-caption">
                 <div class="carousel-text">
                   <h1 class="animated fadeInDownBig animation-delay-7 carousel-title"><%= @content.slide_3_title %></h1>
-                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle"><%= @content.slide_2_subtitle %></h2>
+                  <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle"><%= @content.slide_3_subtitle %></h2>
                   <ul class="list-unstyled carousel-list">
                     <li class="animated bounceInLeft animation-delay-11"><%= link_to "<i class='fa fa-area-chart'></i>#{@content.carousel_link_1_text}".html_safe, @content.carousel_link_1, class: "white-text" %></li>
                     <li class="animated bounceInLeft animation-delay-13"><%= link_to "<i class='fa fa-bar-chart'></i>#{@content.carousel_link_2_text}".html_safe, @content.carousel_link_2, class: "white-text" %></li>
@@ -165,6 +165,19 @@
 <section class="section-lines">
   <div class="container">
     <div class="row">
+      <div class="col-md-4">
+        <div class="home-devices text-justify">
+          <h3><%= @content.section_2_title %></h3>
+          <p><%= @content.section_2_first_paragraph %></p>
+          <p><%= @content.section_2_second_paragraph %></p>
+          <ul class="icon-devices">
+            <li class="active"><a href="#desktop1" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
+            <li><a href="#laptop1" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
+            <li><a href="#tablet1" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
+            <li><a href="#mobile1" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
+          </ul>
+        </div>
+      </div>
       <div class="col-md-8">
         <div class="tab-content">
           <div class="tab-pane active" id="desktop1">
@@ -179,19 +192,6 @@
           <div class="tab-pane" id="mobile1">
             <img src="<%= @section_images[7].image.url %>" alt="" class="img-responsive">
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="home-devices text-justify">
-          <h3><%= @content.section_2_title %></h3>
-          <p><%= @content.section_2_first_paragraph %></p>
-          <p><%= @content.section_2_second_paragraph %></p>
-          <ul class="icon-devices">
-            <li class="active"><a href="#desktop1" data-toggle="tab"><i class="fa fa-pie-chart"></i></a></li>
-            <li><a href="#laptop1" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
-            <li><a href="#tablet1" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
-            <li><a href="#mobile1" data-toggle="tab"><i class="fa fa-line-chart"></i></a></li>
-          </ul>
         </div>
       </div>
     </div>

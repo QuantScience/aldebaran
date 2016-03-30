@@ -3,10 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @content = Content.find(1)
-    @carousel_images = Image.where(image_type: 0)
-    @section_images = Image.where(image_type: 1)
-    @slide_images = Image.where(image_type: 2)
-    @carousel_background = Image.where(image_type: 3)[0]
+    @carousel_images = Image.where(image_type: 0).order('id ASC')
+    @section_images = Image.where(image_type: 1).order('id ASC')
+    @slide_images = Image.where(image_type: 2).order('id ASC')
+    @carousel_background = Image.where(image_type: 3).order('id ASC')[0]
   end
 
   def trading_apps
@@ -17,14 +17,14 @@ class PagesController < ApplicationController
 
   def how_it_works
     @content = Content.find(1)
-    @steps_1 = Step.where(step_type: 0)
-    @steps_2 = Step.where(step_type: 1)
-    @steps_3 = Step.where(step_type: 2)
+    @steps_1 = Step.where(step_type: 0).order('id ASC')[0]
+    @steps_2 = Step.where(step_type: 1).order('id ASC')[0]
+    @steps_3 = Step.where(step_type: 2).order('id ASC')[0]
   end
 
   def faq
     @content = Content.find(1)
-    @faq_items = FaqItem.all
+    @faq_items = FaqItem.all.order('id ASC')[0]
   end
 
   def contact

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'pages/indicators' => 'pages#indicators'
   get 'pages/thanks_for_purchase' => 'pages#thanks_for_purchase'
   get 'pages/my_products' => 'pages#my_products'
+  get 'users' => 'orders#users'
   resources :contents
   resources :faq_items
   resources :steps

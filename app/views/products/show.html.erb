@@ -26,9 +26,9 @@
       <div class="col-md-3">
         <div class="e-price">$ <span><%= @product.price %></span>.00 <span class="price-time">Six Months</span></div>
         <div class="e-price">$ <span><%= @product.price_one_year %></span>.00 <span class="price-time">One Year</span></div>
-        <div class="e-price">$ <span><%= @product.price_open_source %></span>.00 <span class="price-time">Open Source</span></div>
+        <div class="e-price">$ <span><%= @product.price_open_source %></span>.00 <span class="price-time">Open Code</span></div>
         <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, new_order_path(product_id: @product.id), class: "btn btn-ar btn-block btn-success" %>
-        <a href="<%= @product.more_info_link %>" target="_blank" class="btn btn-ar btn-block btn-warning">More info about this product</a>
+        <a href="<%= @product.more_info_link %>" target="_blank" class="btn btn-ar btn-block btn-warning">Download info about this product</a>
         <h3 class="right-line">Related Products</h3>
         <div class="ec-box">
           <div class="ec-box-header"><%= link_to @random_item.title, product_path(@random_item) %></div>
@@ -64,7 +64,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="home-devices">
+        <div class="home-devices text-justify">
           <h3><%= @product.section_title %></h3>
           <p><%= @product.section_paragraph_1 %></p>
           <p><%= @product.section_paragraph_2 %></p>
@@ -74,7 +74,7 @@
             <li><a href="#laptop" data-toggle="tab"><i class="fa fa-bar-chart"></i></a></li>
             <li><a href="#tablet" data-toggle="tab"><i class="fa fa-area-chart"></i></a></li>
           </ul>
-
+          <p class="text-center">*Click on any icon to change image*</p>
         </div>
       </div>
       <div class="col-md-8">

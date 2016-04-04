@@ -7,8 +7,10 @@
     <%= order.label :trading_software, "Trading Software:", class: "lead lead-lg" %>
     <%= order.collection_select :trading_software, Order.trading_softwares.keys, :to_s, :titlecase, { include_blank: "Select One Trading Software" },{ required: true, class: "form-control" } %>
   </div>
+
   <div class="field form-group">
-    <%= order.label :customer_id, "Customer Number:", class: "lead lead-lg" %>
+    <%= order.label :customer_id, "Customer Number:", class: "lead lead-lg" %><br>
+    <span style="color: red;">*If you selected Open Code(.ELD,TXT) above please write down 0 as your customer number*</span>
     <%= order.text_field :customer_id, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
     <a href="http://medium.com/@aldebarantech/were-can-i-find-the-customer-id-8f0064a23a82#.etsjq2xoi" target="_blank">* Where can I find the customer number?</a>
   </div>

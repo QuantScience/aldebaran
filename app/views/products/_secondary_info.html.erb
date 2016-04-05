@@ -35,4 +35,28 @@
     <%= product.label :quality_4, "Quality 4:", class: "lead lead-lg" %>
     <%= product.number_field :quality_4, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
   </div>
+  <div class="field form-group">
+    <h2 class="block-title-2"><span>LOGO:</span></h2>
+    <div class="col-md-12 col-sm-12 col-xs-12 remove-article-image">
+      <% if product.object.logo.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
+        <div class="col-md-3 col-sm-4 col-xs-4 edit_images">
+          <%= image_tag product.object.logo.url(:mini_thumb) %>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-8">
+          <h4 class="block-title-2"><span>LOGO SAVED:</span></h4>
+          <div class="col-md-9 col-sm-9 col-xs-9">
+            <div class="form-group reg-email">
+              <div>
+                <%= product.file_field :logo, class: "input-file" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-md-12">
+          <%= product.file_field :logo, required: true, class: "input-file" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

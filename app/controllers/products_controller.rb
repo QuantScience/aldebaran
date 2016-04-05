@@ -23,8 +23,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    offset = rand(Product.count)
-    @random_item = Product.offset(offset).first
+    @random_item = Product.where.not(id: @product.id).order('RANDOM()').limit(1).first
     @specifications = @product.specifications.split(';')
     @product_images = @product.product_images.order('id ASC')
     @section_images = @product.section_images.order('id ASC')
@@ -57,7 +56,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:title, :resume, :product_type, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :section_paragraph_1, :section_paragraph_2, :pay_pal_button, :quality_1, :quality_2, :quality_3, :quality_4, :more_info_link, product_images_attributes: [:id, :image], section_images_attributes: [:id, :image])
+      params.require(:product).permit(:title, :logo, :resume, :product_type, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :section_paragraph_1, :section_paragraph_2, :pay_pal_button, :quality_1, :quality_2, :quality_3, :quality_4, :more_info_link, product_images_attributes: [:id, :image], section_images_attributes: [:id, :image])
     end
 
     def its_admin?

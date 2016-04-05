@@ -52,3 +52,7 @@ p.product-thumbnail-text {
     line-height: 25px;
   }
 }
+
+div.media.media-first-resource {
+  margin-top: 15px !important;
+}

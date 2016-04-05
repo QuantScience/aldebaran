@@ -22,6 +22,10 @@
 #  price_open_source   :integer
 #  pay_pal_button      :text
 #  more_info_link      :text
+#  logo_file_name      :string
+#  logo_content_type   :string
+#  logo_file_size      :integer
+#  logo_updated_at     :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

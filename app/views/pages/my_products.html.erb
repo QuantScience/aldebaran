@@ -24,7 +24,7 @@
           <% @active_orders.each do |order| %>
             <tr class="text-center">
               <td class="vert-align text-center">
-                <%= image_tag order.product.product_images[0].image.url(:mini_thumb) %><br>
+                <%= image_tag order.product.logo.image.url(:mini_thumb) %><br>
               </td>
               <td class="lead lead-sm vert-align text-center">
                 <strong><%= order.product.title %></strong><br>

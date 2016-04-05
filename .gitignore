@@ -10,6 +10,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
+/public/system/products
 /public/system/images
 /public/system/images/images
 public/system/product_images/

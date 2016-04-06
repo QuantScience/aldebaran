@@ -75,7 +75,7 @@
           <% @unactive_orders.each do |order| %>
             <tr class="text-center">
               <td class="vert-align text-center">
-                <%= image_tag order.product.product_images[0].image.url(:mini_thumb) %><br>
+                <%= image_tag order.product.logo.image.url(:mini_thumb) %><br>
               </td>
               <td class="lead lead-sm vert-align text-center">
                 <strong><%= order.product.title %></strong><br>
@@ -98,7 +98,7 @@
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="ec-box">
               <div class="ec-box-header"><%= link_to product.title, product_path(product) %></div>
-              <%= link_to "<img src='#{product.product_images.first.image.url(:my_store)}' alt="">".html_safe, product_path(product) %>
+              <%= link_to "<img src='#{product.logo.image.url(:my_store)}' alt="">".html_safe, product_path(product) %>
               <div class="ec-box-footer">
                 <span class="label label-primary">Start at $ <%= product.price %></span>
                 <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, product_path(product), class: "btn btn-ar btn-success btn-sm pull-right" %>

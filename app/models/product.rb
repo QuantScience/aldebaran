@@ -33,9 +33,9 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
   validates_attachment_presence :logo
 
-  has_many :product_images
-  has_many :section_images
-  has_many :orders
+  has_many :product_images, dependent: :destroy
+  has_many :section_images, dependent: :destroy
+  has_many :orders, dependent: :destroy
   has_many :users, through: :orders
 
   accepts_nested_attributes_for :product_images, :limit => 3, :reject_if => :all_blank, allow_destroy: true

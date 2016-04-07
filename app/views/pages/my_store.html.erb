@@ -53,11 +53,11 @@
       <div class="row" id="Container">
         <% @products.each do |product| %>
           <% if product.strategy? %>
-            <div class="col-sm-4 mix category-strategy" data-price="<%= product.price %>" data-date="<%= product.created_at.strftime("%Y%m%d")  %>" data-popularity="3">
+            <div class="col-sm-4 mix category-strategy" data-price="<%= product.price %>" data-date="<%= product.id %>" data-popularity="3">
           <% elsif product.indicator? %>
-            <div class="col-sm-4 mix category-indicator" data-price="<%= product.price %>" data-date="20130521" data-popularity="3">
+            <div class="col-sm-4 mix category-indicator" data-price="<%= product.price %>" data-date="<%= product.id %>" data-popularity="3">
           <% else %>
-            <div class="col-sm-4 mix category-portfolio" data-price="<%= product.price %>" data-date="20130521" data-popularity="3">
+            <div class="col-sm-4 mix category-portfolio" data-price="<%= product.price %>" data-date="<%= product.id  %>" data-popularity="3">
           <% end %>
             <div class="ec-box">
               <div class="ec-box-header"><%= link_to product.title, product_path(product) %></div>

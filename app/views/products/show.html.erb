@@ -34,7 +34,7 @@
           <div class="ec-box-header"><%= link_to @random_item.title, product_path(@random_item) %></div>
           <%= link_to "<img src='#{@random_item.logo.url(:my_store)}' alt=''>".html_safe, product_path(@random_item) %>
           <div class="ec-box-footer">
-            <span class="label label-primary">Start at <%= number_to_currency(@random_item.price) %></span>
+            <span class="label label-primary">Start at <%= number_to_currency(@random_item.price, precision: 0) %></span>
             <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, new_order_path(product_id: @product.id), class: "btn btn-ar btn-success btn-sm pull-right" %>
           </div>
         </div>

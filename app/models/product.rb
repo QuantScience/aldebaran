@@ -42,7 +42,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :section_images, :limit => 4, :reject_if => :all_blank, allow_destroy: true
 
 
-  enum product_type: [:strategy, :indicator, :portfolio]
+  enum product_type: [:strategy, :indicator, :portfolio, :education]
 
   validates_associated :product_images
   validates_associated :section_images

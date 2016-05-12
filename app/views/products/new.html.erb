@@ -4,3 +4,53 @@
   </div>
   <%= render 'form' %>
 </div>
+
+<script>
+  $(document).on('ready page:load', function(){
+    $('form.new_product, form.edit_product').on('change','select[name="product[product_type]"]',function(){
+      var productType = $('select[name="product[product_type]"]').val()
+      console.log(productType);
+      if( productType == "education"){
+        $("input[name='product[section_title]']").removeAttr('required');
+        $("input[name='product[section_title]']").parent().hide();
+        $("textarea[name='product[section_paragraph_1]']").removeAttr('required');
+        $("textarea[name='product[section_paragraph_1]']").parent().hide();
+        $("textarea[name='product[section_paragraph_2]']").removeAttr('required');
+        $("textarea[name='product[section_paragraph_2]']").parent().hide();
+        $("input[name='product[quality_1]']").removeAttr('required');
+        $("input[name='product[quality_1]']").parent().hide();
+        $("input[name='product[quality_2]']").removeAttr('required');
+        $("input[name='product[quality_2]']").parent().hide();
+        $("input[name='product[quality_3]']").removeAttr('required');
+        $("input[name='product[quality_3]']").parent().hide();
+        $("input[name='product[quality_4]']").removeAttr('required');
+        $("input[name='product[quality_4]']").parent().hide();
+        $("input[name='product[section_images_attributes][0][image]']").removeAttr('required');
+        $("input[name='product[section_images_attributes][1][image]']").removeAttr('required');
+        $("input[name='product[section_images_attributes][2][image]']").removeAttr('required');
+        $("input[name='product[section_images_attributes][3][image]']").removeAttr('required');
+        $("#section_images").hide();
+      }else {
+        $("input[name='product[section_title]']").attr('required', 'required');
+        $("input[name='product[section_title]']").parent().show();
+        $("textarea[name='product[section_paragraph_1]']").attr('required', 'required');
+        $("textarea[name='product[section_paragraph_1]']").parent().show();
+        $("textarea[name='product[section_paragraph_2]']").attr('required', 'required');
+        $("textarea[name='product[section_paragraph_2]']").parent().show();
+        $("input[name='product[quality_1]']").attr('required', 'required');
+        $("input[name='product[quality_1]']").parent().show();
+        $("input[name='product[quality_2]']").attr('required', 'required');
+        $("input[name='product[quality_2]']").parent().show();
+        $("input[name='product[quality_3]']").attr('required', 'required');
+        $("input[name='product[quality_3]']").parent().show();
+        $("input[name='product[quality_4]']").attr('required', 'required');
+        $("input[name='product[quality_4]']").parent().show();
+        $("input[name='product[section_images_attributes][0][image]']").attr('required', 'required');
+        $("input[name='product[section_images_attributes][1][image]']").attr('required', 'required');
+        $("input[name='product[section_images_attributes][2][image]']").attr('required', 'required');
+        $("input[name='product[section_images_attributes][3][image]']").attr('required', 'required');
+        $("#section_images").show();
+      }
+    });
+  });
+</script>

@@ -1,4 +1,4 @@
-<%= form_for(@product) do |product| %>
+<%= form_for(@product, :html => {:name => 'my_form_name'}) do |product| %>
   <% if @product.errors.any? %>
     <% @product.errors.each do |attribute, message| %>
       <h3 class="validation-error"><%= message %></h3>

@@ -1,0 +1,34 @@
+<header class="main-header">
+  <div class="container">
+    <h1 class="page-title">Education & Others</h1>
+
+    <ol class="breadcrumb pull-right">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bussiness & Products", pages_trading_apps_path %></li>
+      <li class="active">Education & Others</li>
+    </ol>
+  </div>
+</header>
+
+<div class="container">
+  <section class="margin-bottom">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="right-line">Our Education & Others<h2>
+      </div>
+      <div class="col-md-12">
+        <div class="footer-widget">
+          <% @products.each do |product| %>
+            <div class="media col-md-4 media-first-resource">
+              <%= link_to "<img class='media-object' src='#{product.logo.url(:mini_thumb)}' width='75' height='75' alt='image'>".html_safe, product_path(product), class: "pull-left" %>
+              <div class="media-body">
+                <h4 class="media-heading"><%= link_to product.title, product_path(product) %></h4>
+                <p class="product-thumbnail-text"><%= product.resume %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div> <!-- row -->
+  </section>
+</div> <!-- container -->

@@ -27,6 +27,7 @@
           <li><a href="javascript:void(0);" class="filter" data-filter=".category-strategy">Strategies</a></li>
           <li><a href="javascript:void(0);" class="filter" data-filter=".category-portfolio">Portfolios</a></li>
           <li><a href="javascript:void(0);" class="filter" data-filter=".category-indicator">Trading Apps</a></li>
+          <li><a href="javascript:void(0);" class="filter" data-filter=".category-education">Education & Others</a></li>
         </ul>
         <h4>Order by</h4>
         <ul>
@@ -63,6 +64,8 @@
             <div class="col-sm-4 mix category-strategy" data-price="<%= product.price %>" data-date="<%= product.id %>" data-popularity="3">
           <% elsif product.indicator? %>
             <div class="col-sm-4 mix category-indicator" data-price="<%= product.price %>" data-date="<%= product.id %>" data-popularity="3">
+          <% elsif product.education? %>
+            <div class="col-sm-4 mix category-education" data-price="<%= product.price %>" data-date="<%= product.id %>" data-popularity="3">
           <% else %>
             <div class="col-sm-4 mix category-portfolio" data-price="<%= product.price %>" data-date="<%= product.id  %>" data-popularity="3">
           <% end %>

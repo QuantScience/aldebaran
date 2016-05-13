@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @strategies = Product.where(product_type: 0).includes(:section_images).limit(6)
     @indicators = Product.where(product_type: 1).includes(:section_images).limit(6)
     @portfolios = Product.where(product_type: 2).includes(:section_images).limit(6)
+    @education = Product.where(product_type: 3).limit(6)
   end
 
   def how_it_works
@@ -53,6 +54,10 @@ class PagesController < ApplicationController
 
   def portfolios
     @products = Product.where(product_type: 2).includes(:section_images)
+  end
+
+  def education
+    @products = Product.where(product_type: 3)
   end
 
   def my_products

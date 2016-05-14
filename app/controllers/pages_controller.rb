@@ -34,6 +34,7 @@ class PagesController < ApplicationController
 
   def about_us
     @content = Content.find(1)
+    @about_us_banner = Image.where(image_type: 4).order('id ASC')[0]
   end
 
   def strategies

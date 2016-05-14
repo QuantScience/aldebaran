@@ -18,6 +18,14 @@
       $("textarea[name='product[section_paragraph_2]']").removeAttr('required');
       $("textarea[name='product[section_paragraph_2]']").val('');
       $("textarea[name='product[section_paragraph_2]']").parent().hide();
+
+      $("input[name='product[price_one_year]']").removeAttr('required');
+      $("input[name='product[price_one_year]']").val('');
+      $("input[name='product[price_one_year]']").parent().hide();
+      $("input[name='product[price_open_source]']").removeAttr('required');
+      $("input[name='product[price_open_source]']").val('');
+      $("input[name='product[price_open_source]']").parent().hide();
+
       $("input[name='product[quality_1]']").removeAttr('required');
       $("input[name='product[quality_1]']").val('');
       $("input[name='product[quality_1]']").parent().hide();
@@ -51,6 +59,10 @@
         $("textarea[name='product[section_paragraph_1]']").parent().hide();
         $("textarea[name='product[section_paragraph_2]']").removeAttr('required');
         $("textarea[name='product[section_paragraph_2]']").parent().hide();
+        $("input[name='product[price_one_year]']").removeAttr('required');
+        $("input[name='product[price_one_year]']").parent().hide();
+        $("input[name='product[price_open_source]']").removeAttr('required');
+        $("input[name='product[price_open_source]']").parent().hide();
         $("input[name='product[quality_1]']").removeAttr('required');
         $("input[name='product[quality_1]']").parent().hide();
         $("input[name='product[quality_2]']").removeAttr('required');
@@ -71,6 +83,10 @@
         $("textarea[name='product[section_paragraph_1]']").parent().show();
         $("textarea[name='product[section_paragraph_2]']").attr('required', 'required');
         $("textarea[name='product[section_paragraph_2]']").parent().show();
+        $("input[name='product[price_one_year]']").attr('required', 'required');
+        $("input[name='product[price_one_year]']").parent().show();
+        $("input[name='product[price_open_source]']").attr('required', 'required');
+        $("input[name='product[price_open_source]']").parent().show();
         $("input[name='product[quality_1]']").attr('required', 'required');
         $("input[name='product[quality_1]']").parent().show();
         $("input[name='product[quality_2]']").attr('required', 'required');

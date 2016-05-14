@@ -48,7 +48,11 @@
               <div class="ec-box-header"><%= link_to product.title, product_path(product) %></div>
               <%= link_to "<img src='#{product.logo.url(:my_store)}' alt="">".html_safe, product_path(product) %>
               <div class="ec-box-footer">
-                <span class="label label-primary">Start at $ <%= product.price %></span>
+                <% if product.education? %>
+                  <span class="label label-primary"><%= number_to_currency(product.price, precision: 0) %></span>
+                <% else %>
+                  <span class="label label-primary">Start at <%= number_to_currency(product.price, precision: 0) %></span>
+                <% end %>
                 <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, product_path(product), class: "btn btn-ar btn-success btn-sm pull-right" %>
               </div>
             </div>
@@ -72,7 +76,11 @@
               <div class="ec-box-header"><%= link_to product.title, product_path(product) %></div>
               <%= link_to "<img src='#{product.logo.url(:my_store)}' alt="">".html_safe, product_path(product) %>
               <div class="ec-box-footer">
-                <span class="label label-primary">Start at $ <%= product.price %></span>
+                <% if product.education? %>
+                  <span class="label label-primary"><%= number_to_currency(product.price, precision: 0) %></span>
+                <% else %>
+                  <span class="label label-primary">Start at <%= number_to_currency(product.price, precision: 0) %></span>
+                <% end %>
                 <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, product_path(product), class: "btn btn-ar btn-success btn-sm pull-right" %>
               </div>
             </div>

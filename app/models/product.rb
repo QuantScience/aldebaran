@@ -47,7 +47,7 @@ class Product < ActiveRecord::Base
   validates_associated :section_images
   validates :title, :resume, :product_type, :logo, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :pay_pal_button, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}, :if => :not_education?
 
-  validates :title, :resume, :product_type, :logo, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :pay_pal_button, presence: { message: "You must include all the fields"}, :if => :is_education?
+  validates :title, :resume, :product_type, :logo, :subtitle, :price, :specifications, :pay_pal_button, presence: { message: "You must include all the fields"}, :if => :is_education?
 
   validates :resume, length: { maximum: 120,
     too_long: "%{count} characters is the maximum allowed for resume field" }

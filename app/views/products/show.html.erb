@@ -24,9 +24,13 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="e-price">$ <span><%= @product.price %></span>.00 <span class="price-time">Six Months</span></div>
-        <div class="e-price">$ <span><%= @product.price_one_year %></span>.00 <span class="price-time">One Year</span></div>
-        <div class="e-price">$ <span><%= @product.price_open_source %></span>.00 <span class="price-time">Open Code</span></div>
+        <% if @product.education? %>
+          <div class="e-price">$ <span><%= @product.price %></span>.00</div>
+        <% else %>
+          <div class="e-price">$ <span><%= @product.price %></span>.00 <span class="price-time">Six Months</span></div>
+          <div class="e-price">$ <span><%= @product.price_one_year %></span>.00 <span class="price-time">One Year</span></div>
+          <div class="e-price">$ <span><%= @product.price_open_source %></span>.00 <span class="price-time">Open Code</span></div>
+        <% end %>
         <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, new_order_path(product_id: @product.id), class: "btn btn-ar btn-block btn-success" %>
         <% if @product.more_info_link != "" %>
           <a href="<%= @product.more_info_link %>" target="_blank" class="btn btn-ar btn-block btn-warning">Download all info about this product</a>
@@ -36,7 +40,11 @@
           <div class="ec-box-header"><%= link_to @random_item.title, product_path(@random_item) %></div>
           <%= link_to "<img src='#{@random_item.logo.url(:my_store)}' alt=''>".html_safe, product_path(@random_item) %>
           <div class="ec-box-footer">
-            <span class="label label-primary">Start at <%= number_to_currency(@random_item.price, precision: 0) %></span>
+            <% if @random_item.education? %>
+              <span class="label label-primary"><%= number_to_currency(@random_item.price, precision: 0) %></span>
+            <% else %>
+              <span class="label label-primary">Start at <%= number_to_currency(@random_item.price, precision: 0) %></span>
+            <% end %>
             <%= link_to '<i class="fa fa-shopping-cart"></i> Buy Now'.html_safe, new_order_path(product_id: @product.id), class: "btn btn-ar btn-success btn-sm pull-right" %>
           </div>
         </div>

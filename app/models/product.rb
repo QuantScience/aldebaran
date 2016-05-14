@@ -41,16 +41,26 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :product_images, :limit => 3, :reject_if => :all_blank, allow_destroy: true
   accepts_nested_attributes_for :section_images, :limit => 4, :reject_if => :all_blank, allow_destroy: true
 
-
-  enum product_type: [:strategy, :indicator, :portfolio]
+  enum product_type: [:strategy, :indicator, :portfolio, :education]
 
   validates_associated :product_images
   validates_associated :section_images
-  validates :title, :resume, :product_type, :logo, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :pay_pal_button, :more_info_link, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}
+  validates :title, :resume, :product_type, :logo, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :section_title, :pay_pal_button, :section_paragraph_1, :section_paragraph_2, :quality_1, :quality_2, :quality_3, :quality_4, presence: { message: "You must include all the fields"}, :if => :not_education?
+
+  validates :title, :resume, :product_type, :logo, :subtitle, :price, :price_one_year, :price_open_source, :specifications, :pay_pal_button, presence: { message: "You must include all the fields"}, :if => :is_education?
+
   validates :resume, length: { maximum: 120,
     too_long: "%{count} characters is the maximum allowed for resume field" }
   validate :require_three_product_images
-  validate :require_four_section_images
+  validate :require_four_section_images, :if => :not_education?
+
+  def not_education?
+    product_type != "education"
+  end
+
+  def is_education?
+    product_type == "education"
+  end
 
   private
     def require_three_product_images

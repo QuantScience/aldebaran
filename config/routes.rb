@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'pages/strategies' => 'pages#strategies'
   get 'pages/portfolios' => 'pages#portfolios'
   get 'pages/indicators' => 'pages#indicators'
+  get 'pages/education' => 'pages#education'
   get 'pages/thanks_for_purchase' => 'pages#thanks_for_purchase'
   get 'pages/my_products' => 'pages#my_products'
   get 'users' => 'orders#users'

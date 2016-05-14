@@ -1,6 +1,25 @@
 <div class="container">
   <div class="row">
     <h2 class="right-line">Images</h2>
+
+    <h3>About Us Banners</h3>
+    <table class="table">
+     <tr class="success">
+       <th class="text-center lead lead-lg">No.</th>
+       <th class="text-center lead lead-lg">Location</th>
+       <th class="text-center lead lead-lg">Image</th>
+       <th class="text-center lead lead-lg">Options</th>
+     </tr>
+     <tr class="text-center">
+       <td class="lead lead-sm vert-align text-center">1</td>
+       <td class="lead lead-sm vert-align text-center"><%= image_tag @about_us_banner.image.url(:thumb), class: "user-thumbnail" %></td>
+       <td class="lead lead-sm vert-align text-center"><%= @about_us_banner.location %></td>
+       <td class="lead lead-sm vert-align text-center">
+         <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_image_path(@about_us_banner), class: "btn btn-ar btn-warning" %>
+       </td>
+     </tr>
+    </table>
+
     <div class="col-md-12">
       <h3>Carousel Background</h3>
       <table class="table">

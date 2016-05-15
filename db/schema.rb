@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405023529) do
+ActiveRecord::Schema.define(version: 20160515004559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,8 +60,20 @@ ActiveRecord::Schema.define(version: 20160405023529) do
     t.text     "about_us_3_second_paragraph"
     t.text     "contact_us_paragraph"
     t.text     "faq_paragraph"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.text     "partnership_first_paragraph"
+    t.text     "partnership_second_paragraph"
+    t.text     "partnership_third_paragraph"
+    t.string   "partnership_1_title"
+    t.text     "partnership_1_first_paragraph"
+    t.text     "partnership_1_second_paragraph"
+    t.string   "partnership_2_title"
+    t.text     "partnership_2_first_paragraph"
+    t.text     "partnership_2_second_paragraph"
+    t.string   "partnership_3_title"
+    t.text     "partnership_3_first_paragraph"
+    t.text     "partnership_3_second_paragraph"
   end
 
   create_table "faq_items", force: :cascade do |t|

@@ -27,7 +27,14 @@
         <li><%= link_to "How It Works?", pages_how_it_works_path %></li>
         <li><%= link_to "FAQ", pages_faq_path %></li>
         <li><%= link_to "Store", pages_my_store_path %></li>
-        <li><%= link_to "About Us", pages_about_us_path %></li>
+
+        <li class="dropdown">
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+           <ul class="dropdown-menu dropdown-menu-left">
+            <li><%= link_to "About Us", pages_about_us_path %></li>
+            <li><%= link_to "Partnership", pages_partnership_path %></li>
+          </ul>
+        </li>
         <li><%= link_to "Contact", pages_contact_path %></li>
         <li><%= link_to "Blog", "https://medium.com/@aldebarantech", target: '_blank' %></li>
         <% if user_signed_in? %>

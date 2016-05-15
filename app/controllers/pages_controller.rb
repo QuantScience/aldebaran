@@ -37,6 +37,11 @@ class PagesController < ApplicationController
     @about_us_banner = Image.where(image_type: 4).order('id ASC')[0]
   end
 
+  def partnership
+    @content = Content.find(1)
+    @about_us_banner = Image.where(image_type: 4).order('id ASC')[0]
+  end
+
   def strategies
     @products = Product.where(product_type: 0).includes(:section_images)
   end

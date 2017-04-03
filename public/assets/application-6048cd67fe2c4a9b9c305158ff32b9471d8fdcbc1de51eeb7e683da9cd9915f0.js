@@ -12908,13 +12908,13 @@ return jQuery;
 		var ua = navigator.userAgent, // Get user agent string.
 		android = false, // Variable for storing android version.
 		iOS = false; // Variable for storing iOS version.
-		
+
 		if (/Android/.test(ua)) { // Detect Android in user agent string.
 			android = ua.substr(ua.indexOf('Android')+8, 3); // Set version of Android.
 		} else if (/(iPhone|iPod|iPad)/.test(ua)) { // Detect iOS in user agent string.
 			iOS = ua.substr(ua.indexOf('OS ')+3, 3).replace('_', '.'); // Set version of iOS.
 		}
-		
+
 		if (android && android < 3 || iOS && iOS < 5) $('html').addClass('sb-static'); // Add helper class for older versions of Android & iOS.
 
 		// -----------
@@ -12925,7 +12925,7 @@ return jQuery;
 		var $site = $('#sb-site'); // Cache the selector.
 		if (!$site.parent().is('body')) $site.appendTo('body'); // Check its location and move if necessary.
 
-		// Left Slidebar	
+		// Left Slidebar
 		if ($('.sb-left').length) { // Check if the left Slidebar exists.
 			var $left = $('.sb-left'), // Cache the selector.
 			leftActive = false; // Used to check whether the left Slidebar is open or closed.
@@ -12940,15 +12940,15 @@ return jQuery;
 			$right.addClass('sb-slidebar'); // Make sure the Slidebar has the base class.
 			if (!$right.parent().is('body')) $right.appendTo('body'); // Check its location and move if necessary.
 		}
-				
+
 		var init = false,
 		windowWidth = $(window).width(), // Get width of window.
 		$controls = $('.sb-toggle-left, .sb-toggle-right, .sb-open-left, .sb-open-right, .sb-close'), // Cache the control classes.
 		$slide = $('.sb-slide'); // Cache users elements to animate.
-		
+
 		// Initailise Slidebars
 		function initialise() {
-			if (!settings.disableOver || (typeof settings.disableOver === 'number' && settings.disableOver >= windowWidth)) { // False or larger than window size. 
+			if (!settings.disableOver || (typeof settings.disableOver === 'number' && settings.disableOver >= windowWidth)) { // False or larger than window size.
 				init = true; // true enabled Slidebars to open.
 				$('html').addClass('sb-init'); // Add helper class.
 				if (settings.hideControlClasses) $controls.removeClass('sb-hide'); // Remove class just incase Slidebars was originally disabled.
@@ -12960,23 +12960,23 @@ return jQuery;
 			}
 		}
 		initialise();
-		
+
 		// Inline CSS
 		function css() {
 			// Set minimum height.
 			//$site.css('minHeight', ''); // Reset minimum height.
 			//$site.css('minHeight', $('body').height() + 'px'); // Set minimum height of the site to the minimum height of the body.
-			
+
 			// Set off-canvas margins for Slidebars with push and overlay animations.
 			if ($left && ($left.hasClass('sb-style-push') || $left.hasClass('sb-style-overlay'))) $left.css('marginLeft', '-' + $left.css('width'));
 			if ($right && ($right.hasClass('sb-style-push') || $right.hasClass('sb-style-overlay'))) $right.css('marginRight', '-' + $right.css('width'));
-			
+
 			// Custom Slidebar Widths
 			if ($left && $left.hasClass('sb-width-custom')) $left.css('width', $left.attr('data-sb-width')); // Set user custom width.
 			if ($right && $right.hasClass('sb-width-custom')) $right.css('width', $right.attr('data-sb-width')); // Set user custom width.
 		}
 		css();
-		
+
 		// Resize Functions
 		$(window).resize(function() {
 			var resizedWindowWidth = $(window).width(); // Get resized window width.
@@ -13007,7 +13007,7 @@ return jQuery;
 		function animate(object, amount, side) {
             // Choose selectors depending on animation style.
             var selector;
-            
+
             if (object.hasClass('sb-style-push')) {
                 selector = $site.add(object).add($slide); // Push - Animate site, Slidebar and user elements.
             } else if (object.hasClass('sb-style-overlay')) {
@@ -13015,12 +13015,12 @@ return jQuery;
             } else {
                 selector = $site.add($slide); // Reveal - Animate site and user elements.
             }
-            
+
             // Apply animation
             if (animation === 'translate') {
                 selector.css('transform', 'translate(' + amount + ')');
 
-            } else if (animation === 'side') {      
+            } else if (animation === 'side') {
                 if (amount[0] === '-') amount = amount.substr(1); // Remove the '-' from the passed amount for side animations.
                 selector.css(side, amount);
 
@@ -13030,7 +13030,7 @@ return jQuery;
                 properties[side] = amount;
                 selector.stop().animate(properties, 400); // Stop any current jQuery animation before starting another.
             }
-            
+
             // If closed, remove the inline styling on completion of the animation.
             setTimeout(function() {
                 if (amount === '0px') {
@@ -13068,7 +13068,7 @@ return jQuery;
 				}
 			}
 		}
-			
+
 		// Close either Slidebar
 		function close(link) {
 			if (leftActive || rightActive) { // If a Slidebar is open.
@@ -13080,7 +13080,7 @@ return jQuery;
 					animate($right, '0px', 'right'); // Animation
 					rightActive = false;
 				}
-			
+
 				setTimeout(function() { // Wait for closing animation to finish.
 					$('html').removeClass('sb-active sb-active-left sb-active-right'); // Remove active classes.
 					if ($left) $left.removeClass('sb-active');
@@ -13089,7 +13089,7 @@ return jQuery;
 				}, 400);
 			}
 		}
-		
+
 		// Toggle either Slidebar
 		function toggle(side) {
 			if (side === 'left' && $left) { // If left Slidebar is called and in use.
@@ -13124,49 +13124,49 @@ return jQuery;
 
 		// ----------------
 		// 008 - User Input
-		
+
 		function eventHandler(event, selector) {
 			event.stopPropagation(); // Stop event bubbling.
 			event.preventDefault(); // Prevent default behaviour
 			if (event.type === 'touchend') selector.off('click'); // If event type was touch turn off clicks to prevent phantom clicks.
 		}
-		
+
 		// Toggle Left Slidebar
 		$('.sb-toggle-left').on('touchend click', function(event) {
 			eventHandler(event, $(this)); // Handle the event.
 			toggle('left'); // Toggle the left Slidbar.
 		});
-		
+
 		// Toggle Right Slidebar
 		$('.sb-toggle-right').on('touchend click', function(event) {
 			eventHandler(event, $(this)); // Handle the event.
 			toggle('right'); // Toggle the right Slidbar.
 		});
-		
+
 		// Open Left Slidebar
 		$('.sb-open-left').on('touchend click', function(event) {
 			eventHandler(event, $(this)); // Handle the event.
 			open('left'); // Open the left Slidebar.
 		});
-		
+
 		// Open Right Slidebar
 		$('.sb-open-right').on('touchend click', function(event) {
 			eventHandler(event, $(this)); // Handle the event.
 			open('right'); // Open the right Slidebar.
 		});
-		
+
 		// Close a Slidebar
 		$('.sb-close').on('touchend click', function(event) {
 			eventHandler(event, $(this)); // Handle the event.
 			close(); // Close either Slidebar.
 		});
-		
+
 		// Close Slidebar via Link
 		$('.sb-slidebar a').not('.sb-disable-close').on('click', function(event) {
 			eventHandler(event, $(this)); // Handle the event.
 			close( $(this).attr('href') ); // Close the Slidebar and pass link.
 		});
-		
+
 		// Close Slidebar via Site
 		$site.on('touchend click', function(event) {
 			if (settings.siteClose && (leftActive || rightActive)) { // If settings permit closing by site and left or right Slidebar is open.
@@ -13174,7 +13174,7 @@ return jQuery;
 				close(); // Close it.
 			}
 		});
-		
+
 	}; // End slidebars function.
 
 }) (jQuery);
@@ -13441,10 +13441,10 @@ function draw_svg(args){
 	var text_height = ts.height;
 	var width = dimensions.width,
 		height = dimensions.height;
-		
+
 	var font = template.font ? template.font : "Arial,Helvetica,sans-serif";
 	var text = template.text ? template.text : (Math.floor(dimensions.width) + "x" + Math.floor(dimensions.height));
-	
+
 	if (literal) {
 		var dimensions = holder.dimensions;
 		text = dimensions.width + "x" + dimensions.height;
@@ -13454,11 +13454,11 @@ function draw_svg(args){
 		text = (Math.floor(dimensions.width) + "x" + Math.floor(dimensions.height));
 	}
 	var string = svg_el({
-		text: text, 
-		width:width, 
-		height:height, 
-		text_height:text_height, 
-		font:font, 
+		text: text,
+		width:width,
+		height:height,
+		text_height:text_height,
+		font:font,
 		template:template
 	})
 	return "data:image/svg+xml;base64,"+btoa(unescape(encodeURIComponent(string)));
@@ -13487,7 +13487,7 @@ function render(mode, el, holder, src) {
 	el.setAttribute("data-src", src);
 	holder.theme = theme;
 	el.holder_data = holder;
-	
+
 	if (mode == "image") {
 		el.setAttribute("alt", text ? text : theme.text ? theme.text + " [" + dimensions_caption + "]" : dimensions_caption);
 		if (instance_config.use_fallback || !holder.auto) {
@@ -13498,12 +13498,12 @@ function render(mode, el, holder, src) {
 			el.style.backgroundColor = theme.background;
 		} else {
 			el.setAttribute("src", draw({ctx: ctx, dimensions: dimensions, template: theme, ratio:ratio, holder: holder}));
-			
+
 			if(holder.textmode && holder.textmode == "exact"){
 				resizable_images.push(el);
 				resizable_update(el);
 			}
-			
+
 		}
 	} else if (mode == "background") {
 		if (!instance_config.use_fallback) {
@@ -13525,9 +13525,9 @@ function render(mode, el, holder, src) {
 		if (el.style.display == "inline" || el.style.display === "" || el.style.display == "none") {
 			el.style.display = "block";
 		}
-		
+
 		set_initial_dimensions(el)
-		
+
 		if (instance_config.use_fallback) {
 			el.style.backgroundColor = theme.background;
 		} else {
@@ -13705,7 +13705,7 @@ app.run = function (o) {
 		instance_config.use_canvas = true;
 		instance_config.use_svg = false;
 	}
-			
+
 	if (typeof (options.images) == "string") {
 		imageNodes = selector(options.images);
 	} else if (window.NodeList && options.images instanceof window.NodeList) {
@@ -13724,7 +13724,7 @@ app.run = function (o) {
 		bgnodes = [options.bgnodes];
 	}
 	for (i = 0, l = imageNodes.length; i < l; i++) images.push(imageNodes[i]);
-	
+
 	var holdercss = document.getElementById("holderjs-style");
 	if (!holdercss) {
 		holdercss = document.createElement("style");
@@ -13732,7 +13732,7 @@ app.run = function (o) {
 		holdercss.type = "text/css";
 		document.getElementsByTagName("head")[0].appendChild(holdercss);
 	}
-	
+
 	if (!options.nocss) {
 		if (holdercss.styleSheet) {
 			holdercss.styleSheet.cssText += options.stylesheet;
@@ -13742,7 +13742,7 @@ app.run = function (o) {
 			}
 		}
 	}
-	
+
 	var cssregex = new RegExp(options.domain + "\/(.*?)\"?\\)");
 	for (var l = bgnodes.length, i = 0; i < l; i++) {
 		var src = window.getComputedStyle(bgnodes[i], null)
@@ -14024,24 +14024,24 @@ $(document).ready(function() {
  * circles - v0.0.4 - 2014-11-06
  *
  * Copyright (c) 2014 lugolabs
- * Licensed 
+ * Licensed
  */
 
 !function(){"use strict";var a=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){setTimeout(a,1e3/60)},b=window.Circles=function(a){var b=a.id;if(this._el=document.getElementById(b),null!==this._el){this._radius=a.radius||10,this._duration=void 0===a.duration?500:a.duration,this._value=0,this._maxValue=a.maxValue||100,this._text=void 0===a.text?function(a){return this.htmlifyNumber(a)}:a.text,this._strokeWidth=a.width||10,this._colors=a.colors||["#EEE","#F00"],this._svg=null,this._movingPath=null,this._wrapContainer=null,this._textContainer=null,this._wrpClass=a.wrpClass||"circles-wrp",this._textClass=a.textClass||"circles-text",this._styleWrapper=a.styleWrapper||!0,this._styleText=a.styleText||!0;var c=Math.PI/180*270;this._start=-Math.PI/180*90,this._startPrecise=this._precise(this._start),this._circ=c-this._start,this._generate().update(a.value||0)}};b.prototype={VERSION:"0.0.5",_generate:function(){return this._svgSize=2*this._radius,this._radiusAdjusted=this._radius-this._strokeWidth/2,this._generateSvg()._generateText()._generateWrapper(),this._el.innerHTML="",this._el.appendChild(this._wrapContainer),this},_setPercentage:function(a){this._movingPath.setAttribute("d",this._calculatePath(a,!0)),this._textContainer.innerHTML=this._getText(this.getValueFromPercent(a))},_generateWrapper:function(){return this._wrapContainer=document.createElement("div"),this._wrapContainer.className=this._wrpClass,this._styleWrapper&&(this._wrapContainer.style.position="relative",this._wrapContainer.style.display="inline-block"),this._wrapContainer.appendChild(this._svg),this._wrapContainer.appendChild(this._textContainer),this},_generateText:function(){if(this._textContainer=document.createElement("div"),this._textContainer.className=this._textClass,this._styleText){var a={position:"absolute",top:0,left:0,textAlign:"center",width:"100%",fontSize:.7*this._radius+"px",height:this._svgSize+"px",lineHeight:this._svgSize+"px"};for(var b in a)this._textContainer.style[b]=a[b]}return this._textContainer.innerHTML=this._getText(0),this},_getText:function(a){return this._text?(void 0===a&&(a=this._value),a=parseFloat(a.toFixed(2)),"function"==typeof this._text?this._text.call(this,a):this._text):""},_generateSvg:function(){return this._svg=document.createElementNS("http://www.w3.org/2000/svg","svg"),this._svg.setAttribute("xmlns","http://www.w3.org/2000/svg"),this._svg.setAttribute("width",this._svgSize),this._svg.setAttribute("height",this._svgSize),this._generatePath(100,!1,this._colors[0])._generatePath(1,!0,this._colors[1]),this._movingPath=this._svg.getElementsByTagName("path")[1],this},_generatePath:function(a,b,c){var d=document.createElementNS("http://www.w3.org/2000/svg","path");return d.setAttribute("fill","transparent"),d.setAttribute("stroke",c),d.setAttribute("stroke-width",this._strokeWidth),d.setAttribute("d",this._calculatePath(a,b)),this._svg.appendChild(d),this},_calculatePath:function(a,b){var c=this._start+a/100*this._circ,d=this._precise(c);return this._arc(d,b)},_arc:function(a,b){var c=a-.001,d=a-this._startPrecise<Math.PI?0:1;return["M",this._radius+this._radiusAdjusted*Math.cos(this._startPrecise),this._radius+this._radiusAdjusted*Math.sin(this._startPrecise),"A",this._radiusAdjusted,this._radiusAdjusted,0,d,1,this._radius+this._radiusAdjusted*Math.cos(c),this._radius+this._radiusAdjusted*Math.sin(c),b?"":"Z"].join(" ")},_precise:function(a){return Math.round(1e3*a)/1e3},htmlifyNumber:function(a,b,c){b=b||"circles-integer",c=c||"circles-decimals";var d=(a+"").split("."),e='<span class="'+b+'">'+d[0]+"</span>";return d.length>1&&(e+='.<span class="'+c+'">'+d[1].substring(0,2)+"</span>"),e},updateRadius:function(a){return this._radius=a,this._generate().update(!0)},updateWidth:function(a){return this._strokeWidth=a,this._generate().update(!0)},updateColors:function(a){this._colors=a;var b=this._svg.getElementsByTagName("path");return b[0].setAttribute("stroke",a[0]),b[1].setAttribute("stroke",a[1]),this},getPercent:function(){return 100*this._value/this._maxValue},getValueFromPercent:function(a){return this._maxValue*a/100},getValue:function(){return this._value},getMaxValue:function(){return this._maxValue},update:function(b,c){if(b===!0)return this._setPercentage(this.getPercent()),this;if(this._value==b||isNaN(b))return this;void 0===c&&(c=this._duration);var d,e,f,g,h=this,i=h.getPercent(),j=1;return this._value=Math.min(this._maxValue,Math.max(0,b)),c?(d=h.getPercent(),e=d>i,j+=d%1,f=Math.floor(Math.abs(d-i)/j),g=c/f,function k(b){if(e?i+=j:i-=j,e&&i>=d||!e&&d>=i)return void a(function(){h._setPercentage(d)});a(function(){h._setPercentage(i)});var c=Date.now(),f=c-b;f>=g?k(c):setTimeout(function(){k(Date.now())},g-f)}(Date.now()),this):(this._setPercentage(this.getPercent()),this)}},b.create=function(a){return new b(a)}}();
 /*!
  * The Final Countdown for jQuery v2.0.4 (http://hilios.github.io/jQuery.countdown/)
  * Copyright (c) 2014 Edson Hilios
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -14412,7 +14412,6 @@ $(document).ready(function(){
  */
 
 (function(){var a=jQuery,b=function(){function a(){this.fadeDuration=500,this.fitImagesInViewport=!0,this.resizeDuration=700,this.positionFromTop=50,this.showImageNumberLabel=!0,this.alwaysShowNavOnTouchDevices=!1,this.wrapAround=!1}return a.prototype.albumLabel=function(a,b){return"Image "+a+" of "+b},a}(),c=function(){function b(a){this.options=a,this.album=[],this.currentImageIndex=void 0,this.init()}return b.prototype.init=function(){this.enable(),this.build()},b.prototype.enable=function(){var b=this;a("body").on("click","a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]",function(c){return b.start(a(c.currentTarget)),!1})},b.prototype.build=function(){var b=this;a("<div id='lightboxOverlay' class='lightboxOverlay'></div><div id='lightbox' class='lightbox'><div class='lb-outerContainer'><div class='lb-container'><img class='lb-image' src='' /><div class='lb-nav'><a class='lb-prev' href='' ></a><a class='lb-next' href='' ></a></div><div class='lb-loader'><a class='lb-cancel'></a></div></div></div><div class='lb-dataContainer'><div class='lb-data'><div class='lb-details'><span class='lb-caption'></span><span class='lb-number'></span></div><div class='lb-closeContainer'><a class='lb-close'></a></div></div></div></div>").appendTo(a("body")),this.$lightbox=a("#lightbox"),this.$overlay=a("#lightboxOverlay"),this.$outerContainer=this.$lightbox.find(".lb-outerContainer"),this.$container=this.$lightbox.find(".lb-container"),this.containerTopPadding=parseInt(this.$container.css("padding-top"),10),this.containerRightPadding=parseInt(this.$container.css("padding-right"),10),this.containerBottomPadding=parseInt(this.$container.css("padding-bottom"),10),this.containerLeftPadding=parseInt(this.$container.css("padding-left"),10),this.$overlay.hide().on("click",function(){return b.end(),!1}),this.$lightbox.hide().on("click",function(c){return"lightbox"===a(c.target).attr("id")&&b.end(),!1}),this.$outerContainer.on("click",function(c){return"lightbox"===a(c.target).attr("id")&&b.end(),!1}),this.$lightbox.find(".lb-prev").on("click",function(){return b.changeImage(0===b.currentImageIndex?b.album.length-1:b.currentImageIndex-1),!1}),this.$lightbox.find(".lb-next").on("click",function(){return b.changeImage(b.currentImageIndex===b.album.length-1?0:b.currentImageIndex+1),!1}),this.$lightbox.find(".lb-loader, .lb-close").on("click",function(){return b.end(),!1})},b.prototype.start=function(b){function c(a){d.album.push({link:a.attr("href"),title:a.attr("data-title")||a.attr("title")})}var d=this,e=a(window);e.on("resize",a.proxy(this.sizeOverlay,this)),a("select, object, embed").css({visibility:"hidden"}),this.sizeOverlay(),this.album=[];var f,g=0,h=b.attr("data-lightbox");if(h){f=a(b.prop("tagName")+'[data-lightbox="'+h+'"]');for(var i=0;i<f.length;i=++i)c(a(f[i])),f[i]===b[0]&&(g=i)}else if("lightbox"===b.attr("rel"))c(b);else{f=a(b.prop("tagName")+'[rel="'+b.attr("rel")+'"]');for(var j=0;j<f.length;j=++j)c(a(f[j])),f[j]===b[0]&&(g=j)}var k=e.scrollTop()+this.options.positionFromTop,l=e.scrollLeft();this.$lightbox.css({top:k+"px",left:l+"px"}).fadeIn(this.options.fadeDuration),this.changeImage(g)},b.prototype.changeImage=function(b){var c=this;this.disableKeyboardNav();var d=this.$lightbox.find(".lb-image");this.$overlay.fadeIn(this.options.fadeDuration),a(".lb-loader").fadeIn("slow"),this.$lightbox.find(".lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption").hide(),this.$outerContainer.addClass("animating");var e=new Image;e.onload=function(){var f,g,h,i,j,k,l;d.attr("src",c.album[b].link),f=a(e),d.width(e.width),d.height(e.height),c.options.fitImagesInViewport&&(l=a(window).width(),k=a(window).height(),j=l-c.containerLeftPadding-c.containerRightPadding-20,i=k-c.containerTopPadding-c.containerBottomPadding-120,(e.width>j||e.height>i)&&(e.width/j>e.height/i?(h=j,g=parseInt(e.height/(e.width/h),10),d.width(h),d.height(g)):(g=i,h=parseInt(e.width/(e.height/g),10),d.width(h),d.height(g)))),c.sizeContainer(d.width(),d.height())},e.src=this.album[b].link,this.currentImageIndex=b},b.prototype.sizeOverlay=function(){this.$overlay.width(a(window).width()).height(a(document).height())},b.prototype.sizeContainer=function(a,b){function c(){d.$lightbox.find(".lb-dataContainer").width(g),d.$lightbox.find(".lb-prevLink").height(h),d.$lightbox.find(".lb-nextLink").height(h),d.showImage()}var d=this,e=this.$outerContainer.outerWidth(),f=this.$outerContainer.outerHeight(),g=a+this.containerLeftPadding+this.containerRightPadding,h=b+this.containerTopPadding+this.containerBottomPadding;e!==g||f!==h?this.$outerContainer.animate({width:g,height:h},this.options.resizeDuration,"swing",function(){c()}):c()},b.prototype.showImage=function(){this.$lightbox.find(".lb-loader").hide(),this.$lightbox.find(".lb-image").fadeIn("slow"),this.updateNav(),this.updateDetails(),this.preloadNeighboringImages(),this.enableKeyboardNav()},b.prototype.updateNav=function(){var a=!1;try{document.createEvent("TouchEvent"),a=this.options.alwaysShowNavOnTouchDevices?!0:!1}catch(b){}this.$lightbox.find(".lb-nav").show(),this.album.length>1&&(this.options.wrapAround?(a&&this.$lightbox.find(".lb-prev, .lb-next").css("opacity","1"),this.$lightbox.find(".lb-prev, .lb-next").show()):(this.currentImageIndex>0&&(this.$lightbox.find(".lb-prev").show(),a&&this.$lightbox.find(".lb-prev").css("opacity","1")),this.currentImageIndex<this.album.length-1&&(this.$lightbox.find(".lb-next").show(),a&&this.$lightbox.find(".lb-next").css("opacity","1"))))},b.prototype.updateDetails=function(){var b=this;"undefined"!=typeof this.album[this.currentImageIndex].title&&""!==this.album[this.currentImageIndex].title&&this.$lightbox.find(".lb-caption").html(this.album[this.currentImageIndex].title).fadeIn("fast").find("a").on("click",function(){location.href=a(this).attr("href")}),this.album.length>1&&this.options.showImageNumberLabel?this.$lightbox.find(".lb-number").text(this.options.albumLabel(this.currentImageIndex+1,this.album.length)).fadeIn("fast"):this.$lightbox.find(".lb-number").hide(),this.$outerContainer.removeClass("animating"),this.$lightbox.find(".lb-dataContainer").fadeIn(this.options.resizeDuration,function(){return b.sizeOverlay()})},b.prototype.preloadNeighboringImages=function(){if(this.album.length>this.currentImageIndex+1){var a=new Image;a.src=this.album[this.currentImageIndex+1].link}if(this.currentImageIndex>0){var b=new Image;b.src=this.album[this.currentImageIndex-1].link}},b.prototype.enableKeyboardNav=function(){a(document).on("keyup.keyboard",a.proxy(this.keyboardAction,this))},b.prototype.disableKeyboardNav=function(){a(document).off(".keyboard")},b.prototype.keyboardAction=function(a){var b=27,c=37,d=39,e=a.keyCode,f=String.fromCharCode(e).toLowerCase();e===b||f.match(/x|o|c/)?this.end():"p"===f||e===c?0!==this.currentImageIndex?this.changeImage(this.currentImageIndex-1):this.options.wrapAround&&this.album.length>1&&this.changeImage(this.album.length-1):("n"===f||e===d)&&(this.currentImageIndex!==this.album.length-1?this.changeImage(this.currentImageIndex+1):this.options.wrapAround&&this.album.length>1&&this.changeImage(0))},b.prototype.end=function(){this.disableKeyboardNav(),a(window).off("resize",this.sizeOverlay),this.$lightbox.fadeOut(this.options.fadeDuration),this.$overlay.fadeOut(this.options.fadeDuration),a("select, object, embed").css({visibility:"visible"})},b}();a(function(){{var a=new b;new c(a)}})}).call(this);
-//# sourceMappingURL=lightbox.min.map
 ;
 
 var myCircle1 = Circles.create({
